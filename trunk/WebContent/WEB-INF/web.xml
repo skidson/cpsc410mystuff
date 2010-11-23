@@ -17,6 +17,6 @@
 	</servlet-mapping>
 	
   <welcome-file-list>
-    <welcome-file>redirect.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
