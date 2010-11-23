@@ -1,9 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<%@ page language="java" contentType="text/html; %>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<html>
 
 <head>
-<link rel="stylesheet" href="../images/Envision.css" type="text/css" />
+<style type="text/css">
+	<%@include file="./Envision.css" %>
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 
 <title>MyStuff - Login</title>
 	
@@ -64,20 +69,21 @@
 				
 			<div id="main">
 				<h3>Login</h3> <br />
-				<table align="center"><tr>
-					
+				<center>
+				<table><tr>
 					<form action="#">			
 					<p>			
 					<label>Username</label>
 					<input name="username" type="text" size="30" />
-					<label>Password</label>
+					<label>Password                              </label>
 					<input name="password" type="text" size="30" /> <br />
-					<a href="#">Forgot your password? </a>|<a href="#"> Register</a>
+					<a href="#">Forgot your password?</a> | <a href="#">Register</a>
 					<br />	<br />	
 					<center><input class="button" value="          Login          " type="submit" /></center>
 					</p>		
 					</form>				
 				</tr></table>
+				</center>
 			</div>
 		
 		<!-- content-wrap ends here -->	
@@ -88,7 +94,7 @@
 			
 			<p>
 			&copy; 2010 <strong>University of British Columbia</strong> | 
-			<b>CPSC 410 </b>|
+			<b>CPSC 410</b> | 
 			<b>template:</b> <a href="http://www.styleshout.com/">styleshout</a>
    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			
