@@ -1,6 +1,6 @@
 package ca.ubc.cpsc.mystuff.model;
 
-public class Peer extends User {
+public class Peer extends UserBean {
 	private int rating;
 	private String firstName;
 	private String lastName;

@@ -10,8 +10,7 @@ public class MyStuffController extends AbstractController {
 	private String message;
 	
 	@Override
-	protected ModelAndView handleRequestInternal(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return new ModelAndView("welcomePage", "welcomeMessage", message);
 	}
 	
