@@ -1,6 +1,6 @@
-package model;
+package ca.ubc.cpsc.mystuff.model;
 
-public class Song implements Item{
+public class Movie implements Item {
 
 	private String title;
 	private String genre;
@@ -9,7 +9,7 @@ public class Song implements Item{
 	private int itemID;
 
 	
-	public Song(String title, int duration, int rating, int itemID, String genre){
+	public Movie(String title, int duration, int rating, int itemID, String genre){
 		this.duration = duration;
 		this.rating = rating;
 		this.title = title;
@@ -61,6 +61,6 @@ public class Song implements Item{
 	public void addComment() {
 		// TODO Auto-generated method stub
 
-		}
-
 	}
+
+}

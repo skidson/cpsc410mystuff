@@ -14,7 +14,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 		</property>
 	</bean>
 	
-	<bean name="/welcome.htm" class="controller.MyStuffController" >
+	<bean name="/welcome.htm" class="ca.ubc.cpsc.mystuff.controller.MyStuffController" >
 		<property name="message" value="Hello World!" />
 	</bean>
 	
