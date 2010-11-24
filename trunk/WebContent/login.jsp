@@ -61,7 +61,7 @@
 				<h3>Notices</h3>
 				<ul class="sidemenu">				
 					<li>9:45pm - Jeff likes men</li>
-					<li>12:30am - Server Maintenance</a></li>				
+					<li>12:30am - Server Maintenance</li>				
 				</ul>						
 								
 			</div>

@@ -2,9 +2,9 @@ package ca.ubc.cpsc.mystuff.model;
 
 public class Comment {
 	private String text;
-	private User author;
+	private UserBean author;
 	
-	public Comment(User author, String text){
+	public Comment(UserBean author, String text){
 		this.author = author;
 		this.text = text;
 	}
@@ -13,7 +13,7 @@ public class Comment {
 		return text;
 	}
 	
-	public User getAuthor(){
+	public UserBean getAuthor(){
 		return author;
 	}
 	
