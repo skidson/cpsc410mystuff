@@ -1,4 +1,4 @@
-package model;
+package ca.ubc.cpsc.mystuff.model;
 
 public class Search {
 	private int duration;
