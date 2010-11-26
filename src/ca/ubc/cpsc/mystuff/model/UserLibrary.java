@@ -22,4 +22,18 @@ public class UserLibrary {
 
 	}
 	
+	public ArrayList<Item> search(Search search){
+		ArrayList<Item> matchedItems = new ArrayList<Item>();
+		for(Item item : items){
+			if (item.getDuration() == search.getDuration())
+				matchedItems.add(item);
+			else if (item.getGenre().equals(search.getGenre()))
+				matchedItems.add(item);
+			else if (item.getRating() == search.getRating())
+				matchedItems.add(item);
+			else if (item.getTitle() == search.getTitle())
+				matchedItems.add(item);		
+		}
+		return matchedItems;
+	}
 }

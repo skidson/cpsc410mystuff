@@ -7,6 +7,7 @@ public class Song implements Item{
 	private int duration;
 	private int rating;
 	private int itemID;
+	private Comment comment;
 
 	
 	public Song(String title, int duration, int rating, int itemID, String genre){
@@ -58,9 +59,16 @@ public class Song implements Item{
 
 	}
 
-	public void addComment() {
-		// TODO Auto-generated method stub
+	public Comment getCommentAt(int index){
+		return (this.comment.getCommentAt(index));
+	}
+	
+	public void deleteCommentAt(int index){
+		this.comment.deleteCommentAt(index);
+	}
 
-		}
+	public void addComment(Comment comment) {
+		this.comment.addComment(comment);	
+	}
 
 	}
