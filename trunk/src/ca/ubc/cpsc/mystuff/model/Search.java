@@ -5,13 +5,29 @@ public class Search {
 	private int rating;
 	private String title;
 	private String genre;
-	private int itemID;
 	
-	public Search(int duration, int rating, String title, String genre, int itemID){
+	public Search(int duration, int rating, String title, String genre){
 		this.duration = duration;
 		this.rating = rating;
 		this.title = title;
 		this.genre = genre;
-		this.itemID = itemID;
 	}
+	
+	public int getDuration(){
+		return (this.duration);
+	}
+	
+	public int getRating(){
+		return (this.rating);
+	}
+	
+	public String getTitle(){
+		return (this.title);
+	}
+	
+	public String getGenre(){
+		return (this.genre);
+	}
+
+	
 }

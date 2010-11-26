@@ -1,21 +1,25 @@
 package ca.ubc.cpsc.mystuff.model;
 
+import java.util.ArrayList;
+
 public class Peer extends UserBean {
 	private int rating;
 	private String firstName;
 	private String lastName;
 	private String country;
 	private MailBox mailbox;
+	private int userID;
+	private ArrayList<Peer> friends = new ArrayList<Peer>();
 	
 	public Peer() {
 	}
 	
 	public void addFriend(int userID){
-		
+		friends.add(userID);
 	}
 	
 	public void addFriend(FriendRequest request){
-		request.accept();
+		request.accept(this);
 	}
 	
 	public void removeFriend(int userID){
@@ -48,6 +52,14 @@ public class Peer extends UserBean {
 	
 	public void setCountry(String country){
 		this.country = country;
+	}
+	
+	public void setUserID(int id){
+		this.userID = id;
+	}
+	
+	public int getUserID(){
+		return (this.userID);
 	}
 	
 

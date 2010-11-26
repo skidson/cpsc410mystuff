@@ -11,5 +11,5 @@ public interface Item {
 	public void setRating(int rating);
 	public void setGenre(String genre);
 	public void delete();
-	public void addComment();
+	public void addComment(Comment comment);
 }
