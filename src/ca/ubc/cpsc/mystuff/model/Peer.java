@@ -9,7 +9,7 @@ public class Peer extends UserBean {
 	private String country;
 	private MailBox mailbox;
 	private int userID;
-	private ArrayList<Peer> friends = new ArrayList<Peer>();
+	private ArrayList<Integer> friends = new ArrayList<Integer>();
 	
 	public Peer() {
 	}
