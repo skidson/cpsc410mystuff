@@ -20,12 +20,12 @@
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text"><a href="index.html">MyStuff</a></h1>		
+			<h1 id="logo-text"><a href="/home.do">MyStuff</a></h1>		
 			<p id="slogan">Your one-stop shop for media information...</p>		
 			
 			<div id="header-links">
 			<p>
-				<a href="/login">login</a> | 		
+				<a href="/login.do">login</a> | 		
 			</p>		
 		</div>		
 						
@@ -34,12 +34,12 @@
 		<!-- menu -->	
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="index.html">Home</a></li>
-				<li><a href="index.html">Media</a></li>
-				<li><a href="index.html">Friends</a></li>
-				<li><a href="index.html">Account</a></li>
-				<li><a href="index.html">Support</a></li>
-				<li class="last"><a href="index.html">About</a></li>		
+				<li id="current"><a href="/home.do">Home</a></li>
+				<li><a href="/home.do">Media</a></li>
+				<li><a href="/home.do">Friends</a></li>
+				<li><a href="/home.do">Account</a></li>
+				<li><a href="/home.do">Support</a></li>
+				<li class="last"><a href="/home.do">About</a></li>		
 			</ul>
 		</div>					
 			

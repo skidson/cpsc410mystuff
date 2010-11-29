@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/login.do")
 @SessionAttributes("username")
 public class LoginController {
-
+	
 	@RequestMapping(method = RequestMethod.GET)
+	public String showForm() {
+		return("login");
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password) {
 		if (verify(username, password))
-			return("home");
+			return("home.do");
 		else
 			return("login");
 	}
