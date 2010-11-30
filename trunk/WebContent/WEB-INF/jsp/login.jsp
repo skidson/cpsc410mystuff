@@ -71,9 +71,9 @@
 				<table><tr>
 					<form:form method="post" action="/login.do">			
 					<p>			
-					<form:label>Username</form:label>
+					<form:label path="username"> Username</form:label>
 					<form:input path="username" type="text" size="30" />
-					<form:label>Password                              </form:label>
+					<form:label path="password">Password</form:label>
 					<form:input path="password" type="text" size="30" /> <br />
 					<a href="#">Forgot your password?</a> | <a href="/register.do">Register</a>
 					<br />	<br />	
