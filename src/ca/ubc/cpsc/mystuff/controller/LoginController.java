@@ -2,22 +2,21 @@ package ca.ubc.cpsc.mystuff.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
-@RequestMapping("/login.do")
 @SessionAttributes
+@RequestMapping("/login")
 public class LoginController {
-	private UserService userService;
+	private UserService userService = new UserService();
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String showForm(ModelMap model) {
-		model.addAttribute(new User());
-		return("login");
+	public ModelAndView showForm() {
+		return new ModelAndView("login", "command", new User());
 	}
 
 	@RequestMapping(method = RequestMethod.POST)

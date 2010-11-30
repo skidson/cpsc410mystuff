@@ -6,7 +6,7 @@
 
 <head>
 <style type="text/css">
-	<%@include file="/WEB-INF/images/stylesheet.css" %>
+	<%@include file="/images/stylesheet.css" %>
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
@@ -20,11 +20,14 @@
 		
 		<!--header -->
 		<div id="header">			
-			<h1 id="logo-text"><a href="/home.do">MyStuff</a></h1>		
+				
+			<h1 id="logo-text"><a href="home.do">MyStuff</a></h1>		
 			<p id="slogan">Your one-stop shop for media information...</p>		
 			
 			<div id="header-links">
-			<p><a href="#">logout</a></p>		
+			<p>
+				<a href="login.do">logout</a> | 		
+			</p>		
 		</div>		
 						
 		</div>
@@ -32,12 +35,12 @@
 		<!-- menu -->	
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="/home.do">Home</a></li>
-				<li><a href="/media.do">Media</a></li>
+				<li id="current"><a href="home.do">Home</a></li>
+				<li><a href="media.do">Media</a></li>
 				<li><a href="friends.do">Friends</a></li>
-				<li><a href="/account.do">Account</a></li>
-				<li><a href="/support.do">Support</a></li>
-				<li class="last"><a href="/about.do">About</a></li>		
+				<li><a href="account.do">Account</a></li>
+				<li><a href="support.do">Support</a></li>
+				<li class="last"><a href="about.do">About</a></li>		
 			</ul>
 		</div>					
 			
@@ -56,15 +59,29 @@
 					
 				<h3>Notices</h3>
 				<ul class="sidemenu">				
-					<li>9:45pm - Jeff likes men</li>
+					<li>9:45pm - Steve likes men</li>
 					<li>12:30am - Server Maintenance</li>				
 				</ul>						
 								
 			</div>
 				
 			<div id="main">
-				<h3>News Feed</h3> <br />
-				
+				<h3>Login</h3> <br />
+				<center>
+				<table><tr>
+					<form:form method="post" action="login.do">			
+					<p>			
+					<form:label path="username"> Username</form:label>
+					<form:input path="username" type="text" size="30" />
+					<form:label path="password">Password</form:label>
+					<form:input path="password" type="text" size="30" /> <br />
+					<a href="#">Forgot your password?</a> | <a href="register.do">Register</a>
+					<br />	<br />	
+					<center><input class="button" value="          Login          " type="submit" /></center>
+					</p>		
+					</form:form>				
+				</tr></table>
+				</center>
 			</div>
 		
 		<!-- content-wrap ends here -->	
@@ -78,7 +95,6 @@
 			<b>CPSC 410</b> | 
 			<b>template:</b> <a href="http://www.styleshout.com/">styleshout</a>
    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			
    			</p>
 				
 		</div>	
