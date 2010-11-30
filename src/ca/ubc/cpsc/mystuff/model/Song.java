@@ -1,21 +1,22 @@
 package ca.ubc.cpsc.mystuff.model;
 
-public class Song implements Item{
+import java.util.ArrayList;
 
+public class Song{
+	private int songID;
 	private String title;
 	private String genre;
 	private int duration;
 	private int rating;
-	private int itemID;
-	private Comment comment;
+	private ArrayList<Integer> commentID;
 
 	
-	public Song(String title, int duration, int rating, int itemID, String genre){
+	public Song(int songID, String title, int duration, int rating, int itemID, String genre){
+		this.songID = songID;
 		this.duration = duration;
 		this.rating = rating;
 		this.title = title;
 		this.genre = genre;
-		this.itemID = itemID;
 	}
 	
 	public String getTitle() {
@@ -59,16 +60,6 @@ public class Song implements Item{
 
 	}
 
-	public Comment getCommentAt(int index){
-		return (this.comment.getCommentAt(index));
-	}
-	
-	public void deleteCommentAt(int index){
-		this.comment.deleteCommentAt(index);
-	}
 
-	public void addComment(Comment comment) {
-		this.comment.addComment(comment);	
-	}
 
 	}

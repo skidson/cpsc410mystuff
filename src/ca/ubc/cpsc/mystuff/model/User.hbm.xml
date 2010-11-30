@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ca.ubc.cpsc.mystuff.model.User" table="User">
+		<id name="userID" column="userID">
+			<generator class="assigned"/>
+		</id>
+		<property name="userType" column="userType"/>
+		<property name="rating" column="rating"/>
+		<property name="firstName" column="firstName"/>
+		<property name="lastName" column="lastName"/>
+		<property name="country" column="country"/>
+		<property name="userName" column="userName"/>
+		<property name="password" column="password"/>
+		<property name="mailboxID" column="mailbox"/>
+		<list name="friends" table="user_friend">
+			<key column="userID"/>
+			<list-index column="index"/>
+			<element type="integer" column="friend" not-null="true"/>
+		</list>	
+   </class>
+</hibernate-mapping>

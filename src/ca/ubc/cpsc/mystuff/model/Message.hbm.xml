@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ca.ubc.cpsc.mystuff.model.Message" table="Message">
+		<id name="messageID" column="messageID">
+			<generator class="assigned"/>
+		</id>
+		<property name="text" column="text"/>
+		<property name="recipientID" column="recipientID"/>
+		<property name="senderID" column="senderID"/>
+		<property name="messageID" column="messageID"/>
+   </class>
+</hibernate-mapping>

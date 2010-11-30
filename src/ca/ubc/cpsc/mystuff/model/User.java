@@ -1,6 +1,6 @@
 package ca.ubc.cpsc.mystuff.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 	private int userType; 
@@ -10,77 +10,97 @@ public class User {
 	private String country;
 	private String userName;
 	private String password;
-	private MailBox mailbox;
+	private int mailboxID;
 	private int userID;
-	private ArrayList<Integer> friends = new ArrayList<Integer>();
+	private List friends;
 	
-	public User() {
+	public User(){}
+	
+	public User(int userType, 
+			int rating, 
+			String firstName, 
+			String lastName,
+			String country, 
+			String userName,
+			String password,
+			int mailboxID, 
+			int userID, 
+			List friends){
+		this.userType = userType; 
+		this.firstName = firstName; 
+		this.lastName = lastName; 
+		this.country = country;
+		this.userName = userName; 
+		this.password = password; 
+		this.mailboxID = mailboxID; 
+		this.userID = userID;
+		this.friends = friends;
 	}
 	
-	public void setUserType(int type){ 
-		this.userType = type; 
+	public void setFriends(List f){ 
+		this.friends = f;
 	}
 	
-	public int getUserType(){ return userType; }
 	
-	public void setUsername(String username){
-		this.userName = username;
+	
+	public List getFriends(){ 
+		return this.friends;
 	}
 	
-	public void setPassword(String password){
-		this.password = password;
+	public int getUserType() {
+		return userType;
 	}
-	
-	public String getUsername() { return userName; }
-	public String getPassword() { return password; }
-	
-	public void addFriend(int userID){
-		friends.add(userID);
+	public void setUserType(int userType) {
+		this.userType = userType;
 	}
-	
-	public void addFriend(FriendRequest request){
-		request.accept(this);
-	}
-	
-	public void removeFriend(int userID){
-		
-	}
-	
-	public String getFirstName(){
-		return firstName;
-	}
-	
-	public String getLastName(){
-		return lastName;
-	}
-	
-	public String getCountry(){
-		return country;
-	}
-	
-	public int getRating(){
+	public int getRating() {
 		return rating;
 	}
-
-	public void setFirstName(String firstName){
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
-	public void setLastName(String lastName){
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	public void setCountry(String country){
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
 		this.country = country;
 	}
-	
-	public void setUserID(int id){
-		this.userID = id;
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public int getMailboxID() {
+		return mailboxID;
+	}
+	public void setMailboxID(int mailboxID) {
+		this.mailboxID = mailboxID;
+	}
+	public int getUserID() {
+		return userID;
+	}
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 	
-	public int getUserID(){
-		return (this.userID);
-	}
 	
-
 }

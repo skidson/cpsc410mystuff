@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ca.ubc.cpsc.mystuff.model.Comment" table="Comment">
+		<id name="commentID" column="commentID">
+			<generator class="assigned"/>
+		</id>
+		<property name=author column="author"/>
+		<property name="text" column="text"/>
+		<list name="threads" table="comment_thread">
+			<key column="commentID"/>
+			<list-index column="index"/>
+			<element type="integer" column="commentID" not-null="true"/>
+		</list>	
+   </class>
+</hibernate-mapping>
