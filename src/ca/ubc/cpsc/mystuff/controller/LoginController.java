@@ -28,7 +28,7 @@ public class LoginController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String onSubmit(@ModelAttribute("user") User user) {
 		if (userService.verify(user))
-			return("home.do");
+			return("home");
 		else
 			return("login");
 	}
