@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Comment {
 	private String text;
-	private UserBean author;
+	private User author;
 	private ArrayList<Comment> threads;
 	
-	public Comment(UserBean author, String text){
+	public Comment(User author, String text){
 		this.author = author;
 		this.text = text;
 		this.threads = null;
@@ -17,7 +17,7 @@ public class Comment {
 		return text;
 	}
 	
-	public UserBean getAuthor(){
+	public User getAuthor(){
 		return author;
 	}
 	

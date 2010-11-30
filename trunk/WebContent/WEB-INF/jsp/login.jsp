@@ -35,10 +35,10 @@
 		<div  id="menu">
 			<ul>
 				<li id="current"><a href="/home.do">Home</a></li>
-				<li><a href="/home.do">Media</a></li>
-				<li><a href="/home.do">Friends</a></li>
-				<li><a href="/home.do">Account</a></li>
-				<li><a href="/home.do">Support</a></li>
+				<li><a href="/media.do">Media</a></li>
+				<li><a href="/friends.do">Friends</a></li>
+				<li><a href="/account.do">Account</a></li>
+				<li><a href="/support.do">Support</a></li>
 				<li class="last"><a href="/home.do">About</a></li>		
 			</ul>
 		</div>					
@@ -49,7 +49,7 @@
 			<div id="sidebar">
 			
 				<h3>Search</h3>	
-				<form action="#" class="searchform">
+				<form action="/search.do" class="searchform">
 					<p>
 					<input name="search_query" class="textbox" type="text" />
   					<input name="search" class="button" value="Search" type="submit" />
@@ -74,7 +74,7 @@
 					<input name="username" type="text" size="30" />
 					<label>Password                              </label>
 					<input name="password" type="text" size="30" /> <br />
-					<a href="#">Forgot your password?</a> | <a href="#">Register</a>
+					<a href="#">Forgot your password?</a> | <a href="register.do">Register</a>
 					<br />	<br />	
 					<center><input class="button" value="          Login          " type="submit" /></center>
 					</p>		
