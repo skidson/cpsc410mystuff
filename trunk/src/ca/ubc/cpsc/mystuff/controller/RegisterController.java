@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import ca.ubc.cpsc.mystuff.model.User;
+import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 @RequestMapping("/register.do")
@@ -16,7 +17,6 @@ import ca.ubc.cpsc.mystuff.model.User;
 public class RegisterController {
 	private UserService userService;
 	
-	@Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
@@ -31,7 +31,7 @@ public class RegisterController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String onSubmit(@ModelAttribute("user") User user) {
 		userService.add(user);
-		return("redirect:registerSuccess.do");
+		return("redirect:/registerSuccess.do");
 	}
 	
 }

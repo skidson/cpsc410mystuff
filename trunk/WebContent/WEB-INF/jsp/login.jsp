@@ -8,7 +8,6 @@
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-
 <title>MyStuff - Login</title>
 	
 </head>
@@ -20,12 +19,12 @@
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text"><a href="home.do">MyStuff</a></h1>		
+			<h1 id="logo-text"><a href="/home.do">MyStuff</a></h1>		
 			<p id="slogan">Your one-stop shop for media information...</p>		
 			
 			<div id="header-links">
 			<p>
-				<a href="login.do">login</a> | 		
+				<a href="/login.do">login</a> | 		
 			</p>		
 		</div>		
 						
@@ -34,12 +33,12 @@
 		<!-- menu -->	
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="home.do">Home</a></li>
-				<li><a href="media.do">Media</a></li>
-				<li><a href="friends.do">Friends</a></li>
-				<li><a href="account.do">Account</a></li>
-				<li><a href="support.do">Support</a></li>
-				<li class="last"><a href="about.do">About</a></li>		
+				<li id="current"><a href="/home.do">Home</a></li>
+				<li><a href="/media.do">Media</a></li>
+				<li><a href="/friends.do">Friends</a></li>
+				<li><a href="/account.do">Account</a></li>
+				<li><a href="/support.do">Support</a></li>
+				<li class="last"><a href="/about.do">About</a></li>		
 			</ul>
 		</div>					
 			
@@ -68,13 +67,13 @@
 				<h3>Login</h3> <br />
 				<center>
 				<table><tr>
-					<form action="POST">			
+					<form method="post" action="/login.do">			
 					<p>			
 					<label>Username</label>
 					<input name="username" type="text" size="30" />
 					<label>Password                              </label>
 					<input name="password" type="text" size="30" /> <br />
-					<a href="#">Forgot your password?</a> | <a href="register.do">Register</a>
+					<a href="#">Forgot your password?</a> | <a href="/register.do">Register</a>
 					<br />	<br />	
 					<center><input class="button" value="          Login          " type="submit" /></center>
 					</p>		

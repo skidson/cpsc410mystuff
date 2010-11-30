@@ -18,11 +18,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean id="homeController" class="ca.ubc.cpsc.mystuff.controller.HomeController"></bean>
-	<bean id="loginController" class="ca.ubc.cpsc.mystuff.controller.LoginController"></bean>
-	<bean id="registerController" class="ca.ubc.cpsc.mystuff.controller.RegisterController"></bean>
-	<bean id="registerSuccessController" class="ca.ubc.cpsc.mystuff.controller.RegisterSuccessController"></bean>
-	
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 	
