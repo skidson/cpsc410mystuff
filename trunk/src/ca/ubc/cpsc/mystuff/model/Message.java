@@ -2,8 +2,8 @@ package ca.ubc.cpsc.mystuff.model;
 
 public class Message {
 	private String text;
-	private Peer recipient;
-	private Peer sender;
+	private User recipient;
+	private User sender;
 	
 	public Message(){
 	}
@@ -16,19 +16,19 @@ public class Message {
 		return (this.text);
 	}
 	
-	public void setRecipient(Peer recipient){
+	public void setRecipient(User recipient){
 		this.recipient = recipient;
 	}
 	
-	public Peer getRecipient(){
+	public User getRecipient(){
 		return (this.recipient);
 	}
 	
-	public void setSender(Peer sender){
+	public void setSender(User sender){
 		this.sender = sender;
 	}
 	
-	public Peer getSender(){
+	public User getSender(){
 		return (this.sender);
 	}
 	

@@ -1,3 +1,5 @@
+<%@ include file="/WEB-INF/jsp/include.jsp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <html>
@@ -57,7 +59,7 @@
 					
 				<h3>Notices</h3>
 				<ul class="sidemenu">				
-					<li>9:45pm - Jeff likes men</li>
+					<li>9:45pm - Steve likes men</li>
 					<li>12:30am - Server Maintenance</li>				
 				</ul>						
 								
@@ -67,17 +69,17 @@
 				<h3>Login</h3> <br />
 				<center>
 				<table><tr>
-					<form method="post" action="/login.do">			
+					<form:form method="post" action="/login.do">			
 					<p>			
-					<label>Username</label>
-					<input name="username" type="text" size="30" />
-					<label>Password                              </label>
-					<input name="password" type="text" size="30" /> <br />
+					<form:label>Username</form:label>
+					<form:input path="username" type="text" size="30" />
+					<form:label>Password                              </form:label>
+					<form:input path="password" type="text" size="30" /> <br />
 					<a href="#">Forgot your password?</a> | <a href="/register.do">Register</a>
 					<br />	<br />	
 					<center><input class="button" value="          Login          " type="submit" /></center>
 					</p>		
-					</form>				
+					</form:form>				
 				</tr></table>
 				</center>
 			</div>

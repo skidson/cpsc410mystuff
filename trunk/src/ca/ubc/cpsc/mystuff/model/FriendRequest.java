@@ -6,7 +6,7 @@ public class FriendRequest extends Message{
 	public FriendRequest(int id){
 		this.senderID = id;
 	}
-	public void accept(Peer usr){
+	public void accept(User usr){
 		usr.addFriend(senderID);
 	}
 	
