@@ -8,7 +8,7 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private String country;
-	private String userName;
+	private String username;
 	private String password;
 	private int mailboxID;
 	private int userID;
@@ -21,7 +21,7 @@ public class User {
 			String firstName, 
 			String lastName,
 			String country, 
-			String userName,
+			String username,
 			String password,
 			int mailboxID, 
 			int userID, 
@@ -30,7 +30,7 @@ public class User {
 		this.firstName = firstName; 
 		this.lastName = lastName; 
 		this.country = country;
-		this.userName = userName; 
+		this.username = username; 
 		this.password = password; 
 		this.mailboxID = mailboxID; 
 		this.userID = userID;
@@ -77,11 +77,11 @@ public class User {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public String getUserName() {
-		return userName;
+	public String getusername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setusername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;

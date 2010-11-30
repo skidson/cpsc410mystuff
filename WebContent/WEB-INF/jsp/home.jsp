@@ -21,12 +21,12 @@
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text"><a href="home.do">MyStuff</a></h1>		
+			<h1 id="logo-text"><a href="app/home">MyStuff</a></h1>		
 			<p id="slogan">Your one-stop shop for media information...</p>		
 			
 			<div id="header-links">
 			<p>
-				<a href="login.do">logout</a> | 		
+				<a href="app/logout">logout</a>		
 			</p>		
 		</div>		
 						
@@ -34,14 +34,14 @@
 		
 		<!-- menu -->	
 		<div  id="menu">
+			<center>
 			<ul>
-				<li id="current"><a href="home.do">Home</a></li>
-				<li><a href="media.do">Media</a></li>
-				<li><a href="friends.do">Friends</a></li>
-				<li><a href="account.do">Account</a></li>
-				<li><a href="support.do">Support</a></li>
-				<li class="last"><a href="about.do">About</a></li>		
+				<li id="current"><a href="app/home">Home</a></li>
+				<li><a href="app/media">Media</a></li>
+				<li><a href="app/friends">Friends</a></li>
+				<li><a href="app/account">Account</a></li>	
 			</ul>
+			</center>
 		</div>					
 			
 		<!-- content-wrap starts here -->
@@ -50,38 +50,23 @@
 			<div id="sidebar">
 			
 				<h3>Search</h3>	
-				<form action="#" class="searchform">
+				<form action="app/search" class="searchform">
 					<p>
 					<input name="search_query" class="textbox" type="text" />
-  					<input name="search" class="button" value="Search" type="submit" />
+  					<input path="search" name="search" class="button" value="Search" type="submit" />
 					</p>			
 				</form>	
 					
 				<h3>Notices</h3>
 				<ul class="sidemenu">				
-					<li>9:45pm - Steve likes men</li>
-					<li>12:30am - Server Maintenance</li>				
+					${sidebar}		
 				</ul>						
 								
 			</div>
 				
 			<div id="main">
-				<h3>Login</h3> <br />
-				<center>
-				<table><tr>
-					<form:form method="post" action="login.do">			
-					<p>			
-					<form:label path="username"> Username</form:label>
-					<form:input path="username" type="text" size="30" />
-					<form:label path="password">Password</form:label>
-					<form:input path="password" type="text" size="30" /> <br />
-					<a href="#">Forgot your password?</a> | <a href="register.do">Register</a>
-					<br />	<br />	
-					<center><input class="button" value="          Login          " type="submit" /></center>
-					</p>		
-					</form:form>				
-				</tr></table>
-				</center>
+				<h3>News Feed</h3> <br />
+				
 			</div>
 		
 		<!-- content-wrap ends here -->	
