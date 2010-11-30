@@ -1,4 +1,4 @@
-package view;
+package ca.ubc.cpsc.mystuff.view;
 
 public class LoginForm {
 	

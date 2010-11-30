@@ -1,10 +1,10 @@
 package ca.ubc.cpsc.mystuff.model;
 
-public class UserBean {
+public class User {
 	private String username;
 	private String password;
 
-	public UserBean() {
+	public User() {
 		username = null;
 		password = null;
 	}

@@ -32,7 +32,7 @@
 		<!-- menu -->	
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="index.html">Home</a></li>
+				<li id="current"><a href="/home.do">Home</a></li>
 				<li><a href="index.html">Media</a></li>
 				<li><a href="index.html">Friends</a></li>
 				<li><a href="index.html">Account</a></li>

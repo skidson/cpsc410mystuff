@@ -2,7 +2,7 @@ package ca.ubc.cpsc.mystuff.model;
 
 import java.util.ArrayList;
 
-public class Peer extends UserBean {
+public class Peer extends User {
 	private int rating;
 	private String firstName;
 	private String lastName;
