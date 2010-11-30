@@ -19,7 +19,7 @@
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text"><a href="home.do">MyStuff</a></h1>		
+			<h1 id="logo-text"><a href="/home.do">MyStuff</a></h1>		
 			<p id="slogan">Your one-stop shop for media information...</p>		
 			
 			<div id="header-links">
@@ -31,12 +31,12 @@
 		<!-- menu -->	
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="home.do">Home</a></li>
-				<li><a href="media.do">Media</a></li>
+				<li id="current"><a href="/home.do">Home</a></li>
+				<li><a href="/media.do">Media</a></li>
 				<li><a href="friends.do">Friends</a></li>
-				<li><a href="account.do">Account</a></li>
-				<li><a href="support.do">Support</a></li>
-				<li class="last"><a href="about.do">About</a></li>		
+				<li><a href="/account.do">Account</a></li>
+				<li><a href="/support.do">Support</a></li>
+				<li class="last"><a href="/about.do">About</a></li>		
 			</ul>
 		</div>					
 			

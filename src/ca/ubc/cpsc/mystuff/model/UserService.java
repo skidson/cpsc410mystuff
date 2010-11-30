@@ -1,6 +1,5 @@
-package ca.ubc.cpsc.mystuff.controller;
+package ca.ubc.cpsc.mystuff.model;
 
-import ca.ubc.cpsc.mystuff.model.User;
 
 public class UserService {
 	public void add(User user) {

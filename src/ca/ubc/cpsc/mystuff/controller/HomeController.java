@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/login.do")
+@RequestMapping("/home.do")
 public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET)
