@@ -5,8 +5,6 @@ public class User {
 	private String password;
 
 	public User() {
-		username = null;
-		password = null;
 	}
 
 	public void setUsername(String username){
