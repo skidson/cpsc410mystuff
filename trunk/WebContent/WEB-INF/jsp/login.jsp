@@ -21,12 +21,12 @@
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text"><a href="home.do">MyStuff</a></h1>		
+			<h1 id="logo-text"><a href="app/home">MyStuff</a></h1>		
 			<p id="slogan">Your one-stop shop for media information...</p>		
 			
 			<div id="header-links">
 			<p>
-				<a href="login.do">login</a> | 		
+				<a href="app/login">login</a> | 		
 			</p>		
 		</div>		
 						
@@ -35,12 +35,12 @@
 		<!-- menu -->	
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="home.do">Home</a></li>
-				<li><a href="media.do">Media</a></li>
-				<li><a href="friends.do">Friends</a></li>
-				<li><a href="account.do">Account</a></li>
-				<li><a href="support.do">Support</a></li>
-				<li class="last"><a href="about.do">About</a></li>		
+				<li id="current"><a href="app/home">Home</a></li>
+				<li><a href="app/media">Media</a></li>
+				<li><a href="app/friends">Friends</a></li>
+				<li><a href="app/account">Account</a></li>
+				<li><a href="app/support">Support</a></li>
+				<li class="last"><a href="about">About</a></li>		
 			</ul>
 		</div>					
 			
@@ -58,9 +58,7 @@
 				</form>	
 					
 				<h3>Notices</h3>
-				<ul class="sidemenu">				
-					<li>9:45pm - Steve likes men</li>
-					<li>12:30am - Server Maintenance</li>				
+				<ul class="sidemenu">							
 				</ul>						
 								
 			</div>
@@ -69,13 +67,13 @@
 				<h3>Login</h3> <br />
 				<center>
 				<table><tr>
-					<form:form method="post" action="login.do">			
+					<form:form method="post" action="app/login">			
 					<p>			
-					<form:label path="username"> Username</form:label>
+					<form:label path="username">Username</form:label>
 					<form:input path="username" type="text" size="30" />
 					<form:label path="password">Password</form:label>
-					<form:input path="password" type="text" size="30" /> <br />
-					<a href="#">Forgot your password?</a> | <a href="register.do">Register</a>
+					<form:input path="password" type="password" size="30" /> <br />
+					<a href="#">Forgot your password?</a> | <a href="app/register">Register</a>
 					<br />	<br />	
 					<center><input class="button" value="          Login          " type="submit" /></center>
 					</p>		

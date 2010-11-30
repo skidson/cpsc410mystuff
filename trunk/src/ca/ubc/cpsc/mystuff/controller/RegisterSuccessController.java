@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RegisterSuccessController {
 	
-	@RequestMapping("/registerSuccess.do")
+	@RequestMapping("/registerSuccess")
 	public String redirect() {
 		return("registerSuccess");
 	}

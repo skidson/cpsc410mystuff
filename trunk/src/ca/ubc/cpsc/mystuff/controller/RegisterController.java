@@ -1,6 +1,5 @@
 package ca.ubc.cpsc.mystuff.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,7 +11,7 @@ import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
-@RequestMapping("/register.do")
+@RequestMapping("/register")
 @SessionAttributes("username")
 public class RegisterController {
 	private UserService userService;

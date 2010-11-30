@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/home.do")
+@RequestMapping("/home")
 public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -12,7 +12,7 @@ public class HomeController {
 		return("home");
 	}
 	
-	private void generateNewsFeed() {
+	private void showNewsFeed() {
 		// do database things and stuff
 		
 	}
