@@ -4,36 +4,44 @@ import java.util.ArrayList;
 
 public class UserLibrary {
 	private int count;
-	private ArrayList<Item> items;
+	private int ownerID;
+	private ArrayList<Integer> viewerID;
+	private int id;
+	private ArrayList<Integer> items;
 	
-	public UserLibrary(){
-		items = null;
+	public ArrayList<Integer> getViewerID() {
+		return viewerID;
+	}
+	public void setViewerID(ArrayList<Integer> viewerID) {
+		this.viewerID = viewerID;
 	}
 	
-	public int getCount(){
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getCount() {
 		return count;
 	}
-	
-	public Item getItem(int itemID){
-		return items.get(0); //NOTDONE
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public int getOwnerID() {
+		return ownerID;
+	}
+	public void setOwnerID(int ownerID) {
+		this.ownerID = ownerID;
+	}
+	public ArrayList<Integer> getItems() {
+		return items;
+	}
+	public void setItems(ArrayList<Integer> items) {
+		this.items = items;
 	}
 	
-	public void addItem(int itemID){
+	
 
-	}
-	
-	public ArrayList<Item> search(Search search){
-		ArrayList<Item> matchedItems = new ArrayList<Item>();
-		for(Item item : items){
-			if (item.getDuration() == search.getDuration())
-				matchedItems.add(item);
-			else if (item.getGenre().equals(search.getGenre()))
-				matchedItems.add(item);
-			else if (item.getRating() == search.getRating())
-				matchedItems.add(item);
-			else if (item.getTitle() == search.getTitle())
-				matchedItems.add(item);		
-		}
-		return matchedItems;
-	}
 }

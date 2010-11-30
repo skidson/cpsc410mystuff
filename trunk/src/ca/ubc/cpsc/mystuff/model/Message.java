@@ -2,10 +2,19 @@ package ca.ubc.cpsc.mystuff.model;
 
 public class Message {
 	private String text;
-	private User recipient;
-	private User sender;
+	private int recipientID;
+	private int senderID;
+	private int messageID;
 	
 	public Message(){
+	}
+	
+	public int getMessageID() {
+		return messageID;
+	}
+
+	public void setMessageID(int messageID) {
+		this.messageID = messageID;
 	}
 	
 	public void setText(String text){
@@ -15,22 +24,24 @@ public class Message {
 	public String getText(){
 		return (this.text);
 	}
-	
-	public void setRecipient(User recipient){
-		this.recipient = recipient;
+
+	public int getRecipientID() {
+		return recipientID;
+	}
+
+	public void setRecipientID(int recipientID) {
+		this.recipientID = recipientID;
+	}
+
+	public int getSenderID() {
+		return senderID;
+	}
+
+	public void setSenderID(int senderID) {
+		this.senderID = senderID;
 	}
 	
-	public User getRecipient(){
-		return (this.recipient);
-	}
-	
-	public void setSender(User sender){
-		this.sender = sender;
-	}
-	
-	public User getSender(){
-		return (this.sender);
-	}
+
 	
 	
 }

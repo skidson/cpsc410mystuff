@@ -1,5 +1,7 @@
 package ca.ubc.cpsc.mystuff.model;
 
+import java.util.ArrayList;
+
 public class Movie implements Item {
 
 	private String title;
@@ -7,7 +9,7 @@ public class Movie implements Item {
 	private int duration;
 	private int rating;
 	private int itemID;
-	private Comment comment;
+	private ArrayList<Integer> commentID;
 
 	
 	public Movie(String title, int duration, int rating, int itemID, String genre){
@@ -44,6 +46,22 @@ public class Movie implements Item {
 
 	}
 
+	public int getItemID() {
+		return itemID;
+	}
+
+	public void setItemID(int itemID) {
+		this.itemID = itemID;
+	}
+
+	public ArrayList<Integer> getCommentID() {
+		return commentID;
+	}
+
+	public void setCommentID(ArrayList<Integer> commentID) {
+		this.commentID = commentID;
+	}
+
 	public void setRating(int rating) {
 		this.rating = rating;
 
@@ -59,17 +77,12 @@ public class Movie implements Item {
 
 	}
 
+	@Override
 	public void addComment(Comment comment) {
-		this.comment.addComment(comment);
+		// TODO Auto-generated method stub
+		
 	}
-	
-	public Comment getCommentAt(int index){
-		return (this.comment.getCommentAt(index));
-	}
-	
-	public void deleteCommentAt(int index){
-		this.comment.deleteCommentAt(index);
-	}
+
 	
 
 }

@@ -4,37 +4,49 @@ import java.util.ArrayList;
 
 public class Comment {
 	private String text;
-	private User author;
-	private ArrayList<Comment> threads;
+	private int author;
+	private ArrayList<Integer> threads;
+	private int commentID;
 	
-	public Comment(User author, String text){
+
+	public Comment(int author, String text){
 		this.author = author;
 		this.text = text;
 		this.threads = null;
 	}
+
+	public int getCommentID() {
+		return commentID;
+	}
+
+	public void setCommentID(int commentID) {
+		this.commentID = commentID;
+	}
 	
-	public String getText(){
+	public String getText() {
 		return text;
 	}
-	
-	public User getAuthor(){
-		return author;
-	}
-	
-	public void setText(String text){
+
+	public void setText(String text) {
 		this.text = text;
 	}
-	
-	public void addComment(Comment comment){
-		threads.add(comment);
+
+	public int getAuthor() {
+		return author;
 	}
-	
-	public Comment getCommentAt(int index){
-		return (threads.get(index));
+
+	public void setAuthor(int author) {
+		this.author = author;
 	}
-	
-	public void deleteCommentAt(int index){
-		threads.remove(index);
+
+	public ArrayList<Integer> getThreads() {
+		return threads;
 	}
+
+	public void setThreads(ArrayList<Integer> threads) {
+		this.threads = threads;
+	}
+
+
 	
 }
