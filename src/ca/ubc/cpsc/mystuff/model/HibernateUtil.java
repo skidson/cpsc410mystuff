@@ -1,6 +1,5 @@
 package ca.ubc.cpsc.mystuff.model;
 
-
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 

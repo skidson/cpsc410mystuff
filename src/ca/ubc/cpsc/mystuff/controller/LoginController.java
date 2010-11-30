@@ -19,11 +19,11 @@ public class LoginController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String onSubmit(@ModelAttribute("user") User user) {
+	public ModelAndView onSubmit(@ModelAttribute("user") User user) {
 		if (userService.verify(user))
-			return("home");
+			return new ModelAndView("home");
 		else
-			return("login");
+			return new ModelAndView("login");
 	}
 	
 }

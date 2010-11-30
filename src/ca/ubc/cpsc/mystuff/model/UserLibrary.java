@@ -42,6 +42,8 @@ public class UserLibrary {
 		this.items = items;
 	}
 	
-	
+	public void search(Search query) {
+		
+	}
 
 }
