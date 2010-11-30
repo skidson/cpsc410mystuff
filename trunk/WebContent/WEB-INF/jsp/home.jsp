@@ -21,7 +21,7 @@
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text"><a href="app/home">MyStuff</a></h1>		
+			<h1 id="logo-text"><a href="home.html">MyStuff</a></h1>		
 			<p id="slogan">Your one-stop shop for media information...</p>		
 			
 			<div id="header-links">
@@ -36,10 +36,10 @@
 		<div  id="menu">
 			<center>
 			<ul>
-				<li id="current"><a href="app/home">Home</a></li>
-				<li><a href="app/media">Media</a></li>
-				<li><a href="app/friends">Friends</a></li>
-				<li><a href="app/account">Account</a></li>	
+				<li id="current"><a href="home.html">Home</a></li>
+				<li><a href="media.html">Media</a></li>
+				<li><a href="friends.html">Friends</a></li>
+				<li><a href="account.html">Account</a></li>	
 			</ul>
 			</center>
 		</div>					
@@ -50,10 +50,10 @@
 			<div id="sidebar">
 			
 				<h3>Search</h3>	
-				<form action="app/search" class="searchform">
+				<form action="search.html" class="searchform">
 					<p>
 					<input name="search_query" class="textbox" type="text" />
-  					<input path="search" name="search" class="button" value="Search" type="submit" />
+  					<input path="search.html" name="search" class="button" value="Search" type="submit" />
 					</p>			
 				</form>	
 					

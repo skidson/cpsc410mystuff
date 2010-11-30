@@ -8,7 +8,7 @@
 		<id name="commentID" column="commentID">
 			<generator class="assigned"/>
 		</id>
-		<property name=author column="author"/>
+		<property name="author" column="author"/>
 		<property name="text" column="text"/>
 		<list name="threads" table="comment_thread">
 			<key column="commentID"/>
