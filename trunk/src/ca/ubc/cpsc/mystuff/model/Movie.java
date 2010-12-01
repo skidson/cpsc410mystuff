@@ -6,7 +6,6 @@ public class Movie implements Item {
 
 	private String title;
 	private String genre;
-	private int duration;
 	private int rating;
 	private int itemID;
 	private String image;
@@ -15,8 +14,7 @@ public class Movie implements Item {
 
 	public Movie() {}
 	
-	public Movie(String title, int duration, int rating, int itemID, String genre){
-		this.duration = duration;
+	public Movie(String title, int rating, int itemID, String genre){
 		this.rating = rating;
 		this.title = title;
 		this.genre = genre;
@@ -31,20 +29,12 @@ public class Movie implements Item {
 		return genre;
 	}
 
-	public int getDuration() {
-		return duration;
-	}
-
 	public int getRating() {
 		return rating;
 	}
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
 	}
 
 	public int getItemID() {
