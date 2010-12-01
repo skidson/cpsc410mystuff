@@ -26,7 +26,7 @@ public class User {
 			String username,
 			String password,
 			int mailboxID,
-			int userID){
+			long userID){
 		this.authority = authority;
 		this.rating = 0;
 		this.firstName = firstName; 
@@ -99,7 +99,7 @@ public class User {
 	public long getUserID() {
 		return userID;
 	}
-	public void setUserID(int userID) {
+	public void setUserID(long userID) {
 		this.userID = userID;
 	}
 
