@@ -13,6 +13,21 @@ public class UserService {
 	    session.close();
 	}
 	
+	public static User getUser(String username){ 
+		Session session = HibernateUtil.getSessionFactory().openSession();
+	    Transaction tx = session.beginTransaction();
+
+	    User user = (User) session.createQuery(
+                "from User" + " where username = ?").setString(0,username).uniqueResult();
+	    ArrayList<Integer> L = new ArrayList( user.getFriends());
+	    user.setFriends(L);
+
+	    tx.commit();
+	    session.close();
+	    
+	    return user;
+	}
+	
 	public static User getUser(int userID){ 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    Transaction tx = session.beginTransaction();

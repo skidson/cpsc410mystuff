@@ -4,10 +4,38 @@ import java.util.ArrayList;
 
 public class UserLibrary {
 	private int itemCount;
-	private int ownerID;
+	private long ownerID;
 	private ArrayList<Integer> viewerID;
 	private int id;
-	private ArrayList<Integer> items;
+	private ArrayList<Integer> movies;
+	private ArrayList<Integer> songs;
+	
+	public void addMovieToLibrary(int movieID){ 
+		movies.add(movieID);
+	}
+	
+	public void addSongToLibrary(int songID){ 
+		songs.add(songID);
+	}
+	
+	public UserLibrary(long ownerID){ 
+		this.itemCount = 0; 
+		this.ownerID = ownerID; 
+		this.viewerID = null; 
+		this.movies = null; 
+		this.songs = null;
+	}
+	
+	public UserLibrary(int itemCount, long ownerID,
+			ArrayList<Integer> viewerID, int id, ArrayList<Integer> movies,
+			ArrayList<Integer> songs) {
+		this.itemCount = itemCount;
+		this.ownerID = ownerID;
+		this.viewerID = viewerID;
+		this.id = id;
+		this.movies = movies;
+		this.songs = songs;
+	}
 	
 	public ArrayList<Integer> getViewerID() {
 		return viewerID;
@@ -29,19 +57,24 @@ public class UserLibrary {
 	public void setCount(int count) {
 		this.itemCount = count;
 	}
-	public int getOwnerID() {
+	public long getOwnerID() {
 		return ownerID;
 	}
-	public void setOwnerID(int ownerID) {
+	public void setOwnerID(long ownerID) {
 		this.ownerID = ownerID;
 	}
-	public ArrayList<Integer> getItems() {
-		return items;
+	public ArrayList<Integer> getMovies() {
+		return movies;
 	}
-	public void setItems(ArrayList<Integer> items) {
-		this.items = items;
+	public void setmovies(ArrayList<Integer> items) {
+		this.movies = items;
 	}
-	
+	public ArrayList<Integer> getSongs() {
+		return songs;
+	}
+	public void setSongs(ArrayList<Integer> songs) {
+		this.songs = songs;
+	}
 	public void search(Search query) {
 		
 	}

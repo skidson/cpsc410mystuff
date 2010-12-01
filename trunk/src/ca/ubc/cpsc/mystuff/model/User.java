@@ -40,6 +40,7 @@ public class User {
 		this.friends = new ArrayList<Integer>();
 	}
 	
+	
 	public void setFriends(List<Integer> friends){ 
 		this.friends = friends;
 	}
