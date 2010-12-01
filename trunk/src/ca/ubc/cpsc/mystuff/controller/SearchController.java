@@ -1,19 +1,23 @@
 package ca.ubc.cpsc.mystuff.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import java.util.List;
 
-import ca.ubc.cpsc.mystuff.model.Search;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import ca.ubc.cpsc.mystuff.model.Movie;
 import ca.ubc.cpsc.mystuff.model.SearchService;
 
 @Controller
 public class SearchController {
 	private SearchService searchService = new SearchService();
 
-	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public ModelAndView onSearch(@RequestParam("searchQuery") String query) {
-		Search search = new Search(query);
-		
+	@RequestMapping("/search")
+	public String showResults(@RequestParam("searchQuery") String search, Model model) {
+		List<Movie> resultList = searchService.doSearch(search);
+		model.addAttribute("resultsList", resultList);
+		return "searchResults";
 	}
+		
 }
