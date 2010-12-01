@@ -33,6 +33,9 @@
 				<h3>Login</h3>
 				<center>
 				<table><tr><p>
+					<c:if test="${not empty param.error}">
+						<font color="red">Login error: ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</font>
+					</c:if>
 					<form method="POST" action="<c:url value="/j_spring_security_check" />">			
 					<label>Username:</label><input type="text" size = "30" name="j_username" />
 					<label>Password:</label><input type="password" size="30" name="j_password" /> <br />
