@@ -31,6 +31,7 @@
 				
 			<div id="main">
 				<h3>Media</h3> <br />
+				${movie.itemID}
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

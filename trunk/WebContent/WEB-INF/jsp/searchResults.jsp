@@ -46,7 +46,7 @@
 					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
 					<p class="post-footer align-right">					
 					<a href="#" class="readmore">Information</a>
-					<a href="#" class="comments">Comments (7)</a>
+					<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
 					</p>
 				</c:forEach>
 				

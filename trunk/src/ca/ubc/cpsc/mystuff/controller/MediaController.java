@@ -4,12 +4,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/media")
-public class MediaController {
+import ca.ubc.cpsc.mystuff.model.Movie;
 
-	@RequestMapping(method = RequestMethod.GET)
+@Controller
+public class MediaController {
+	
+	@RequestMapping(value = "/media", method = RequestMethod.GET)
 	public String loadContent(Model model) {
+		return "media";
+	}
+	
+	@RequestMapping("/addMedia")
+	public String addMedia(@RequestParam("itemID") String itemID, Model model) {
+		Movie movie = new Movie();
+		movie.setItemID(Integer.parseInt(itemID));
+		model.addAttribute("movie", movie);
 		return "media";
 	}
 	
