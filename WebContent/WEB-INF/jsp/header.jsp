@@ -3,6 +3,6 @@
 
 <div id="header-links">
 <p>
-	<a href="logout.htm">logout</a> | 		
+	<a href="<c:url value="/j_spring_security_logout" />">Logout</a> 		
 </p>		
 </div>
