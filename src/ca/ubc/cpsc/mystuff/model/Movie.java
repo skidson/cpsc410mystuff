@@ -41,12 +41,10 @@ public class Movie implements Item {
 
 	public void setTitle(String title) {
 		this.title = title;
-
 	}
 
 	public void setDuration(int duration) {
 		this.duration = duration;
-
 	}
 
 	public int getItemID() {
@@ -72,7 +70,6 @@ public class Movie implements Item {
 
 	public void setGenre(String genre) {
 		this.genre = genre;
-
 	}
 
 	public void delete() {
@@ -101,7 +98,5 @@ public class Movie implements Item {
 	public String getOverview() {
 		return overview;
 	}
-
-	
 
 }

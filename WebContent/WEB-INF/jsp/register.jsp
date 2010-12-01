@@ -3,7 +3,7 @@
 
 <head>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
-<title>MyStuff - Search</title>
+<title>MyStuff - Home</title>
 </head>
 
 <body>
@@ -15,8 +15,8 @@
 		
 		<div  id="menu">
 			<ul>
-				<li><a href="home.htm">Home</a></li>
-				<li id="current"><a href="media.htm">Media</a></li>
+				<li id="current"><a href="home.htm">Home</a></li>
+				<li><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
 				<li><a href="account.htm">Account</a></li>	
 			</ul>
@@ -29,13 +29,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h3>Search</h3> <br />
-				${user.username}
-				<c:forEach items="${resultsList}" var="movie">
-					<tr>
-						<td><img src="${movie.image}" /></td><td>${movie.title}<td> <td>${movie.rating}/10</td>
-					</tr>
-				</c:forEach>
+				<h3>News Feed</h3> <br />
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->
