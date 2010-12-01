@@ -19,6 +19,7 @@ public class SearchController {
 		return "search";
 	}
 
+
 	@RequestMapping(method = RequestMethod.POST)
 	public String showResults(@RequestParam("searchQuery") String search, Model model) {
 		List<Movie> resultList = searchService.doSearch(search);
@@ -26,4 +27,5 @@ public class SearchController {
 		return "searchResults";
 	}
 		
+	
 }
