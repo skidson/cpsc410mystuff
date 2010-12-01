@@ -8,7 +8,6 @@ import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
-@SessionAttributes
 @RequestMapping("/login")
 public class LoginController {
 	private UserService userService = new UserService();
@@ -21,9 +20,8 @@ public class LoginController {
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView onSubmit(@ModelAttribute("user") User user) {
 		if (userService.verify(user))
-			return new ModelAndView("home");
+			return new ModelAndView("home", "command", user);
 		else
-			return new ModelAndView("login");
-	}
-	
+			return new ModelAndView("redirect:/login.htm");
+	}	
 }
