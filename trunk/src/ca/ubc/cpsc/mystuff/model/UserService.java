@@ -38,7 +38,7 @@ public class UserService {
 		// TODO hibernate stuff here
 	}
 	
-	public int getUserID(String username) {
+	public long getUserID(String username) {
 		// TODO hibernate stuff here
 		return 1337;
 	}
@@ -48,8 +48,8 @@ public class UserService {
 		return 1337;
 	}
 	
-	public int generateUserID() {
-		// TODO hibernate stuff here
-		return 1337;
+	public long generateUserID() {
+		// TODO: Change way of generating user id
+		return System.currentTimeMillis();
 	}
 }

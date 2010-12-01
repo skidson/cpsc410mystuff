@@ -13,7 +13,7 @@ public class User {
 	private String password;
 	private String email;
 	private int mailboxID;
-	private int userID;
+	private long userID;
 	private List<Integer> friends;
 	
 	public User(){}
@@ -48,11 +48,11 @@ public class User {
 		return this.friends;
 	}
 	
-	public String getUserType() {
+	public String getauthority() {
 		return authority;
 	}
-	public void setUserType(String userType) {
-		this.authority = userType;
+	public void setauthority(String authority) {
+		this.authority = authority;
 	}
 	public int getRating() {
 		return rating;
@@ -96,7 +96,7 @@ public class User {
 	public void setMailboxID(int mailboxID) {
 		this.mailboxID = mailboxID;
 	}
-	public int getUserID() {
+	public long getUserID() {
 		return userID;
 	}
 	public void setUserID(int userID) {

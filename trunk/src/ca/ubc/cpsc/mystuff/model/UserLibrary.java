@@ -3,7 +3,7 @@ package ca.ubc.cpsc.mystuff.model;
 import java.util.ArrayList;
 
 public class UserLibrary {
-	private int count;
+	private int itemCount;
 	private int ownerID;
 	private ArrayList<Integer> viewerID;
 	private int id;
@@ -24,10 +24,10 @@ public class UserLibrary {
 	}
 	
 	public int getCount() {
-		return count;
+		return itemCount;
 	}
 	public void setCount(int count) {
-		this.count = count;
+		this.itemCount = count;
 	}
 	public int getOwnerID() {
 		return ownerID;
