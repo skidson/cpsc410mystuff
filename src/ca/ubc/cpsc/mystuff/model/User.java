@@ -3,7 +3,7 @@ package ca.ubc.cpsc.mystuff.model;
 import java.util.List;
 
 public class User {
-	private int userType; 
+	private String authority; 
 	private int rating;
 	private String firstName;
 	private String lastName;
@@ -16,7 +16,7 @@ public class User {
 	
 	public User(){}
 	
-	public User(int userType, 
+	public User(String userType, 
 			int rating, 
 			String firstName, 
 			String lastName,
@@ -26,7 +26,7 @@ public class User {
 			int mailboxID, 
 			int userID, 
 			List friends){
-		this.userType = userType; 
+		this.authority = userType; 
 		this.firstName = firstName; 
 		this.lastName = lastName; 
 		this.country = country;
@@ -47,11 +47,11 @@ public class User {
 		return this.friends;
 	}
 	
-	public int getUserType() {
-		return userType;
+	public String getUserType() {
+		return authority;
 	}
-	public void setUserType(int userType) {
-		this.userType = userType;
+	public void setUserType(String userType) {
+		this.authority = userType;
 	}
 	public int getRating() {
 		return rating;
