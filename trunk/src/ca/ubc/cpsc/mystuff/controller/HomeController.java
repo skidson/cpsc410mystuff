@@ -1,5 +1,7 @@
 package ca.ubc.cpsc.mystuff.controller;
 
+import java.util.List;
+
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +20,10 @@ public class HomeController {
 		User user = new User();
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		user.setUsername(username);
-		model.addAttribute(user);
+		if(username.equalsIgnoreCase("anonymousUser")){
+			return "login";
+		}
+		model.addAttribute("user", user);
 		return "home";
 	}
 	

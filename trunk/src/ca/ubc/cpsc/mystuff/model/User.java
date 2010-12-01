@@ -14,7 +14,7 @@ public class User {
 	private String email;
 	private int mailboxID;
 	private long userID;
-	private List<Integer> friends;
+	private List<Integer> friends = new ArrayList<Integer>();
 	
 	public User(){}
 	
@@ -43,6 +43,10 @@ public class User {
 	
 	public void setFriends(List<Integer> friends){ 
 		this.friends = friends;
+	}
+	
+	public void addFriend(int friendID){
+		this.friends.add(friendID);
 	}
 	
 	public List<Integer> getFriends(){ 
