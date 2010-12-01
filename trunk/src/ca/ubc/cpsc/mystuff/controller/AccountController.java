@@ -6,8 +6,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import ca.ubc.cpsc.mystuff.model.User;
+import ca.ubc.cpsc.mystuff.model.UserLibraryService;
 import ca.ubc.cpsc.mystuff.model.UserService;
-
+import ca.ubc.cpsc.mystuff.model.UserLibrary;
 @Controller
 public class AccountController {
 	private UserService userService = new UserService();
@@ -38,11 +39,13 @@ public class AccountController {
 		// TODO verify valid information
 		
 		/* Generate these IDs here to ensure bean does not contain a service or business logic */
-		int mailboxID = userService.generateMailboxID();
 		long userID = userService.generateUserID();
+		UserLibrary ul = new UserLibrary(userID);
 		
-		User user = new User("ROLE_USER", firstName, lastName, email, country, username, password, mailboxID, userID);
+		
+		User user = new User("ROLE_USER", firstName, lastName, email, country, username, password, 0, userID);
 		userService.saveUser(user);
+		UserLibraryService.saveUserLibrary(ul);
 		return "registerSuccess";
 	}
 	
