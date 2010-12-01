@@ -3,27 +3,31 @@ package ca.ubc.cpsc.mystuff.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
-@RequestMapping("/register")
-public class RegisterController {
+public class AccountController {
 	private UserService userService = new UserService();
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public String showForm(Model model) {
-		return "register";
+	@RequestMapping(value = "/account", method = RequestMethod.GET)
+	public String showAccount() {
+		return "account";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
+	public String editAccount(Model model) {
+		return "account";
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String showForm() {
+		return "register";
+	}
+
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String onSubmit(ModelMap model,
 			@RequestParam("in_firstName") String firstName, 
 			@RequestParam("in_lastName") String lastName,
@@ -41,5 +45,11 @@ public class RegisterController {
 		userService.saveUser(user);
 		return "registerSuccess";
 	}
-
+	
+	@RequestMapping("/registerSuccess")
+	public String success() {
+		return("registerSuccess");
+	}
+		
+	
 }

@@ -3,7 +3,7 @@
 
 <head>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
-<title>MyStuff - Home</title>
+<title>MyStuff - Register</title>
 </head>
 
 <body>
@@ -19,6 +19,7 @@
 				<li><a href="home.htm">Home</a></li>
 				<li><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
+				<li><a href="mailbox.htm">Mailbox</a></li>
 				<li id="current"><a href="account.htm">Account</a></li>	
 			</ul>
 		</div>		
@@ -27,15 +28,16 @@
 				
 			<div id="main">
 				<h3>Register</h3>
-				<table><p><form method="POST" action="register.htm">
+				<table><form method="POST" action="register.htm">
 					<tr><td>First name: <font color="red">*</font></td><td><input type="text" size="30" name="in_firstName" /></td></tr>
 					<tr><td>Last name: <font color="red">*</font></td><td><input type="text" size="30" name="in_lastName" /></td></tr>
 					<tr><td>E-mail address: <font color="red">*</font></td><td><input type="text" size="30" name="in_email" /></td></tr>
 					<tr><td>Username: <font color="red">*</font></td><td><input type="text" size="30" name="in_username" /></td></tr>
-					<tr><td>Password: <font color="red">*</font></td><td><input type="text" size="30" name="in_password" /></td></tr>
+					<tr><td>Password: <font color="red">*</font></td><td><input type="password" size="30" name="in_password" /></td></tr>
+					<tr><td>Confirm password: <font color="red">*</font></td><td><input type="password" size="30" name="in_confirmPassword" /></td></tr>
 					<tr><td>Country: <font color="red">*</font></td><td><input type="text" size="30" name="in_country" /></td></tr>
-					<tr><td align="center"><input class="button" value="          Create Account          " type="submit" /></td></tr>
-				</form></p></table>
+					<tr><td><input class="button" value="          Create Account          " type="submit" /></td></tr>
+				</form></table>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

@@ -3,35 +3,34 @@
 
 <head>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
-<title>MyStuff - Register</title>
+<title>MyStuff - Media</title>
 </head>
 
 <body>
 	<div id="wrap">
 		
 		<div id="header">			
-			<h1 id="logo-text"><a href="home.htm">MyStuff</a></h1>
-			<p id="slogan">Your one-stop shop for media information...</p>
+			<%@ include file="/WEB-INF/jsp/header.jsp" %>
 		</div> <!-- header -->
 		
 		<div  id="menu">
 			<ul>
 				<li><a href="home.htm">Home</a></li>
-				<li><a href="media.htm">Media</a></li>
+				<li id="current"><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
 				<li><a href="mailbox.htm">Mailbox</a></li>
-				<li id="current"><a href="account.htm">Account</a></li>	
+				<li><a href="account.htm">Account</a></li>	
 			</ul>
 		</div>		
 		
 		<div id="content-wrap">
 		
+			<div id="sidebar">
+				<%@ include file="/WEB-INF/jsp/sidebar.jsp" %>
+			</div> <!-- sidebar -->		
+				
 			<div id="main">
-				<h3>Register</h3> <br />
-				<center>
-					<font color="green">Registration successful!</font>
-					<a href="login.jsp">Proceed to login</a>
-				</center>
+				<h3>Media</h3> <br />
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

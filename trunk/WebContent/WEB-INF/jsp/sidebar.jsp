@@ -3,6 +3,7 @@
 <p>
 	<input name="searchQuery" class="textbox" type="text" /> 
 	<input name="search" class="button" value="Search" type="submit" />
+	<a href="search.htm">Advanced Search</a>
 </p>
 </form>
 		

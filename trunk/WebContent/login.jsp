@@ -20,9 +20,8 @@
 				<li id="current"><a href="home.htm">Home</a></li>
 				<li><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
-				<li><a href="account.htm">Account</a></li>
-				<li><a href="support.htm">Support</a></li>
-				<li class="last"><a href="about.htm">About</a></li>		
+				<li><a href="mailbox.htm">Mailbox</a></li>
+				<li><a href="account.htm">Account</a></li>	
 			</ul>
 		</div> <!--  menu -->	
 		
@@ -32,7 +31,7 @@
 			<div id="main">
 				<h3>Login</h3>
 				<center>
-				<table><tr><p>
+				<table><tr>
 					<c:if test="${not empty param.error}">
 						<font color="red">Login error: ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</font>
 					</c:if>
@@ -44,7 +43,7 @@
 						<label><input type="checkbox" name="_spring_security_remember_me" /> Remember me</label>
 						<center><input class="button" value="          Login          " type="submit" /></center>
 					</form>		
-				</p></tr></table>
+				</tr></table>
 				</center>
 			</div> <!--  main -->
 		</div> <!-- content-wrap -->	
