@@ -14,7 +14,8 @@ public class Movie implements Item {
 
 	public Movie() {}
 	
-	public Movie(String title, int rating, int itemID, String genre){
+	public Movie(String title, int rating, int itemID, String genre, String image){
+		this.image = image;
 		this.rating = rating;
 		this.title = title;
 		this.genre = genre;
