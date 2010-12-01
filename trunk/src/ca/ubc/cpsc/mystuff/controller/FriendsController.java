@@ -18,7 +18,7 @@ public class FriendsController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadContent(Model model) {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
-		User user = new User();
+		User user = new User(); // NEED TO SEARCH DATA BASE FOR USER HERE
 		user.setUsername(username);
 		List<Integer> friends = friendService.getFriends();
 		model.addAttribute("friends", friends);
