@@ -10,15 +10,16 @@
 	<div id="wrap">
 		
 		<div id="header">			
-			<%@ include file="/WEB-INF/jsp/header.jsp" %>
+			<h1 id="logo-text"><a href="home.htm">MyStuff</a></h1>
+			<p id="slogan">Your one-stop shop for media information...</p>
 		</div> <!-- header -->
 		
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="home.htm">Home</a></li>
+				<li><a href="home.htm">Home</a></li>
 				<li><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
-				<li><a href="account.htm">Account</a></li>	
+				<li id="current"><a href="account.htm">Account</a></li>	
 			</ul>
 		</div>		
 		
@@ -29,7 +30,11 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h3>News Feed</h3> <br />
+				<h3>Register</h3> <br />
+				<center>
+					<font color="green">Registration successful!</font>
+					<a href="login.jsp">Proceed to login</a>
+				</center>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->
