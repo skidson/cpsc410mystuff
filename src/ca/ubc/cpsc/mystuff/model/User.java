@@ -1,5 +1,6 @@
 package ca.ubc.cpsc.mystuff.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -10,40 +11,40 @@ public class User {
 	private String country;
 	private String username;
 	private String password;
+	private String email;
 	private int mailboxID;
 	private int userID;
-	private List friends;
+	private List<Integer> friends;
 	
 	public User(){}
 	
-	public User(String userType, 
-			int rating, 
+	public User(String authority,
 			String firstName, 
 			String lastName,
+			String email,
 			String country, 
 			String username,
 			String password,
-			int mailboxID, 
-			int userID, 
-			List friends){
-		this.authority = userType; 
+			int mailboxID,
+			int userID){
+		this.authority = authority;
+		this.rating = 0;
 		this.firstName = firstName; 
-		this.lastName = lastName; 
+		this.lastName = lastName;
+		this.email = email;
 		this.country = country;
 		this.username = username; 
 		this.password = password; 
 		this.mailboxID = mailboxID; 
 		this.userID = userID;
+		this.friends = new ArrayList<Integer>();
+	}
+	
+	public void setFriends(List<Integer> friends){ 
 		this.friends = friends;
 	}
 	
-	public void setFriends(List f){ 
-		this.friends = f;
-	}
-	
-	
-	
-	public List getFriends(){ 
+	public List<Integer> getFriends(){ 
 		return this.friends;
 	}
 	
@@ -100,6 +101,14 @@ public class User {
 	}
 	public void setUserID(int userID) {
 		this.userID = userID;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return email;
 	}
 	
 	

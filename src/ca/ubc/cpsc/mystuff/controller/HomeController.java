@@ -18,7 +18,6 @@ public class HomeController {
 		User user = new User();
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		user.setUsername(username);
-		user.setUserID(userService.getUserID(username));
 		return "home";
 	}
 	
