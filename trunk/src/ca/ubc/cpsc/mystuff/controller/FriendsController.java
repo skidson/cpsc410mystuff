@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import ca.ubc.cpsc.mystuff.model.FriendsService;
-import ca.ubc.cpsc.mystuff.model.SearchService;
 import ca.ubc.cpsc.mystuff.model.User;
-import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 @RequestMapping("/friends")
@@ -27,9 +25,5 @@ public class FriendsController {
 		return "friends";
 	}
 	
-	private void showNewsFeed() {
-		// do database things and stuff
-		
-	}
 	
 }
