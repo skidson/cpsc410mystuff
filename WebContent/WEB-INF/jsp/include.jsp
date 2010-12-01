@@ -5,4 +5,5 @@
 <style type="text/css">
 	<%@include file="/images/stylesheet.css" %>
 </style>
+<link rel="shortcut icon" href="/images/favicon.ico">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">

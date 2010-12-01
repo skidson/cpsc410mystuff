@@ -47,12 +47,10 @@ public class MovieDBWebService {
 				img = "";
 			}
 			
-			
 			String name = l1.item(0).getTextContent();
 			int rating = (int) Double.parseDouble(l2.item(0).getTextContent());
 			String overview = l3.item(0).getTextContent();
 			int id = Integer.parseInt(l4.item(0).getTextContent());
-//			NodeList l5 = e.getElementsByTagName("image");
 			movieList.add(new Movie(name, rating, id, overview, img));
 			System.out.println(name);
 		}

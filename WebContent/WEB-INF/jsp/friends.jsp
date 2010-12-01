@@ -3,7 +3,7 @@
 
 <head>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
-<title>MyStuff - Home</title>
+<title>MyStuff - Friends</title>
 </head>
 
 <body>
@@ -15,9 +15,10 @@
 		
 		<div  id="menu">
 			<ul>
-				<li id="current"><a href="home.htm">Home</a></li>
+				<li><a href="home.htm">Home</a></li>
 				<li><a href="media.htm">Media</a></li>
-				<li><a href="friends.htm">Friends</a></li>
+				<li id="current"><a href="friends.htm">Friends</a></li>
+				<li><a href="mailbox.htm">Mailbox</a></li>
 				<li><a href="account.htm">Account</a></li>	
 			</ul>
 		</div>		

@@ -18,6 +18,7 @@
 				<li><a href="home.htm">Home</a></li>
 				<li id="current"><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
+				<li><a href="mailbox.htm">Mailbox</a></li>
 				<li><a href="account.htm">Account</a></li>	
 			</ul>
 		</div>		
@@ -30,12 +31,25 @@
 				
 			<div id="main">
 				<h3>Search</h3> <br />
-				${user.username}
+				<table><tr><form method="POST" action="search.htm">
+					<center><input type="text" size="40" name="searchQuery" />
+					<select name="dropdown_media" size="1">
+						<option value="movies">Movies</option>
+						<option value="songs">Songs</option>
+						<option value="users">Users</option>
+					</select>
+					<input class="button" value=" Search " type="submit" /></center>
+				</form></tr></table>
+				
 				<c:forEach items="${resultsList}" var="movie">
-					<tr>
-						<td><img src="${movie.image}" height="200" width="300" /></td><td>${movie.title}<td> <td>${movie.rating}/10</td>
-					</tr>
+					<h2>${movie.title}<div style="float:right">${movie.rating}/10</div></h2>
+					<table><tr><td><img src="${movie.image}" width="25%" height="10%" align="left"/></td><td>${movie.overview}</td></tr></table>
+					<p class="post-footer align-right">					
+					<a href="#" class="readmore">Information</a>
+					<a href="#" class="comments">Comments (7)</a>
+					</p>
 				</c:forEach>
+				
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

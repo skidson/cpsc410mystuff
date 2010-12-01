@@ -18,6 +18,7 @@
 				<li id="current"><a href="home.htm">Home</a></li>
 				<li><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
+				<li><a href="mailbox.htm">Mailbox</a></li>
 				<li><a href="account.htm">Account</a></li>	
 			</ul>
 		</div>		
