@@ -32,9 +32,14 @@
 			<div id="main">
 				<h3>Friends</h3> <br />
 				<c:forEach items="${friends}" var="friend">
+					<table>
 					<tr>
-						<td>${friend}</td><td><td> <td></td>
+						<td>${friend}</td>
+						<tr> <td> <a href="friends.htm">View Profile</a> </td></tr>
+						<tr> <td> <a href="mailbox.htm">Send Message</a> </td></tr>
+						<tr> <td> <a href="friends.htm">View library</a> </td></tr>
 					</tr>
+					</table>
 				</c:forEach>
 			</div> <!-- main -->
 		

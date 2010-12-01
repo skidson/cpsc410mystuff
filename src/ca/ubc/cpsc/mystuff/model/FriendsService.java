@@ -11,8 +11,6 @@ public class FriendsService {
 	}
 		
 	public List<Integer> getFriends(){
-		friends.add(3245);
-		friends.add(589430);
 		return this.friends;
 	}
 		
