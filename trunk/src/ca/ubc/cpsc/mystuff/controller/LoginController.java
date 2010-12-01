@@ -1,4 +1,4 @@
-package ca.ubc.cpsc.mystuff.controller;
+/*package ca.ubc.cpsc.mystuff.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -25,3 +25,4 @@ public class LoginController {
 			return new ModelAndView("redirect:/login.htm");
 	}	
 }
+*/
