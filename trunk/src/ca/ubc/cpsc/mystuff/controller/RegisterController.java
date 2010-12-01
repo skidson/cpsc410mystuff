@@ -32,11 +32,14 @@ public class RegisterController {
 			@RequestParam("in_username") String username,
 			@RequestParam("in_password") String password) {
 		// TODO verify valid information
+		
+		/* Generate these IDs here to ensure bean does not contain a service or business logic */
 		int mailboxID = userService.generateMailboxID();
 		int userID = userService.generateUserID();
+		
 		User user = new User("ROLE_USER", firstName, lastName, email, country, username, password, mailboxID, userID);
 		userService.saveUser(user);
-		return "registerSuccess"; // TODO how to get outside security?
+		return "registerSuccess";
 	}
 
 }

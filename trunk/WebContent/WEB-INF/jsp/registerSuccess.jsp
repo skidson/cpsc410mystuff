@@ -25,10 +25,6 @@
 		
 		<div id="content-wrap">
 		
-			<div id="sidebar">
-				<%@ include file="/WEB-INF/jsp/sidebar.jsp" %>
-			</div> <!-- sidebar -->		
-				
 			<div id="main">
 				<h3>Register</h3> <br />
 				<center>
