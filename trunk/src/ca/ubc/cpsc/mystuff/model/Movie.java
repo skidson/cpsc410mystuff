@@ -9,8 +9,11 @@ public class Movie implements Item {
 	private int duration;
 	private int rating;
 	private int itemID;
+	private String image;
+	private String overview;
 	private ArrayList<Integer> commentID;
 
+	public Movie() {}
 	
 	public Movie(String title, int duration, int rating, int itemID, String genre){
 		this.duration = duration;
@@ -81,6 +84,22 @@ public class Movie implements Item {
 	public void addComment(Comment comment) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setOverview(String overview) {
+		this.overview = overview;
+	}
+
+	public String getOverview() {
+		return overview;
 	}
 
 	

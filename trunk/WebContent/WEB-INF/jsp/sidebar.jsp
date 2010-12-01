@@ -1,5 +1,5 @@
 <h3>Search</h3>
-	<form action="search.htm" class="searchform">
+	<form method="POST" action="search.htm" class="searchform">
 	<p>
 		<input name="search_query" class="textbox" type="text" /> 
 		<input path="search.html" name="search" class="button" value="Search" type="submit" />
