@@ -5,7 +5,26 @@ public class Message {
 	private int recipientID;
 	private int senderID;
 	private int messageID;
+	private String senderName;
+	private String subject;
+	private long date;
 	
+	public String getSenderName() {
+		return senderName;
+	}
+
+	public void setSenderName(String senderName) {
+		this.senderName = senderName;
+	}
+
+	public long getDate() {
+		return date;
+	}
+
+	public void setDate(long date) {
+		this.date = date;
+	}
+
 	public Message(){
 	}
 	
@@ -39,6 +58,14 @@ public class Message {
 
 	public void setSenderID(int senderID) {
 		this.senderID = senderID;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getSubject() {
+		return subject;
 	}
 	
 
