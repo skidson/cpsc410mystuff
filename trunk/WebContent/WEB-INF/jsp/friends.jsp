@@ -29,7 +29,6 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				Welcome ${user.username}!
 				<h3>Friends</h3> <br />
 				<c:forEach items="${friends}" var="friend">
 					<tr>
