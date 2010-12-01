@@ -43,7 +43,7 @@
 				
 				<c:forEach items="${resultsList}" var="movie">
 					<h2>${movie.title}<div style="float:right">${movie.rating}/10</div></h2>
-					<table><tr><td><img src="${movie.image}" width="25%" height="10%" align="left"/></td><td>${movie.overview}</td></tr></table>
+					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
 					<p class="post-footer align-right">					
 					<a href="#" class="readmore">Information</a>
 					<a href="#" class="comments">Comments (7)</a>
