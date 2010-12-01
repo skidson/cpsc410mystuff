@@ -14,7 +14,7 @@ import ca.ubc.cpsc.mystuff.model.UserService;
 @Controller
 @RequestMapping("/friends")
 public class FriendsController {
-	private FriendsService friendService = new FriendsService();
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadContent(Model model) {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();

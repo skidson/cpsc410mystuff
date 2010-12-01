@@ -30,7 +30,15 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h3>Media</h3> <br />
+				<h3>Mailbox</h3> <br />
+				<c:forEach items="${messageList}" var="message">
+					<h2>${message.subject}<div style="float:right">${movie.senderName}/10</div></h2>
+					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
+					<p class="post-footer align-right">					
+					<a href="#" class="readmore">Information</a>
+					<a href="deleteMessage.htm?messageID=${message.messageID}"><button>Delete</button></a>
+					</p>
+				</c:forEach>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->
