@@ -33,7 +33,7 @@
 				${user.username}
 				<c:forEach items="${resultsList}" var="movie">
 					<tr>
-						<td><img src="${movie.image}" /></td><td>${movie.title}<td> <td>${movie.rating}/10</td>
+						<td><img src="${movie.image}" height="200" width="300" /></td><td>${movie.title}<td> <td>${movie.rating}/10</td>
 					</tr>
 				</c:forEach>
 			</div> <!-- main -->
