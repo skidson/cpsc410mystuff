@@ -2,6 +2,7 @@ package ca.ubc.cpsc.mystuff.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,26 +12,38 @@ import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
-@RequestMapping("/register")
-@SessionAttributes("username")
 public class RegisterController {
-	private UserService userService;
+	private UserService userService = new UserService();
 	
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
-	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String showForm(ModelMap model) {
-		User user = new User();
-		model.addAttribute(user);
-		return("register");
+		try {
+			boolean wtf = ((User)model.get("user")).getUsername().equals("it works");
+			return("test");
+		} catch (NullPointerException e) {
+			User user = new User();
+			user.setUsername("it works");
+			model.addAttribute(user);
+			return("register");
+		}
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public String onSubmit(@ModelAttribute("user") User user) {
-		userService.add(user);
-		return("redirect:/registerSuccess.do");
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String onSubmit(ModelMap model, BindingResult result) {
+		try {
+			boolean wtf = ((User)model.get("user")).getUsername().equals("it works");
+			return("test");
+		} catch (NullPointerException e) {
+			User user = new User();
+			user.setUsername("it works");
+			model.addAttribute(user);
+			return("register");
+		}
+	}
+	
+	@RequestMapping(value = "/test")
+	public String onTest(ModelMap model, BindingResult result) {
+		return "test";
 	}
 	
 }
