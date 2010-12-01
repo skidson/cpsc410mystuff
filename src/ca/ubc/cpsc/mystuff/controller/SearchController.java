@@ -5,18 +5,15 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import ca.ubc.cpsc.mystuff.model.Search;
-import ca.ubc.cpsc.mystuff.model.User;
-import ca.ubc.cpsc.mystuff.model.UserService;
+import ca.ubc.cpsc.mystuff.model.SearchService;
 
 @Controller
-@RequestMapping("/search")
 public class SearchController {
-	private searchService 
-	
+	private SearchService searchService = new SearchService();
 
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView onSubmit(@ModelAttribute("search") Search search) {
-		Search mySearch = new Search(search.getString());
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public ModelAndView onSearch(@RequestParam("searchQuery") String query) {
+		Search search = new Search(query);
 		
-	}	
+	}
 }

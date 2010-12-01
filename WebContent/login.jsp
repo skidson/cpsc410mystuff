@@ -11,7 +11,8 @@
 	<div id="wrap">
 		
 		<div id="header">			
-			<%@ include file="/WEB-INF/jsp/header.jsp" %>
+			<h1 id="logo-text"><a href="home.htm">MyStuff</a></h1>
+			<p id="slogan">Your one-stop shop for media information...</p>
 		</div> <!-- header -->
 		
 		<div  id="menu">
@@ -32,24 +33,19 @@
 				<h3>Login</h3>
 				<center>
 				<table><tr><p>
-					<c:if test="${not empty param.error}">
-						<font color="red">Login error: ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</font>
-					</c:if>
 					<form method="POST" action="<c:url value="/j_spring_security_check" />">			
-					<label>Username: <input type="text" size = "30" name="j_username" /></label>
-					<label>Password: <input type="password" size="30" name="j_password" /> <br /></label>
-					<br />
+					<label>Username:</label><input type="text" size = "30" name="j_username" />
+					<label>Password:</label><input type="password" size="30" name="j_password" /> <br />
 					<a href="recoverPassword.htm">Forgot your password?</a> | <a href="register.htm">Register</a>
 					<br />
-					<label>Remember me<input type="checkbox" name="_spring_security_remember_me" /></label>
+					<label><input type="checkbox" name="_spring_security_remember_me" /> Remember me</label>
 					<center><input class="button" value="          Login          " type="submit" /></center>
 					</form>		
 				</p></tr></table>
 				</center>
 			</div> <!--  main -->
-	</div> <!-- content-wrap -->	
+		</div> <!-- content-wrap -->	
 				
-	<!--footer starts here-->
 	<div id="footer">
 		<%@ include file="/WEB-INF/jsp/footer.jsp" %>
 	</div>	
