@@ -161,6 +161,16 @@ input.button {
 	border: none;
 }
 
+button { 
+	font: bold 12px Arial, Sans-serif; 
+	height: 24px;
+	margin: 0;
+	padding: 2px 3px; 
+	color: #FFF;
+	background: #8EB50C url(<%=request.getContextPath()%>/images/button-bg.jpg) repeat-x 0 0;
+	border: none;
+}
+
 /* search form */
 .searchform {
 	background-color: transparent;
