@@ -1,5 +1,6 @@
 package ca.ubc.cpsc.mystuff.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import ca.ubc.cpsc.mystuff.model.Event;
+import ca.ubc.cpsc.mystuff.model.EventService;
 import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserService;
 
@@ -23,6 +26,15 @@ public class HomeController {
 		if(username.equalsIgnoreCase("anonymousUser")){
 			return "login";
 		}
+		
+		user = userService.getCurrentUser();
+		ArrayList<Event> eventList = new ArrayList<Event>();
+		for(long friendID : user.getFriends()) {
+			eventList.addAll(EventService.getEventLibrary(friendID));
+		}
+		
+		if(eventList != null)
+			model.addAttribute("eventList", eventList);
 		model.addAttribute("user", userService.getCurrentUser());
 		return "home";
 	}

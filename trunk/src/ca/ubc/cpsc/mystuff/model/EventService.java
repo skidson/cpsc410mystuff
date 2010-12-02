@@ -14,11 +14,11 @@ public class EventService {
 		session.close();
 	}
 
-	public static List<Event> getEventLibrary(String username){ 
+	public static List<Event> getEventLibrary(long userid){ 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
 
-		List<Event> temp = (List<Event>) session.createQuery("select e, from Event e, User u where e.userID = u.userID and u.username = ?").setString(0, username);
+		List<Event> temp = (List<Event>) session.createQuery("from Event where userID = ?").setLong(0, userid).list();
 		List<Event> eventList = new ArrayList<Event>();
 		for(Event e:temp){ 
 			Event tmp = new Event(e.getUserID(), e.getName(), e.getUsername(), e.getDescription());
@@ -28,7 +28,6 @@ public class EventService {
 		session.close();
 
 		return eventList;
-
 	}
 
 }
