@@ -11,15 +11,26 @@ public class Song{
 	private String artist;
 	private ArrayList<Integer> commentID;
 	private String url;
+	private String picture;
 	
-	public Song(String songID, String title, int duration, int rating, int itemID, String newArtist, String url) {//, String genre){
+	public Song(String songID, String title, int duration, int rating, int itemID, String newArtist, String url, String pic) {//, String genre){
 		this.songID = songID;
+		this.picture = pic;
 		this.duration = duration;
 		this.rating = rating;
 		this.title = title;
 		this.artist = newArtist;
 		this.url = url;
 		//this.genre = genre;
+	}
+	
+
+	public void setPicture(String pic) {
+		this.picture = pic;
+	}
+	
+	public String getPicture() {
+		return this.picture;
 	}
 	
 	public void setArtist(String newArtist) {
@@ -64,9 +75,9 @@ public class Song{
 		return title;
 	}
 
-	public String getGenre() {
-		return genre;
-	}
+//	public String getGenre() {
+//		return genre;
+//	}
 
 	public int getDuration() {
 		return duration;
@@ -91,10 +102,10 @@ public class Song{
 
 	}
 
-	public void setGenre(String genre) {
-		this.genre = genre;
+//	public void setGenre(String genre) {
+//		this.genre = genre;
 
-	}
+//	}
 
 	public void delete() {
 		this.delete();
