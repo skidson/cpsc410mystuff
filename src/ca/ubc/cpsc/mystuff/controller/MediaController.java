@@ -136,11 +136,11 @@ public class MediaController {
 		try {
 			currentMovie = MovieDBWebService.getMovieByID(Integer.parseInt(itemID));
 		} catch (NumberFormatException e1) {} catch (Exception e1) {}
-		String eventDescription = "{userFirstName} commented on {movieName}: \n {comment}...";
+		String eventDescription = "{userFirstName} commented on {movieName}: {comment}";
 		if(commentstuff.length() < 30){
-			eventDescription = eventDescription.replace("{userFirstName}", user.getFirstName()).replace("{movieName}", currentMovie.getTitle()).replace("{comment}", commentstuff);
+			eventDescription = eventDescription.replace("{userFirstName}", user.getFirstName()).replace("{movieName}", currentMovie.getTitle()).replace("{comment}", commentstuff).replace("{URL}", "<a class='comment' href='itemPage.htm?itemID=" + currentMovie.getItemID());
 		}else{ 
-			eventDescription = eventDescription.replace("{userFirstName}", user.getFirstName()).replace("{movieName}", currentMovie.getTitle()).replace("{comment}", commentstuff.substring(0, 29));
+			eventDescription = eventDescription.replace("{userFirstName}", user.getFirstName()).replace("{movieName}", currentMovie.getTitle()).replace("{comment}", commentstuff.substring(0, 29))+"...";
 		}
 		Event e = new Event(authorID, user.getFirstName(), user.getUsername(), eventDescription );
 		EventService.saveEvent(e);
