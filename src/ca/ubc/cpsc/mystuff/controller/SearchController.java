@@ -28,7 +28,6 @@ public class SearchController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String showResults(@RequestParam("searchQuery") String search, @RequestParam("dropdown_search") String option, Model model) {
-		Random random = new Random();
 		int useResult;
 		System.out.println(option);
 		if(option.equals("movies")){
