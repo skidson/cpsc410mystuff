@@ -35,7 +35,7 @@
 					<table>
 						<tr><td>To: </td><td><input type="text" size="60" name="in_recipient"></td></tr>
 						<tr><td>Subject: </td><td><input type="text" size="60" name="in_subject"></td></tr>
-						<tr><td colspan="2"><textarea name="in_text" rows="5" cols="60"></textarea></td></tr>
+						<tr><td colspan="2"><center><textarea name="in_text"></textarea></center></td></tr>
 						<tr><td colspan="2"><center><input class="button" value="       Send       " type="submit" /></center></td></tr>
 					</table>
 				</form>
