@@ -52,8 +52,16 @@ public class UserService {
 	}
 	
 	public long getUserID(String username) {
-		// TODO hibernate stuff here
-		return 1337;
+		Session session = HibernateUtil.getSessionFactory().openSession();
+	    Transaction tx = session.beginTransaction();
+
+	    User user = (User) session.createQuery(
+                "from User" + " where username = ?").setString(0,username).uniqueResult();
+	    long userID = user.getUserID();
+	    tx.commit();
+	    session.close();
+	    
+	    return userID;
 	}
 	
 	public int generateMailboxID() {
