@@ -43,7 +43,7 @@ public class AccountController {
 		synLName = isdigornum(lastName);
 		
 		if (!(synName && synPass && synCountry && synEmail && synFName && synLName)){
-			return "redirect:/register.htm?error=true";
+			return "redirect:/registerFailure.htm";
 		}
 		
 		/* Generate these IDs here to ensure bean does not contain a service or business logic */
