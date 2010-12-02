@@ -24,6 +24,13 @@ public class SearchService {
 			return null;
 		}
 	}
+	public List<Song> songSearch(String search) {
+		try {
+			return(LastFMWebService.getSongs(search));
+		} catch (Exception e) {
+			return null;
+		}
+	}
 	
 	public List<User> doUserSearch(String firstname){ 
 		UserService service = new UserService(); 

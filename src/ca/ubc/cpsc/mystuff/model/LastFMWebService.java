@@ -11,13 +11,14 @@ public class LastFMWebService {
 
 
 	
-	public static ArrayList<Song> getSongs(String track, String lim, String art) throws MalformedURLException, IOException {
+	public static ArrayList<Song> getSongs(String track) throws MalformedURLException, IOException {
 
 		ArrayList<Song> songArray = new ArrayList<Song>();
 		
 		String apiKey = "54a95dbf1f737c65aa382725431d8aab";
 		//String appSecret = "4ef85cb5b8646ae31e7dfa7c74c5b3ee";
-		
+		String art = "";
+		String lim = "10";
 		String search = "";
 		String limit = "";
 		String artSearch = ""; 
