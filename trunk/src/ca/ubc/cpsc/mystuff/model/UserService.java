@@ -28,6 +28,24 @@ public class UserService {
 	    return user;
 	}
 	
+	public List<User> getUsersByFirstName(String firstname){ 
+		Session session = HibernateUtil.getSessionFactory().openSession();
+	    Transaction tx = session.beginTransaction();
+
+	    List<User> temp = (List<User>) session.createQuery("from User" + " where firstName = ?").setString(0,firstname).list();
+	    List<User> userList = new ArrayList<User>();
+	    for(User u: temp){ 
+	    	User tmp = new User(u.getauthority(), u.getFirstName(), u.getLastName(), u.getEmail(), u.getCountry(),u.getUsername(),u.getPassword(), u.getUserID());
+	    	tmp.setFriends(u.getFriends());
+	    	userList.add(tmp);
+	    }
+	    
+	    tx.commit();
+	    session.close();
+	    
+	    return userList;
+	}
+	
 	public static User getUser(long userID){ 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    Transaction tx = session.beginTransaction();
