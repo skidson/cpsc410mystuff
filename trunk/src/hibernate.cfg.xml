@@ -24,6 +24,11 @@
         <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 
         <mapping resource="ca/ubc/cpsc/mystuff/model/User.hbm.xml"/>
+        <mapping resource="ca/ubc/cpsc/mystuff/model/UserLibrary.hbm.xml"/>
+        <mapping resource="ca/ubc/cpsc/mystuff/model/Song.hbm.xml"/>
+        <mapping resource="ca/ubc/cpsc/mystuff/model/Movie.hbm.xml"/>
+        <mapping resource="ca/ubc/cpsc/mystuff/model/Message.hbm.xml"/>
+        
 
     </session-factory>
 </hibernate-configuration>
