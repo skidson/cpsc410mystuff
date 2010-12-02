@@ -25,4 +25,9 @@ public class SearchService {
 		}
 	}
 	
+	public List<User> doUserSearch(String firstname){ 
+		UserService service = new UserService(); 
+		return service.getUsersByFirstName(firstname);
+	}
+	
 }
