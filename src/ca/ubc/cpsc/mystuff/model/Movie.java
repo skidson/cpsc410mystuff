@@ -10,7 +10,6 @@ public class Movie implements Item {
 	private int itemID;
 	private String image;
 	private String overview;
-	private ArrayList<Integer> commentID;
 
 	public Movie() {}
 	
@@ -44,14 +43,6 @@ public class Movie implements Item {
 
 	public void setItemID(int itemID) {
 		this.itemID = itemID;
-	}
-
-	public ArrayList<Integer> getCommentID() {
-		return commentID;
-	}
-
-	public void setCommentID(ArrayList<Integer> commentID) {
-		this.commentID = commentID;
 	}
 
 	public void setRating(int rating) {
