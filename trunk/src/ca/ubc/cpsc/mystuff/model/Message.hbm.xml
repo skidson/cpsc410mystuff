@@ -11,5 +11,10 @@
 		<property name="text" column="text"/>
 		<property name="recipientID" column="recipientID"/>
 		<property name="senderID" column="senderID"/>
+		<property name="senderName" column="senderName"/>
+		<property name="subject" column="subject"/>
+		<property name="date" column="date"/>
+		<property name="status" column="status"/>
+		
    </class>
 </hibernate-mapping>
