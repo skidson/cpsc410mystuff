@@ -13,18 +13,22 @@ public class CommentService {
 		session.close();
 	}
 	
-	public static List<Comment> getCommentsForMovie(String movieID){ 
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction tx = session.beginTransaction();
-
-		Comment c =  (Comment) session.createQuery("select c from Comment c, Movie m where m.itemID = ul.ownerID and u.username = ?").setString(0,username).uniqueResult();
-		UserLibrary ul2 = new UserLibrary(ul.getItemCount(), ul.getOwnerID(), ul.getViewerID(),ul.getId() ,ul.getMovies(), ul.getSongs());
-		tx.commit(); 
-		session.close();
-
-		return ul2;
-
-
-	}
+//	public static List<Comment> getCommentsForMovie(int movieID){ 
+//		Session session = HibernateUtil.getSessionFactory().openSession();
+//		Transaction tx = session.beginTransaction();
+//
+//		List<Comment> tempList =  (List<Comment>) session.createQuery("select c from Comment c where c.itemID = ?").setInteger(0,movieID).list();
+//		
+//		For(Comment c: tempList){
+//			
+//		}
+//		
+//		tx.commit(); 
+//		session.close();
+//
+//		return ul2;
+//
+//
+//	}
 
 }
