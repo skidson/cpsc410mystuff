@@ -24,17 +24,22 @@ public class MessageService {
 		return m2;
 	}
 
-	public void deleteMessage(int messageID) {
-		// TODO hibernate stuff here
+	public void deleteMessage(long messageID) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.delete(getMessage(messageID));
+
+		tx.commit();
+		session.close();
 	}
 	
 	public void saveMessage(Message message) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		   Transaction tx = session.beginTransaction();
-		   session.saveOrUpdate(message);
-		 
-		   tx.commit();
-		   session.close();
+		Transaction tx = session.beginTransaction();
+		session.saveOrUpdate(message);
+
+		tx.commit();
+		session.close();
 	}
 	
 	public Message getMessage(long messageID){

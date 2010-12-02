@@ -32,8 +32,8 @@ public class MailboxController {
 	}
 	
 	@RequestMapping("/deleteMessage")
-	public String deleteMessage(@RequestParam("messageID") String messageID) {
-		messageService.deleteMessage(Integer.parseInt(messageID));
+	public String deleteMessage(@RequestParam("messageID") Long messageID) {
+		messageService.deleteMessage(messageID);
 		return("redirect:/mailbox.htm");
 	}
 	
