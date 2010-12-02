@@ -31,7 +31,7 @@
 				
 			<div id="main">
 				<h4>Add Comment to ${movie.title}</h4>
-				<form method="POST" action="submitComment.htm?itemID=${movie.itemID}?userID=${user.userID}">
+				<form method="POST" action="submitComment.htm?itemID=${movie.itemID}">
 					<table>
 						<tr><td colspan="2"><center><textarea name="in_text"></textarea></center></td></tr>
 						<tr><td colspan="2"><center><input class="button" value="       Submit       " type="submit" /></center></td></tr>

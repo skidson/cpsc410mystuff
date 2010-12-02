@@ -11,6 +11,5 @@
 		<property name="authorID" column="authorID"/>
 		<property name="text" column="text"/>
 		<property name="itemID" column="itemID"/>
-		<property name="type" column="type"/>
    </class>
 </hibernate-mapping>

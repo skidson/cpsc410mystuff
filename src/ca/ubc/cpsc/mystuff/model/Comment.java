@@ -8,16 +8,17 @@ public class Comment {
 	private long authorID;
 	private long itemID; 
 	private long commentID;
+	private String authorName;
 	
 	public Comment(){}
 
 	public Comment(String text, long authorID, long itemID,
 			long commentID) {
-		super();
 		this.text = text;
 		this.authorID = authorID;
 		this.itemID = itemID;
 		this.commentID = commentID;
+		this.authorName = UserService.getUser(authorID).getUsername();
 	}
 
 	public String getText() {
@@ -50,6 +51,14 @@ public class Comment {
 
 	public void setCommentID(long commentID) {
 		this.commentID = commentID;
+	}
+	
+	public String getAuthorName(){
+		return(this.authorName);
+	}
+	
+	public void setAuthorName(String username){
+		this.authorName = username;
 	}
 
 }
