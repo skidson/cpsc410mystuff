@@ -48,7 +48,9 @@ public class LastFMWebService {
 		String results = (String)content;
 		Scanner scanner = new Scanner(results);
 	    while ( scanner.hasNext() ){
-		songArray.add(parseString(scanner, results));
+	    Song song = parseString(scanner, results);
+	    if(song != null)	
+	    	songArray.add(song);
 
 	    }
 	    
@@ -63,7 +65,7 @@ public class LastFMWebService {
 		String songID = null;
 		String picture = null;
 	    String newLine = scanner.nextLine();
-	    Song tempSong = new Song("urmom", "urothermom", 111, 111, 101, "urmomfriendsmom", "urmomsmom", "urmommom");
+	    Song tempSong = new Song();
 	    	newLine = newLine.trim();
 
 	        if (newLine.equals("<track>")) {
@@ -93,9 +95,9 @@ public class LastFMWebService {
 		    	tempSong.setURL(url);
 		    	tempSong.setArtist(artist);
 		    	//System.out.println(name +" "+ artist + " " + url + " " + songID);
-	        
+		    	return tempSong;
 	        }
-	return tempSong;
+	return null;
 	
 	}
 	

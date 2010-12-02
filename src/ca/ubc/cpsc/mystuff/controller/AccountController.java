@@ -1,5 +1,6 @@
 package ca.ubc.cpsc.mystuff.controller;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -48,6 +49,14 @@ public class AccountController {
 	@RequestMapping("/registerSuccess")
 	public String success() {
 		return("registerSuccess");
+	}
+	
+	@RequestMapping(value = "/updateInfo" , method = RequestMethod.POST)
+	public String updateInfo(@RequestParam("newPassword") String password, Model model){
+		User currentUser = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
+		currentUser.setPassword(password);
+		userService.saveUser(currentUser);
+		return("redirect:/account.htm");
 	}
 		
 	

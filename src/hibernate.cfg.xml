@@ -19,7 +19,6 @@
         <property name="format_sql">true</property>
         <property name="use_sql_comments">true</property>
 
-
         <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 
         <mapping resource="ca/ubc/cpsc/mystuff/model/User.hbm.xml"/>

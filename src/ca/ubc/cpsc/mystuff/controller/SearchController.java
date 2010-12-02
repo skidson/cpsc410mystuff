@@ -41,8 +41,16 @@ public class SearchController {
 			model.addAttribute("resultsList", resultList);
 			model.addAttribute("useResult", useResult);
 		}else if(option.equals("users")){
-			useResult = 1;
+			useResult = 2;
 			List<User> resultsList = searchService.doUserSearch(search);
+			model.addAttribute("resultsList", resultsList);
+			model.addAttribute("useResult", useResult);
+		}
+		else if(option.equals("songs")){
+			useResult = 1;
+			List<Song> resultsList = searchService.songSearch(search);
+			System.out.println(resultsList.get(0).getTitle());
+			System.out.println(resultsList.get(0).getURL());
 			model.addAttribute("resultsList", resultsList);
 			model.addAttribute("useResult", useResult);
 		}

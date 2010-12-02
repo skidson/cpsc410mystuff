@@ -30,7 +30,13 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h4>Account</h4> <br />
+				<h4>Update Account Information </h4>
+				<form method="POST" action="updateInfo.htm">
+					<table>
+						<tr><td>New Password</td><td><input type="text" size="60" name="newPassword"></td></tr>
+						<tr><td colspan="2"><center><input class="button" value="       Update Info       " type="submit" /></center></td></tr>
+					</table>
+				</form>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

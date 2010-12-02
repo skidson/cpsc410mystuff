@@ -33,6 +33,7 @@
 				<h4>Compose Message</h4>
 				<form method="POST" action="sendMessage.htm">
 					<table>
+
 						<tr><td>To: </td><td><input type="text" size="60" name="in_recipient" value=${replyName}></td></tr>
 						<tr><td>Subject: </td><td><input type="text" size="60" name="in_subject" value=${reply.subject}></td></tr>
 						<tr><td colspan="2"><center><textarea name="in_text"></textarea></center></td></tr>

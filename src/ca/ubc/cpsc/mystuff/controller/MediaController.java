@@ -24,7 +24,9 @@ public class MediaController {
 	
 	@RequestMapping(value = "/media", method = RequestMethod.GET)
 	public String loadContent(Model model) {
-		UserLibrary ul = UserLibraryService.getUserLibrary(SecurityContextHolder.getContext().getAuthentication().getName());
+		User currentUser = UserService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
+		
+		UserLibrary ul = UserLibraryService.getUserLibrary(currentUser.getUsername());
 		List<Integer> movies = ul.getMovies();
 		List<Movie> results = new ArrayList<Movie>();
 		for(Integer id : movies){
@@ -35,6 +37,7 @@ public class MediaController {
 				e.printStackTrace();
 			}
 		}
+
 		model.addAttribute("user", userService.getCurrentUser());
 		model.addAttribute("results", results);
 		return "media";
