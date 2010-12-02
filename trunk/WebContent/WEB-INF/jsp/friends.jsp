@@ -34,10 +34,10 @@
 				<c:forEach items="${friends}" var="friend">
 					<table>
 					<tr>
-						<td>${friend}</td>
-						<tr> <td> <a href="friends.htm">View Profile</a> </td></tr>
+						<td>${friend.firstName}   ${friend.lastName }</td>
+						<tr> <td> <a href="userPage.htm">View Profile</a> </td></tr>
 						<tr> <td> <a href="mailbox.htm">Send Message</a> </td></tr>
-						<tr> <td> <a href="friends.htm">View library</a> </td></tr>
+						<tr> <td> <a href="userLibrary.htm">View library</a> </td></tr>
 					</tr>
 					</table>
 				</c:forEach>

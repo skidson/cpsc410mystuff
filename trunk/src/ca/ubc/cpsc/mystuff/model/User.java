@@ -14,7 +14,7 @@ public class User {
 	private String email;
 	private int mailboxID;
 	private long userID;
-	private List<Integer> friends = new ArrayList<Integer>();
+	private List<Long> friends = new ArrayList<Long>();
 	
 	public User(){}
 	
@@ -37,19 +37,19 @@ public class User {
 		this.password = password; 
 		this.mailboxID = mailboxID; 
 		this.userID = userID;
-		this.friends = new ArrayList<Integer>();
+		this.friends = new ArrayList<Long>();
 	}
 	
 	
-	public void setFriends(List<Integer> friends){ 
+	public void setFriends(List<Long> friends){ 
 		this.friends = friends;
 	}
 	
-	public void addFriend(int friendID){
+	public void addFriend(long friendID){
 		this.friends.add(friendID);
 	}
 	
-	public List<Integer> getFriends(){ 
+	public List<Long> getFriends(){ 
 		return this.friends;
 	}
 	

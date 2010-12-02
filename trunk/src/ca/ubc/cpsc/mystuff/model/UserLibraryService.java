@@ -19,7 +19,7 @@ public class UserLibraryService {
 
 	    User user = (User) session.createQuery(
                 "from User" + " where username = ?").setString(0,username).uniqueResult();
-	    ArrayList<Integer> L = new ArrayList( user.getFriends());
+	    ArrayList<Long> L = new ArrayList( user.getFriends());
 	    user.setFriends(L);
 
 	    tx.commit();

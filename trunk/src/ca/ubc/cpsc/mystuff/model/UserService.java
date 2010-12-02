@@ -19,7 +19,7 @@ public class UserService {
 
 	    User user = (User) session.createQuery(
                 "from User" + " where username = ?").setString(0,username).uniqueResult();
-	    ArrayList<Integer> L = new ArrayList( user.getFriends());
+	    ArrayList<Long> L = new ArrayList( user.getFriends());
 	    user.setFriends(L);
 
 	    tx.commit();
@@ -28,14 +28,14 @@ public class UserService {
 	    return user;
 	}
 	
-	public static User getUser(int userID){ 
+	public static User getUser(long userID){ 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    Transaction tx = session.beginTransaction();
 
 	    User user = (User) session.createQuery(
-                "from User" + " where userID = ?").setInteger(0,
+                "from User" + " where userID = ?").setLong(0,
                 userID).uniqueResult();
-	    ArrayList<Integer> L = new ArrayList( user.getFriends());
+	    ArrayList<Long> L = new ArrayList( user.getFriends());
 	    user.setFriends(L);
 	    
 //	    User user = (User) session.get(User.class, userID);
