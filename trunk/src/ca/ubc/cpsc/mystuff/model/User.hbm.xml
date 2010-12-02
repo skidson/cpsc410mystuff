@@ -15,7 +15,6 @@
 		<property name="country" column="country"/>
 		<property name="username" column="username"/>
 		<property name="password" column="password"/>
-		<property name="mailboxID" column="mailbox"/>
 		<list name="friends" table="user_friend">
 			<key column="userID"/>
 			<list-index column="index"/>
