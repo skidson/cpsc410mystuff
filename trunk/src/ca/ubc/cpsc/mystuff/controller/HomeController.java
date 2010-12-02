@@ -23,7 +23,7 @@ public class HomeController {
 		if(username.equalsIgnoreCase("anonymousUser")){
 			return "login";
 		}
-		model.addAttribute("user", user);
+		model.addAttribute("user", userService.getCurrentUser());
 		return "home";
 	}
 	

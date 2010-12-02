@@ -30,7 +30,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h3>${movie.title}</h3> <br />			
+				<h4>Media</h4> <br />			
 					<h2>${movie.title}<div style="float:right">${movie.rating}/10</div></h2>
 					<table>
 						<tr><td width="200px"><img src="${movie.image}" width="99%" height="20%"></td><td>${movie.genre}</td></tr>

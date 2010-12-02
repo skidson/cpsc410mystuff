@@ -1,6 +1,8 @@
 package ca.ubc.cpsc.mystuff.model;
 
 import org.hibernate.*;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import java.util.*;
 
 public class UserService {
@@ -77,6 +79,10 @@ public class UserService {
 	    session.close();
 	    
 	    return userID;
+	}
+	
+	public User getCurrentUser() {
+		return getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 	}
 	
 	

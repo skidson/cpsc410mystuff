@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +15,17 @@ import ca.ubc.cpsc.mystuff.model.SearchService;
 import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserLibrary;
 import ca.ubc.cpsc.mystuff.model.UserLibraryService;
+import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 @RequestMapping("/search")
 public class SearchController {
 	private SearchService searchService = new SearchService();
+	private UserService userService = new UserService();
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm() {
+		User currentUser = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 		return "search";
 	}
 

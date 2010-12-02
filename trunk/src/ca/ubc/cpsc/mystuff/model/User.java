@@ -43,15 +43,20 @@ public class User {
 		this.friends = friends;
 	}
 	
-	public void addFriend(long friendID){
+	public boolean addFriend(long friendID){
+		for (long id : friends) {
+			if (friendID == id)
+				return false;
+		}
 		this.friends.add(friendID);
+		return true;
 	}
 	
 	public List<Long> getFriends(){ 
 		return this.friends;
 	}
 	
-	public void setInbow(List<Long> friends){ 
+	public void setInbox(List<Long> friends){ 
 		this.friends = friends;
 	}
 	
