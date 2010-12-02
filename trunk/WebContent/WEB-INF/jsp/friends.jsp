@@ -35,10 +35,8 @@
 					<table>
 					<tr>
 						<td>${friend.firstName}   ${friend.lastName }</td>
-						<td>${friend.userID}</td>
 						<tr> <td> <a href="profile.htm?userID=${friend.userID}">View Profile</a> </td></tr>
 						<tr> <td> <a href="composeMessage.htm?username=${friend.username}"}>Send Message</a> </td></tr>
-						<tr> <td> <a href="userLibrary.htm">View library</a> </td></tr>
 					</tr>
 					</table>
 				</c:forEach>

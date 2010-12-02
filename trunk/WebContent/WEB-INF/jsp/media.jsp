@@ -39,6 +39,7 @@
 					<a href="removeMedia.htm?itemID=${movie.itemID}"><button>Remove from Library</button></a>
 					</p>
 				</c:forEach>
+
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

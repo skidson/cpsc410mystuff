@@ -41,9 +41,18 @@
 					</p>
 				</c:forEach>
 				</c:if>
+				
 				<c:if test="${useResult == 1}" >
+				<c:forEach items="${resultsList}" var="song">
+					<h2><a href="${song.URL}"> ${song.title} </a> </h2>
+					<table><tr><td width="100px"><img src="${song.picture}" width="95%" height="10%"></td><td>${song.artist}</td></tr></table>
+					<br />
+				</c:forEach>
+				
+				</c:if>
+				<c:if test="${useResult == 2}" >
 				<c:forEach items="${resultsList}" var="searchUser">
-					<h2><a href="profile.htm?userID=${user.userID}"> ${searchUser.firstName} ${searchUser.lastName } </a>
+					<h2><a href="profile.htm?userID=${searchUser.userID}"> ${searchUser.firstName} ${searchUser.lastName } </a>
 					<div style="float:right"><a href="requestFriend.htm?recipient=${searchUser.userID}"><button>Send Friend Request</button></a></div></h2>
 				</c:forEach>
 				</c:if>
