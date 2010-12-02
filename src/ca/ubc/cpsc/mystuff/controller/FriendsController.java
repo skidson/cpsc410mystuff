@@ -38,20 +38,21 @@ public class FriendsController {
 
 	@RequestMapping("/requestFriend")
 	public String sendFriendRequest(@RequestParam("recipient") long recipientID) {
+		long messageID = messageService.generateMessageID();
 		User currentUser = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 		String text = "You've received a friend request from " + currentUser.getUsername() +
 			"(" + currentUser.getFirstName() + " " + currentUser.getLastName() + 
-			"! Click <a href='acceptFriend.htm?userID=" + currentUser.getUserID() + "'>here</a> to accept.";
+			"! Click <a href='acceptFriend.htm?userID=" + currentUser.getUserID() + "?messageID=" + messageID + "'>here</a> to accept.";
 		String subject = "Friend request from " + currentUser.getUsername();
 		Message friendRequest = new Message(text, recipientID, currentUser.getUserID(),
-				messageService.generateMessageID(), currentUser.getUsername(), subject, 
+				messageID, currentUser.getUsername(), subject, 
 				System.currentTimeMillis(), 0);
 		messageService.saveMessage(friendRequest);
 		return "redirect:/friends.htm";
 	}
 	
 	@RequestMapping("/acceptFriend")
-	public String acceptFriendRequest(@RequestParam("userID") Long otherUserID) {
+	public String acceptFriendRequest(@RequestParam("userID") Long otherUserID, @RequestParam("messageID") Long messageID) {
 		User currentUser = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 		User otherUser = userService.getUser(otherUserID);
 		if (currentUser.addFriend(otherUser.getUserID()))
@@ -59,6 +60,8 @@ public class FriendsController {
 			
 		if (otherUser.addFriend(currentUser.getUserID()))
 			userService.saveUser(otherUser);
+		
+		messageService.deleteMessage(messageID);
 		
 		return "redirect:/mailbox.htm";
 	}

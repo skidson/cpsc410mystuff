@@ -8,6 +8,8 @@ public class Event {
 	private String description;
 	private int eventID;
 	
+	public Event(){}
+	
 	public Event(long userID, String name, String username, String description) {
 		this.userID = userID;
 		this.name = name;
