@@ -6,13 +6,14 @@ import java.util.List;
 public class Comment {
 	private String text;
 	private long authorID;
-	private List<Integer> threads;
-	private List commentID;
+	private List<Long> threads;
+	private Long commentID;
 	
 	public Comment(){}
 	
-	public Comment(String text, long authorID, List<Integer> threads,
-			List commentID) {
+	public Comment(String text, long authorID, List<Long> threads,
+			Long commentID) {
+		super();
 		this.text = text;
 		this.authorID = authorID;
 		this.threads = threads;
@@ -31,19 +32,18 @@ public class Comment {
 	public void setAuthorID(long authorID) {
 		this.authorID = authorID;
 	}
-	public List<Integer> getThreads() {
+	public List<Long> getThreads() {
 		return threads;
 	}
-	public void setThreads(List<Integer> threads) {
+	public void setThreads(List<Long> threads) {
 		this.threads = threads;
 	}
-	public List getCommentID() {
+	public Long getCommentID() {
 		return commentID;
 	}
-	public void setCommentID(List commentID) {
+	public void setCommentID(Long commentID) {
 		this.commentID = commentID;
 	}
-	
 	
 	
 }

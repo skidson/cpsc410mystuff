@@ -8,12 +8,12 @@
 		<id name="commentID" column="commentID">
 			<generator class="assigned"/>
 		</id>
-		<property name="author" column="author"/>
+		<property name="authorID" column="authorID"/>
 		<property name="text" column="text"/>
 		<list name="threads" table="comment_thread">
 			<key column="commentID"/>
 			<list-index column="index"/>
-			<element type="integer" column="commentID" not-null="true"/>
+			<element type="bigint" column="commentID" not-null="true"/>
 		</list>	
    </class>
 </hibernate-mapping>
