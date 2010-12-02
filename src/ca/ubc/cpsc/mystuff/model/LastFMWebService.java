@@ -56,29 +56,37 @@ public class LastFMWebService {
 	}
 	
 	public static Song parseString(Scanner scanner, String results) throws MalformedURLException, IOException {
-		String name;
-		String artist;
-		String url;
-		String medPicture;
-		String songID;
+		String name = null;
+		String artist = null;
+		String url = null;
+		String songID = null;
+		String picture = null;
 	    String newLine = scanner.nextLine();
-	    Song tempSong = new Song("urmom", "urothermom", 111, 111, 101, "urmomfriendsmom", "urmomsmom");
+	    Song tempSong = new Song("urmom", "urothermom", 111, 111, 101, "urmomfriendsmom", "urmomsmom", "urmommom");
 	    	newLine = newLine.trim();
 
 	        if (newLine.equals("<track>")) {
 
 	        	newLine = scanner.nextLine().trim();
-
 		        name = newLine.substring(6,newLine.length()-7); //name
 		    	newLine = scanner.nextLine().trim();
-
 		    	artist = newLine.substring(8,newLine.length()-9); //Artist
 		    	newLine = scanner.nextLine().trim();
-		    	
 		    	url = newLine.substring(5,newLine.length()-6); //url
-		    	
 		    	songID = getID(name, artist); // songID
 		    	
+		    	//go down to pictures
+		    	newLine = scanner.nextLine().trim();
+		    	newLine = scanner.nextLine().trim();
+		    	newLine = scanner.nextLine().trim();
+		    	newLine = scanner.nextLine().trim();
+		    	newLine = newLine.replace(" ", "+");
+		    	if (newLine.length() > 20){
+		    	if (newLine.substring(0,21).equals("<image+size=\"medium\">")){
+		    		picture = newLine.substring(21, newLine.length()-8);
+		    		tempSong.setPicture(picture);
+		    		System.out.println(picture);
+		    	}}
 		    	tempSong.setSongID(songID);
 		    	tempSong.setTitle(name);
 		    	tempSong.setURL(url);
