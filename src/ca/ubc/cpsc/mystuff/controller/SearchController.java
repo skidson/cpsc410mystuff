@@ -38,20 +38,8 @@ public class SearchController {
 			model.addAttribute("useResult", useResult);
 		}else if(option.equals("users")){
 			useResult = 1;
-			List<User> resultList = searchService.doUserSearch(search);
-			List<Movie> movies = new ArrayList<Movie>();
-			for(User user : resultList){
-				UserLibrary ul = UserLibraryService.getUserLibrary(user.getUsername());
-				List<Integer> moviesID = ul.getMovies();
-				try {
-					movies.add(MovieDBWebService.getMovieByID(moviesID.get(random.nextInt(moviesID.size()))));
-					} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			model.addAttribute("movies", movies);
-			model.addAttribute("resultList", resultList);
+			List<User> resultsList = searchService.doUserSearch(search);
+			model.addAttribute("resultsList", resultsList);
 			model.addAttribute("useResult", useResult);
 		}
 			

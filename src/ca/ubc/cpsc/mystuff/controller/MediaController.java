@@ -65,4 +65,9 @@ public class MediaController {
 		return "redirect:/media.htm";
 	}
 	
+	@RequestMapping("/addComment")
+	public String addComment(@RequestParam("itemID") String itemID){
+		
+	}
+	
 }

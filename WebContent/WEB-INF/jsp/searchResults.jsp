@@ -30,26 +30,22 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h4>Search</h4> <br />
-				<table><tr><form method="POST" action="search.htm">
-					<center><input type="text" size="40" name="searchQuery" />
-					<select name="dropdown_media" size="1">
-						<option value="movies">Movies</option>
-						<option value="songs">Songs</option>
-						<option value="users">Users</option>
-					</select>
-					<input class="button" value=" Search " type="submit" /></center>
-				</form></tr></table>
-				
-				<c:forEach items="${resultsList}" var="user">
-					<h2><a href="profile.htm?userID=${user.userID}"> ${user.firstname} ${user.lastname } </a><div style="float:right"></div></h2>
-					<table><tr><td><a href="viewMedia.html?itemID=${movie.itemID}"> ${movie.title}</a>
-					<tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
+				<h3> Search Results</h3>
+				<c:if test="${useResult == 0}" >
+				<c:forEach items="${resultsList}" var="movie">
+					<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
+					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
 					<p class="post-footer align-right">					
 					<a href="#" class="readmore">Information</a>
+					<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
 					</p>
 				</c:forEach>
-				
+				</c:if>
+				<c:if test="${useResult == 1}" >
+				<c:forEach items="${resultsList}" var="user">
+					<h2><a href="profile.htm?userID=${user.userID}"> ${user.firstName} ${user.lastName } </a><div style="float:right"><a href="">Send Friend Request</a></div></h2>
+				</c:forEach>
+				</c:if>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->
