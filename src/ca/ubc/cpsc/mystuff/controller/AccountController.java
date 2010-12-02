@@ -12,9 +12,10 @@ import ca.ubc.cpsc.mystuff.model.UserLibrary;
 @Controller
 public class AccountController {
 	private UserService userService = new UserService();
-	
+
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
 	public String showAccount() {
+
 		return "account";
 	}
 
@@ -22,7 +23,7 @@ public class AccountController {
 	public String editAccount(Model model) {
 		return "account";
 	}
-	
+
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String showForm() {
 		return "register";
@@ -37,22 +38,22 @@ public class AccountController {
 			@RequestParam("in_username") String username,
 			@RequestParam("in_password") String password) {
 		// TODO verify valid information
-		
+
 		/* Generate these IDs here to ensure bean does not contain a service or business logic */
 		long userID = userService.generateUserID();
 		UserLibrary ul = new UserLibrary(userID);
-		
-		
+
+
 		User user = new User("ROLE_USER", firstName, lastName, email, country, username, password, userID);
 		userService.saveUser(user);
 		UserLibraryService.saveUserLibrary(ul);
 		return "registerSuccess";
 	}
-	
+
 	@RequestMapping("/registerSuccess")
 	public String success() {
 		return("registerSuccess");
 	}
-		
-	
+
+
 }

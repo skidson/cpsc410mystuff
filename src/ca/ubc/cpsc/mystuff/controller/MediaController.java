@@ -38,7 +38,7 @@ public class MediaController {
 		UserLibrary ul = UserLibraryService.getUserLibrary(SecurityContextHolder.getContext().getAuthentication().getName());
 		ul.addMovieToLibrary(Integer.parseInt(itemID));
 		UserLibraryService.saveUserLibrary(ul);
-		return "media";
+		return "redirect:/media.htm";
 	}
 	
 	@RequestMapping(value = "/viewMedia")
