@@ -3,8 +3,8 @@ package ca.ubc.cpsc.mystuff.model;
 public class Message {
 	private int messageID;
 	private String text;
-	private int recipientID;
-	private int senderID;
+	private long recipientID;
+	private long senderID;
 	private String senderName;
 	private String subject;
 	private long date;
@@ -21,7 +21,7 @@ public class Message {
 	 * @param date
 	 * @param status
 	 */
-	public Message(String text, int recipientID, int senderID, int messageID,
+	public Message(String text, long recipientID, long senderID, int messageID,
 			String senderName, String subject, long date, int status) {
 		super();
 		this.text = text;
@@ -77,19 +77,19 @@ public class Message {
 		return (this.text);
 	}
 
-	public int getRecipientID() {
+	public long getRecipientID() {
 		return recipientID;
 	}
 
-	public void setRecipientID(int recipientID) {
+	public void setRecipientID(long recipientID) {
 		this.recipientID = recipientID;
 	}
 
-	public int getSenderID() {
+	public long getSenderID() {
 		return senderID;
 	}
 
-	public void setSenderID(int senderID) {
+	public void setSenderID(long senderID) {
 		this.senderID = senderID;
 	}
 
