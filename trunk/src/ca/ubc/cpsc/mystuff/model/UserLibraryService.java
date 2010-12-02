@@ -6,14 +6,14 @@ import java.util.*;
 public class UserLibraryService {
 	
 	public static void saveUserLibrary(UserLibrary ul){ 
-	Session session = HibernateUtil.getSessionFactory().openSession();
-	   Transaction tx = session.beginTransaction();
-	   session.saveOrUpdate(ul);
-	 
-	   tx.commit();
-	   session.close();
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.saveOrUpdate(ul);
+
+		tx.commit();
+		session.close();
 	}
-	
+
 	public static UserLibrary getUserLibrary(String username){ 
 	Session session = HibernateUtil.getSessionFactory().openSession();
 	   Transaction tx = session.beginTransaction();
