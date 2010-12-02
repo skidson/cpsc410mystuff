@@ -30,6 +30,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
+				<h2>Home</h2>
 				Welcome ${user.username}!
 				<h3>News Feed</h3> <br />
 			</div> <!-- main -->

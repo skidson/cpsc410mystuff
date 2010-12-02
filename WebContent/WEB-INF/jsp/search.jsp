@@ -26,7 +26,7 @@
 		<div id="content-wrap">
 		
 			<div id="main">
-				<h3>Search</h3> <br />
+				<h2>Search</h2> <br />
 				<table><tr><form method="POST" action="search.htm">
 					<center><input type="text" size="40" name="searchQuery" />
 					<select name="dropdown_media" size="1">

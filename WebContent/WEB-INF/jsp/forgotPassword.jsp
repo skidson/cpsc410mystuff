@@ -30,7 +30,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h3>Media</h3> <br />
+				<h3>Recover Password</h3> <br />
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

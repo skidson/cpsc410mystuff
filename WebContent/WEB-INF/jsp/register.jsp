@@ -27,7 +27,7 @@
 		<div id="content-wrap">
 				
 			<div id="main">
-				<h3>Register</h3>
+				<h2>Register</h2>
 				<table><form method="POST" action="register.htm">
 					<tr><td>First name: <font color="red">*</font></td><td><input type="text" size="30" name="in_firstName" /></td></tr>
 					<tr><td>Last name: <font color="red">*</font></td><td><input type="text" size="30" name="in_lastName" /></td></tr>

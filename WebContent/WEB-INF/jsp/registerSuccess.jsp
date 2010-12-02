@@ -27,11 +27,11 @@
 		<div id="content-wrap">
 		
 			<div id="main">
-				<h3>Register</h3> <br />
-				<center>
-					<font color="green">Registration successful!</font>
-					<a href="login.jsp">Proceed to login</a>
-				</center>
+				<h2>Register</h2><br />
+				<center><table>
+					<h1><font color="green">Registration successful!</font></h1><br />
+					<a href="login.jsp"><button>Proceed to login</button></a>
+				</table></center>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->
