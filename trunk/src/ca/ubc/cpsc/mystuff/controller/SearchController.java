@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import ca.ubc.cpsc.mystuff.model.Movie;
 import ca.ubc.cpsc.mystuff.model.MovieDBWebService;
 import ca.ubc.cpsc.mystuff.model.SearchService;
+import ca.ubc.cpsc.mystuff.model.Song;
 import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserLibrary;
 import ca.ubc.cpsc.mystuff.model.UserLibraryService;
@@ -39,8 +40,13 @@ public class SearchController {
 			useResult = 0;
 			model.addAttribute("resultsList", resultList);
 			model.addAttribute("useResult", useResult);
-		}else if(option.equals("users")){
+		}else if(option.equals("songs")){
 			useResult = 1;
+			List<Song> resultsList = searchService.songSearch(search);
+			model.addAttribute("resultsList", resultsList);
+			model.addAttribute("useResult", useResult);
+		}else if(option.equals("users")){
+			useResult = 2;
 			List<User> resultsList = searchService.doUserSearch(search);
 			model.addAttribute("resultsList", resultsList);
 			model.addAttribute("useResult", useResult);
