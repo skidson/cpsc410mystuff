@@ -24,7 +24,7 @@ import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 public class MediaController {
-	private static String ADD_MEDIA_MESSAGE = "{userFirstName} added {mediaName} to their library";
+	private static String ADD_MEDIA_MESSAGE = "<a href='{URL}' class='readmore'></a> {userFirstName} added {mediaName} to their library";
 	UserService userService = new UserService();
 	
 	@RequestMapping(value = "/media", method = RequestMethod.GET)
@@ -58,7 +58,7 @@ public class MediaController {
 		Movie addedMovie;
 		try {
 			addedMovie = MovieDBWebService.getMovieByID(Integer.parseInt(itemID));
-			Event event = new Event(currentUser.getUserID(), currentUser.getFirstName(), currentUser.getUsername(), ADD_MEDIA_MESSAGE.replace("{userFirstName}", currentUser.getFirstName()).replace("{mediaName}", addedMovie.getTitle()));
+			Event event = new Event(currentUser.getUserID(), currentUser.getFirstName(), currentUser.getUsername(), ADD_MEDIA_MESSAGE.replace("{userFirstName}", currentUser.getFirstName()).replace("{mediaName}", addedMovie.getTitle()).replace("{URL}", ("profile.htm?userID=" + currentUser.getUserID())));
 			EventService.saveEvent(event);
 		} catch (NumberFormatException e) {
 
