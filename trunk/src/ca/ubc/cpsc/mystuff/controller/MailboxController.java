@@ -38,17 +38,12 @@ public class MailboxController {
 	}
 	
 	@RequestMapping(value = "/replyMessage", method = RequestMethod.GET)
-	public String showReplyForm(@RequestParam("messageID") int messageID, Model model){
-		Message replyMessage = messageService.getReplyMessage(messageID);
-		model.addAttribute("message", replyMessage);
-		return "replyMessage";
-	}
-	
-	@RequestMapping(value = "/replyMessage", method = RequestMethod.POST)
-	public String sendReply(@ModelAttribute("message") Message message) {
-		// TODO verify message
-		messageService.saveMessage(message);
-		return("redirect:/mailbox.htm");
+	public String showReplyForm(@RequestParam("messageID") long messageID, Model model){
+		Message reply = messageService.getReplyMessage(messageID);
+		String replyName = messageService.getMessage(messageID).getSenderName();
+		model.addAttribute("reply", reply);
+		model.addAttribute("replyName", replyName);
+		return "composeMessage";
 	}
 	
 	@RequestMapping(value = "/composeMessage")
