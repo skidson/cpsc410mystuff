@@ -31,7 +31,6 @@
 				
 			<div id="main">
 				<h4>Home</h4>
-				Welcome ${user.username}!
 				<h3>News Feed</h3> <br />
 			</div> <!-- main -->
 		
