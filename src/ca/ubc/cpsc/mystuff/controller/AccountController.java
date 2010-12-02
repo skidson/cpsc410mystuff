@@ -35,18 +35,17 @@ public class AccountController {
 			@RequestParam("in_password") String password,
 			@RequestParam("in_confirmPassword")String confirm) {
 		// verify valid information
-		boolean synName, synPass, synCountry, synEmail, synFName, synLName, synConfirm = true;
+		boolean synName, synPass, synCountry, synFName, synLName, synConfirm = true;
 		synName = isdigornum(username);
 		synConfirm = isdigornum(confirm);
 		synPass = isdigornum(password);
 		synCountry = isdigornum(country);
-		synEmail = isdigornum(email);
 		synFName = isdigornum(firstName);
 		synLName = isdigornum(lastName);
 		if(!(confirm == password)){
 			return "redirect:/registerFailure.htm";
 		}
-		if (!(synName && synPass && synCountry && synEmail && synFName && synLName && synConfirm)){
+		if (!(synName && synPass && synCountry && synFName && synLName && synConfirm)){
 			return "redirect:/registerFailure.htm";
 		}
 		
