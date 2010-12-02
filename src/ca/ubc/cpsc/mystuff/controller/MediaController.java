@@ -25,7 +25,22 @@ public class MediaController {
 		UserLibrary ul = UserLibraryService.getUserLibrary(SecurityContextHolder.getContext().getAuthentication().getName());
 		ul.addMovieToLibrary(Integer.parseInt(itemID));
 		UserLibraryService.saveUserLibrary(ul);
-		return "Movie has been added to library";
+		return "media";
 	}
 	
+	@RequestMapping(value = "/viewMedia")
+	public String viewMedia(@RequestParam("itemID") String itemID, Model model){
+		Movie movie = null;
+		try {
+			movie = MovieDBWebService.getMovieByID(Integer.parseInt(itemID));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute(movie);
+		return "itemPage";
+	}
 }
