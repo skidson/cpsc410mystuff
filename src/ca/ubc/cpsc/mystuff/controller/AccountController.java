@@ -43,7 +43,7 @@ public class AccountController {
 		UserLibrary ul = new UserLibrary(userID);
 		
 		
-		User user = new User("ROLE_USER", firstName, lastName, email, country, username, password, 0, userID);
+		User user = new User("ROLE_USER", firstName, lastName, email, country, username, password, userID);
 		userService.saveUser(user);
 		UserLibraryService.saveUserLibrary(ul);
 		return "registerSuccess";
