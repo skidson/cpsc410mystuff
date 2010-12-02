@@ -31,6 +31,8 @@ public class UserService {
 	    return user;
 	}
 	
+//	public List<Event>
+	
 	public List<User> getUsersByFirstName(String firstname){ 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    Transaction tx = session.beginTransaction();
