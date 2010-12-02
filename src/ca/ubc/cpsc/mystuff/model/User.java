@@ -12,9 +12,9 @@ public class User {
 	private String username;
 	private String password;
 	private String email;
-	private int mailboxID;
 	private long userID;
 	private List<Long> friends = new ArrayList<Long>();
+	private List<Integer> inbox = new ArrayList<Integer>();
 	
 	public User(){}
 	
@@ -25,7 +25,6 @@ public class User {
 			String country, 
 			String username,
 			String password,
-			int mailboxID,
 			long userID){
 		this.authority = authority;
 		this.rating = 0;
@@ -34,8 +33,7 @@ public class User {
 		this.email = email;
 		this.country = country;
 		this.username = username; 
-		this.password = password; 
-		this.mailboxID = mailboxID; 
+		this.password = password;
 		this.userID = userID;
 		this.friends = new ArrayList<Long>();
 	}
@@ -53,6 +51,17 @@ public class User {
 		return this.friends;
 	}
 	
+	public void setInbow(List<Long> friends){ 
+		this.friends = friends;
+	}
+	
+	public void addMessage(int messageID){
+		this.inbox.add(messageID);
+	}
+	
+	public List<Integer> getMessages(){ 
+		return this.inbox;
+	}
 	public String getauthority() {
 		return authority;
 	}
@@ -95,12 +104,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getMailboxID() {
-		return mailboxID;
-	}
-	public void setMailboxID(int mailboxID) {
-		this.mailboxID = mailboxID;
-	}
+
 	public long getUserID() {
 		return userID;
 	}

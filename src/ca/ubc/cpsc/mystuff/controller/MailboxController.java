@@ -30,10 +30,16 @@ public class MailboxController {
 		return "mailbox";
 	}
 	
-	@RequestMapping(value = "/deleteMessage")
+	@RequestMapping("/deleteMessage")
 	public String deleteMessage(@RequestParam("messageID") String messageID) {
 		messageService.deleteMessage(Integer.parseInt(messageID));
 		return("redirect:/mailbox.htm");
+	}
+	
+	@RequestMapping("/replyMessage")
+	public String replyToMessage(@RequestParam("messageID") int messageID){
+		
+		return "messagereply";
 	}
 	
 }

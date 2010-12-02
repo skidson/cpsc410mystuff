@@ -3,7 +3,7 @@
 
 <head>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
-<title>MyStuff - Media</title>
+<title>MyStuff - Mailbox</title>
 </head>
 
 <body>
@@ -16,10 +16,10 @@
 		<div  id="menu">
 			<ul>
 				<li><a href="home.htm">Home</a></li>
-				<li id="current"><a href="media.htm">Media</a></li>
+				<li><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
-				<li><a href="mailbox.htm">Mailbox</a></li>
-				<li><a href="account.htm">Account</a></li>	
+				<li id="mailbox"><a href="mailbox.htm">Mailbox</a></li>
+				<li><a href="account.htm">Account</a></li>
 			</ul>
 		</div>		
 		
@@ -27,18 +27,14 @@
 		
 			<div id="sidebar">
 				<%@ include file="/WEB-INF/jsp/sidebar.jsp" %>
-			</div> <!-- sidebar -->		
+			</div> <!-- sidebar -->
 				
 			<div id="main">
-				<h4>Media</h4> <br />
-					<c:forEach items="${results}" var="movie">
-					<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
-					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
-					<p class="post-footer align-right">					
-					<a href="#" class="readmore">Information</a>
-					<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
-					</p>
-				</c:forEach>
+				<h2>Mailbox</h2> <br />
+					<p class="post-footer"><a href="#" class="readmore"></a>${message.subject}${message.senderName}
+						<a href="replyMessage.htm?messageID=${message.messageID}"><button>Reply</button></a>
+						<a href="deleteMessage.htm?messageID=${message.messageID}"><button>Delete</button></a>
+					</p>	
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->
