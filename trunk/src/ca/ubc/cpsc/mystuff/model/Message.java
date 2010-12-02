@@ -1,7 +1,7 @@
 package ca.ubc.cpsc.mystuff.model;
 
 public class Message {
-	private int messageID;
+	private long messageID;
 	private String text;
 	private long recipientID;
 	private long senderID;
@@ -21,7 +21,7 @@ public class Message {
 	 * @param date
 	 * @param status
 	 */
-	public Message(String text, long recipientID, long senderID, int messageID,
+	public Message(String text, long recipientID, long senderID, long messageID,
 			String senderName, String subject, long date, int status) {
 		super();
 		this.text = text;
@@ -61,11 +61,11 @@ public class Message {
 	public Message(){
 	}
 	
-	public int getMessageID() {
+	public long getMessageID() {
 		return messageID;
 	}
 
-	public void setMessageID(int messageID) {
+	public void setMessageID(long messageID) {
 		this.messageID = messageID;
 	}
 	
