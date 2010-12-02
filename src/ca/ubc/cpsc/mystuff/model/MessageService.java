@@ -29,7 +29,12 @@ public class MessageService {
 	}
 	
 	public void saveMessage(Message message) {
-		// TODO hibernate stuff here
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		   Transaction tx = session.beginTransaction();
+		   session.saveOrUpdate(message);
+		 
+		   tx.commit();
+		   session.close();
 	}
 	
 	public Message getMessage(int messageID){
@@ -49,8 +54,8 @@ public class MessageService {
 		return reply;
 	}
 	
-	public int generateMessageID(){ 
+	public long generateMessageID(){ 
 		//TODO: implement generator
-		return 123;
+		return System.currentTimeMillis();
 	}
 }
