@@ -33,7 +33,18 @@ public class AccountController {
 			@RequestParam("in_country") String country,
 			@RequestParam("in_username") String username,
 			@RequestParam("in_password") String password) {
-		// TODO verify valid information
+		// verify valid information
+		boolean synName, synPass, synCountry, synEmail, synFName, synLName, valid = true;
+		synName = isdigornum(username);
+		synPass = isdigornum(password);
+		synCountry = isdigornum(country);
+		synEmail = isdigornum(email);
+		synFName = isdigornum(firstName);
+		synLName = isdigornum(lastName);
+		
+		if (!(synName && synPass && synCountry && synEmail && synFName && synLName)){
+			return "redirect:/register.htm?error=true";
+		}
 		
 		/* Generate these IDs here to ensure bean does not contain a service or business logic */
 		long userID = userService.generateUserID();
@@ -41,10 +52,14 @@ public class AccountController {
 		
 		
 		User user = new User("ROLE_USER", firstName, lastName, email, country, username, password, userID);
+		
+		
 		userService.saveUser(user);
 		UserLibraryService.saveUserLibrary(ul);
 		return "registerSuccess";
-	}
+
+
+		}
 	
 	@RequestMapping("/registerSuccess")
 	public String success() {
@@ -59,5 +74,17 @@ public class AccountController {
 		return("redirect:/account.htm");
 	}
 		
-	
+	public static boolean isdigornum(String a){
+		char[] characters = a.toCharArray();
+		for (int i = 0; i< characters.length; i++){
+			if (Character.isLetterOrDigit(characters[i]))
+			{
+			return false;
+			}
+		}
+		if (a.equals("")) {
+			return false;
+		}
+		return true;
+}
 }
