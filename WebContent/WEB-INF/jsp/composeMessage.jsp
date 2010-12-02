@@ -30,22 +30,15 @@
 			</div> <!-- sidebar -->
 				
 			<div id="main">
-				<h4>Mailbox</h4> <br />
-				<a href="composeMessage.htm"><button> Compose Message </button></a>
-				<table>
-				<c:forEach items="${messageList}" var="message">
-					<p class="post-footer"><a href="replyMessage.htm?messageID=${message.messageID}" class="readmore">${message.subject}</a>
-						<span style="float:right"><b>${message.senderName}</b></span>
-					</p>
-						<span style="float:right">
-							<a href="replyMessage.htm?messageID=${message.messageID}"><button>Reply</button></a>
-							<a href="deleteMessage.htm?messageID=${message.messageID}"><button>Delete</button></a>
-						</span>
-						<div style="padding-left:50px"><font color="#808080"><i>
-							${message.text}
-						</i></font></div>
-				</c:forEach>
-				</table>
+				<h4>Compose Message</h4>
+				<form method="POST" action="sendMessage.htm">
+					<table>
+						<tr><td>To: </td><td><input type="text" size="60" name="in_recipient"></td></tr>
+						<tr><td>Subject: </td><td><input type="text" size="60" name="in_subject"></td></tr>
+						<tr><td colspan="2"><textarea name="in_text" rows="5" cols="60"></textarea></td></tr>
+						<tr><td colspan="2"><center><input class="button" value="       Send       " type="submit" /></center></td></tr>
+					</table>
+				</form>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

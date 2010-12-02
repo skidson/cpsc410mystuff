@@ -67,6 +67,7 @@ ul, ol {
 
 textarea {
 	resize: none;
+	cols: 70;
 }
 
 code {
