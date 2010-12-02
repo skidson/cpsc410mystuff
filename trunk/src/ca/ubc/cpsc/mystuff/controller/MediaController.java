@@ -48,8 +48,10 @@ public class MediaController {
 	@RequestMapping(value = "/viewMedia")
 	public String viewMedia(@RequestParam("itemID") String itemID, Model model){
 		Movie movie = null;
+		List<Comment> comments = null;
 		try {
 			movie = MovieDBWebService.getMovieByID(Integer.parseInt(itemID));
+			comments = CommentService.getCommentsForMovie(movie.getItemID());
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -57,7 +59,8 @@ public class MediaController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		model.addAttribute(movie);
+		model.addAttribute("comments", comments);
+		model.addAttribute("movie", movie);
 		return "itemPage";
 	}
 	
@@ -72,8 +75,6 @@ public class MediaController {
 	@RequestMapping("/addComment")
 	public String addComment(@RequestParam("itemID") String itemID, Model model) {
 		Movie movie = null;
-		String username = SecurityContextHolder.getContext().getAuthentication().getName();
-		User user = UserService.getUser(username);
 		try {
 			movie = MovieDBWebService.getMovieByID((Integer.parseInt(itemID)));
 			
@@ -84,18 +85,19 @@ public class MediaController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
-		model.addAttribute("user", user);
 		model.addAttribute("movie", movie);
 		return "addComment";
 	}
 	
 	@RequestMapping("/submitComment")
-	public String submitComment(@RequestParam("itemID") String itemID, @RequestParam("userID") long userID, @RequestParam("in_text") String text, Model model){
+	public String submitComment(@RequestParam("itemID") String itemID, @RequestParam("in_text") String text, Model model){
 		Comment c;
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = UserService.getUser(username);
 		String commentstuff = text;
-		long authorID = userID;
+		long authorID = user.getUserID();
 		long commentID = CommentService.generateCommentID();
-		c = new Comment(commentstuff, authorID, commentID, Long.parseLong(itemID));
+		c = new Comment(commentstuff, authorID, Long.parseLong(itemID), commentID);
 		CommentService.saveComment(c);
 		
 		return "redirect:/media.htm";

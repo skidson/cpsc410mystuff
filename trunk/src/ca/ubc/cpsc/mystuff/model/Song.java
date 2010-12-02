@@ -64,9 +64,9 @@ public class Song{
 		return title;
 	}
 
-//	public String getGenre() {
-//		return genre;
-//	}
+	public String getGenre() {
+		return genre;
+	}
 
 	public int getDuration() {
 		return duration;
@@ -91,10 +91,10 @@ public class Song{
 
 	}
 
-//	public void setGenre(String genre) {
-//		this.genre = genre;
+	public void setGenre(String genre) {
+		this.genre = genre;
 
-//	}
+	}
 
 	public void delete() {
 		this.delete();
