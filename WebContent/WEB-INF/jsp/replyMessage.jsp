@@ -30,21 +30,20 @@
 			</div> <!-- sidebar -->
 				
 			<div id="main">
-				<h4>Mailbox</h4> <br />
-				<table>
-				<c:forEach items="${messageList}" var="message">
-					<p class="post-footer"><a href="#" class="readmore">${message.subject}</a>
-						<span style="float:right"><b>${message.senderName}</b></span>
-					</p>
-						<span style="float:right">
-						<a href="replyMessage.htm?messageID=${message.messageID}"><button>Reply</button></a>
-						<a href="deleteMessage.htm?messageID=${message.messageID}"><button>Delete</button></a>
-						</span>
-						<div style="padding-left:50px"><font color="#808080"><i>
-							${message.text}
-						</i></font></div>
-				</c:forEach>
-				</table>
+				<h4>Reply</h4> <br />
+				<p class="post-footer"><a href="#" class="readmore">${message.subject}</a>
+					<span style="float:right"><b>${message.senderName}</b></span>
+				</p>
+				<span style="float:right">
+					<a href="deleteMessage.htm?messageID=${message.messageID}"></a><button>Delete</button>
+				</span>
+				<div style="padding-left:30px"><font color="#808080"><i>
+					${message.text}
+				</i></font></div>
+				<form method="POST" action="sendMessage">
+					<input type="text" size="80" name="in_subject" />
+					<textarea ></textarea>
+				</form>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->

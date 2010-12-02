@@ -35,7 +35,7 @@ public class UserService {
 	    User user = (User) session.createQuery(
                 "from User" + " where userID = ?").setLong(0,
                 userID).uniqueResult();
-	    ArrayList<Long> L = new ArrayList( user.getFriends());
+	    ArrayList<Long> L = new ArrayList(user.getFriends());
 	    user.setFriends(L);
 	    
 //	    User user = (User) session.get(User.class, userID);
@@ -46,8 +46,6 @@ public class UserService {
 	    
 	    return user;
 	}
-	
-	
 	
 	public void delete() {
 		// TODO hibernate stuff here

@@ -33,12 +33,12 @@
 				<h4>Mailbox</h4> <br />
 				<table>
 				<c:forEach items="${messageList}" var="message">
-					<p class="post-footer"><a href="#" class="readmore">${message.subject}</a>
+					<p class="post-footer"><a href="replyMessage.htm?messageID=${message.messageID}" class="readmore">${message.subject}</a>
 						<span style="float:right"><b>${message.senderName}</b></span>
 					</p>
 						<span style="float:right">
-						<a href="replyMessage.htm?messageID=${message.messageID}"><button>Reply</button></a>
-						<a href="deleteMessage.htm?messageID=${message.messageID}"><button>Delete</button></a>
+							<a href="replyMessage.htm?messageID=${message.messageID}"><button>Reply</button></a>
+							<a href="deleteMessage.htm?messageID=${message.messageID}"><button>Delete</button></a>
 						</span>
 						<div style="padding-left:50px"><font color="#808080"><i>
 							${message.text}
