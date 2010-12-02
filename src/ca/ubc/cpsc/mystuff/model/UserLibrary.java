@@ -44,6 +44,20 @@ public class UserLibrary {
 		this.viewerID = viewerID;
 	}
 	
+	
+	
+	public int getItemCount() {
+		return itemCount;
+	}
+
+	public void setItemCount(int itemCount) {
+		this.itemCount = itemCount;
+	}
+
+	public void setMovies(ArrayList<Integer> movies) {
+		this.movies = movies;
+	}
+
 	public int getId() {
 		return id;
 	}

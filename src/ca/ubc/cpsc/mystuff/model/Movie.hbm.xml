@@ -10,9 +10,10 @@
 		</id>
 		<property name="title" column="title"/>
 		<property name="genre" column="genre"/>
-		<property name="duration" column="duration"/>
 		<property name="rating" column="rating"/>
-		<list name="commentID" table="song_comment">
+		<property name="image" column="image"/>
+		<property name="overview" column="overview"/>
+		<list name="commentID" table="movie_commentID">
 			<key column="itemID"/>
 			<list-index column="index"/>
 			<element type="integer" column="commentID" not-null="true"/>

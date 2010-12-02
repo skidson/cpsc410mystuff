@@ -19,6 +19,32 @@ public class Song{
 		this.genre = genre;
 	}
 	
+	
+	
+	public int getSongID() {
+		return songID;
+	}
+
+
+
+	public void setSongID(int songID) {
+		this.songID = songID;
+	}
+
+
+
+	public ArrayList<Integer> getCommentID() {
+		return commentID;
+	}
+
+
+
+	public void setCommentID(ArrayList<Integer> commentID) {
+		this.commentID = commentID;
+	}
+
+
+
 	public String getTitle() {
 		return title;
 	}

@@ -18,9 +18,8 @@ public class SearchService {
 	}
 	
 	public List<Movie> doSearch(String search) {
-		MovieDBWebService s = new MovieDBWebService(search);
 		try {
-			return(s.getMovies());
+			return(MovieDBWebService.getMovies(search));
 		} catch (Exception e) {
 			return null;
 		}

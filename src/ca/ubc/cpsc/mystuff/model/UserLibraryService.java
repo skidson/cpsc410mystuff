@@ -18,7 +18,7 @@ public class UserLibraryService {
 	    Transaction tx = session.beginTransaction();
 
 	    User user = (User) session.createQuery(
-                "from User" + " where userid = ?").setString(0,username).uniqueResult();
+                "from User" + " where username = ?").setString(0,username).uniqueResult();
 	    ArrayList<Integer> L = new ArrayList( user.getFriends());
 	    user.setFriends(L);
 

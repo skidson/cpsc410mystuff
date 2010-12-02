@@ -14,17 +14,51 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 public class MovieDBWebService {
-
-	private static final String CONNECT_URL = "http://api.themoviedb.org/2.1/Movie.search/en/xml/7253e0115550221036e1a4a61facd12b/";
-	private String searchURL = null;
-	private ArrayList<Movie> movieList;
+	private static final String API_KEY = "7253e0115550221036e1a4a61facd12b/";
+	private static final String SEARCH_URL_PREFIX = "http://api.themoviedb.org/2.1/Movie.search/en/xml/" + API_KEY;
+	private static final String MOVIE_INFO_URL_PREFIX = "http://api.themoviedb.org/2.1/Movie.getInfo/en/xml/" + API_KEY;
+	//private String searchURL = null;
+	//private ArrayList<Movie> movieList;
 	
 	public MovieDBWebService(String movieName){
-		searchURL = CONNECT_URL + movieName.replace(' ', '+');
-		movieList = new ArrayList<Movie>();
+//		searchURL = SEARCH_URL_PREFIX + movieName.replace(' ', '+');
+		//movieList = new ArrayList<Movie>();
 	}
 	
-	public ArrayList<Movie> getMovies() throws Exception {
+	public static Movie getMovieByID(int movieID) throws Exception{ 
+		URL url = new URL(MOVIE_INFO_URL_PREFIX+movieID);
+		InputStream input = url.openStream();
+		DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+		Document d = db.parse(input);
+		NodeList list = d.getElementsByTagName("movie");
+		String img;
+	
+			Element e = (Element) list.item(0);
+			NodeList l1 = e.getElementsByTagName("name");
+			NodeList l2 = e.getElementsByTagName("rating");
+			NodeList l3 = e.getElementsByTagName("overview");
+			NodeList l4 = e.getElementsByTagName("id");
+			NodeList l5 = e.getElementsByTagName("images");
+			Element im = (Element) l5.item(0);
+			try{
+				NodeList l6 = im.getElementsByTagName("image");
+				Element one = (Element) l6.item(0);
+				 img = one.getAttribute("url");
+			}catch(NullPointerException e1){
+				img = "";
+			}
+			
+			String name = l1.item(0).getTextContent();
+			int rating = (int) Double.parseDouble(l2.item(0).getTextContent());
+			String overview = l3.item(0).getTextContent();
+			int id = Integer.parseInt(l4.item(0).getTextContent());
+			return new Movie(name, rating, id, overview, img);
+
+	}
+	
+	public static ArrayList<Movie> getMovies(String MovieName) throws Exception {
+		String searchURL = SEARCH_URL_PREFIX + MovieName.replace(' ', '+');
+		ArrayList<Movie> movieList = new ArrayList<Movie>();
 		URL url = new URL(searchURL);
 		InputStream input = url.openStream();
 		DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -56,21 +90,6 @@ public class MovieDBWebService {
 		}
 		return movieList;
 	}
-	
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	private static void checkResponse(InputStream input) throws Exception {
 		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(input);
