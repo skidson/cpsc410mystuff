@@ -23,4 +23,12 @@ public class MessageService {
 	public void deleteMessage(int messageID) {
 		// TODO hibernate stuff here
 	}
+	
+	public void getMessage(int messageID){
+		
+	}
+	
+	public void replyToMessage(Message message){
+		
+	}
 }
