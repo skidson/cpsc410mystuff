@@ -30,7 +30,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h2>Search</h2> <br />
+				<h4>Search</h4> <br />
 				<table><tr><form method="POST" action="search.htm">
 					<center><input type="text" size="40" name="searchQuery" />
 					<select name="dropdown_media" size="1">

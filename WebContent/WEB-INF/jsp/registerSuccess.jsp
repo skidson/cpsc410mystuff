@@ -27,7 +27,7 @@
 		<div id="content-wrap">
 		
 			<div id="main">
-				<h2>Register</h2><br />
+				<h4>Register</h4><br />
 				<center><table>
 					<h1><font color="green">Registration successful!</font></h1><br />
 					<a href="login.jsp"><button>Proceed to login</button></a>
