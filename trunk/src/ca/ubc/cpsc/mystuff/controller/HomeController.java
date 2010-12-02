@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import ca.ubc.cpsc.mystuff.model.Event;
 import ca.ubc.cpsc.mystuff.model.EventService;
+import ca.ubc.cpsc.mystuff.model.Message;
+import ca.ubc.cpsc.mystuff.model.MessageService;
 import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserService;
 
@@ -17,6 +19,7 @@ import ca.ubc.cpsc.mystuff.model.UserService;
 @RequestMapping("/home")
 public class HomeController {
 	UserService userService = new UserService();
+	MessageService messageService = new MessageService();
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadContent(Model model) {
@@ -31,6 +34,18 @@ public class HomeController {
 		ArrayList<Event> eventList = new ArrayList<Event>();
 		for(long friendID : user.getFriends()) {
 			eventList.addAll(EventService.getEventLibrary(friendID));
+		}
+		
+		int newCount = 0;
+		List<Message> mail = messageService.getInbox(user.getUsername());
+		for (Message message : mail) {
+			if (message.getStatus() == 0)
+				newCount++;
+		}
+		
+		if (newCount != 0) {
+			String messageAlert = "You have " + newCount + " new messages in your mailbox!";
+			model.addAttribute("messageAlert", messageAlert);
 		}
 		
 		if(eventList != null)

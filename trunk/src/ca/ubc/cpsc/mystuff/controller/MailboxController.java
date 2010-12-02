@@ -41,6 +41,7 @@ public class MailboxController {
 	public String showReplyForm(@RequestParam("messageID") long messageID, Model model){
 		Message reply = messageService.getReplyMessage(messageID);
 		String replyName = messageService.getMessage(messageID).getSenderName();
+		messageService.getMessage(messageID).setStatus(1);
 		model.addAttribute("reply", reply);
 		model.addAttribute("replyName", replyName);
 		model.addAttribute("user", userService.getCurrentUser());

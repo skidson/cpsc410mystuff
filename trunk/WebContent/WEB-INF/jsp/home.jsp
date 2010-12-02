@@ -31,6 +31,8 @@
 				
 			<div id="main">
 				<h4>Home</h4>
+				<br  />
+				<center><b>${messageAlert}</b></center>
 				<h2>News Feed</h2> 
 				<c:forEach items="${eventList}" var="event">
 					<p class="post-footer"><a href="#" class="readmore"></a>${event.description}</p>

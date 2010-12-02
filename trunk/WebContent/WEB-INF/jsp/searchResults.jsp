@@ -45,7 +45,7 @@
 				<c:if test="${useResult == 1}" >
 				<c:forEach items="${resultsList}" var="song">
 					<h2><a href="${song.URL}"> ${song.title} </a> </h2>
-					<table><tr><td width="100px"><img src="${song.picture}" width="95%" height="10%"></td><td>${song.artist}</td></tr></table>
+					<table><tr><td width="100px"><img src="${song.picture}" width="60%" height="100%"></td><td>${song.artist}</td></tr></table>
 					<br />
 				</c:forEach>
 				
