@@ -18,7 +18,7 @@
 		<list name="friends" table="user_friend">
 			<key column="userID"/>
 			<list-index column="index"/>
-			<element type="integer" column="friend" not-null="true"/>
+			<element type="long" column="friend" not-null="true"/>
 		</list>	
    </class>
 </hibernate-mapping>
