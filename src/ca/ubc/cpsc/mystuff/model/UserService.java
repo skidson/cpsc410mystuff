@@ -64,10 +64,6 @@ public class UserService {
 	    return userID;
 	}
 	
-	public int generateMailboxID() {
-		// TODO hibernate stuff here
-		return 1337;
-	}
 	
 	public long generateUserID() {
 		// TODO: Change way of generating user id
