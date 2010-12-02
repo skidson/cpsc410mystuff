@@ -10,7 +10,6 @@
 		</id>
 		<property name="title" column="title"/>
 		<property name="genre" column="genre"/>
-		<property name="duration" column="duration"/>
 		<property name="rating" column="rating"/> 
 
    </class>
