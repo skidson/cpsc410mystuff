@@ -37,10 +37,10 @@ public class MessageService {
 		   session.close();
 	}
 	
-	public Message getMessage(int messageID){
+	public Message getMessage(long messageID){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
-	    Message message = (Message) session.createQuery("from Message" + " where messageID = ?").setInteger(0,messageID).uniqueResult();
+	    Message message = (Message) session.createQuery("from Message" + " where messageID = ?").setLong(0,messageID).uniqueResult();
 		Message m = new Message(message.getText(), message.getRecipientID(), message.getSenderID(), message.getMessageID() , message.getSenderName(), message.getSubject(), message.getDate(), message.getStatus());
 		tx.commit();
 		session.close();
@@ -48,7 +48,7 @@ public class MessageService {
 		return m;
 	}
 
-	public Message getReplyMessage(int messageID){
+	public Message getReplyMessage(long messageID){
 		Message m = getMessage(messageID);
 		Message reply = new Message("", m.getSenderID(), m.getRecipientID(), generateMessageID(), "", "RE:" + m.getSubject(), System.currentTimeMillis(), 0);
 		return reply;
