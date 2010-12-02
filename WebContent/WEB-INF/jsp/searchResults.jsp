@@ -42,9 +42,9 @@
 				</c:forEach>
 				</c:if>
 				<c:if test="${useResult == 1}" >
-				<c:forEach items="${resultsList}" var="user">
-					<h2><a href="profile.htm?userID=${user.userID}"> ${user.firstName} ${user.lastName } </a>
-					<div style="float:right"><a href="requestFriend.htm?recipient=${user.userID}"><button>Send Friend Request</button></a></div></h2>
+				<c:forEach items="${resultsList}" var="searchUser">
+					<h2><a href="profile.htm?userID=${user.userID}"> ${searchUser.firstName} ${searchUser.lastName } </a>
+					<div style="float:right"><a href="requestFriend.htm?recipient=${searchUser.userID}"><button>Send Friend Request</button></a></div></h2>
 				</c:forEach>
 				</c:if>
 			</div> <!-- main -->
