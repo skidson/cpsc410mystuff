@@ -8,7 +8,6 @@ import java.util.*;
 public class UserLibraryService {
 	
 	public static void saveUserLibrary(UserLibrary ul){ 
-		
 		try{
 			Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
