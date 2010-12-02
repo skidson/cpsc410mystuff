@@ -11,6 +11,5 @@
 		<property name="text" column="text"/>
 		<property name="recipientID" column="recipientID"/>
 		<property name="senderID" column="senderID"/>
-		<property name="messageID" column="messageID"/>
    </class>
 </hibernate-mapping>
