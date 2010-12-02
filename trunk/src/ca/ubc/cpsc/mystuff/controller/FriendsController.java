@@ -52,7 +52,7 @@ public class FriendsController {
 	}
 	
 	@RequestMapping("/acceptFriend")
-	public String acceptFriendRequest(@RequestParam("userID") Long otherUserID, @RequestParam("messageID") Long messageID) {
+	public String acceptFriendRequest(@RequestParam("userID") Long otherUserID) {
 		User currentUser = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 		User otherUser = userService.getUser(otherUserID);
 		if (currentUser.addFriend(otherUser.getUserID()))
@@ -60,8 +60,6 @@ public class FriendsController {
 			
 		if (otherUser.addFriend(currentUser.getUserID()))
 			userService.saveUser(otherUser);
-		
-		messageService.deleteMessage(messageID);
 		
 		return "redirect:/mailbox.htm";
 	}
