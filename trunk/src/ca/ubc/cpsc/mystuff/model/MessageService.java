@@ -32,14 +32,16 @@ public class MessageService {
 		session.close();
 		
 		return m2;
-		
-		
 	}
 
 	public void deleteMessage(int messageID) {
 		// TODO hibernate stuff here
 	}
-
+	
+	public void saveMessage(Message message) {
+		// TODO hibernate stuff here
+	}
+	
 	public Message getMessage(int messageID){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
@@ -55,7 +57,6 @@ public class MessageService {
 		Message m = getMessage(messageID);
 		Message reply = new Message("", m.getSenderID(), m.getRecipientID(), generateMessageID(), "", "RE:" + m.getSubject(), System.currentTimeMillis(), 0);
 		return reply;
-		
 	}
 	
 	public int generateMessageID(){ 

@@ -25,7 +25,6 @@ public class FriendsController {
 		for(Long id : friendIDs){
 			friendsList.add(UserService.getUser(id));
 		}
-		
 
 		model.addAttribute("user", user);
 		model.addAttribute("friends", friendsList);

@@ -1,5 +1,6 @@
 package ca.ubc.cpsc.mystuff.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -36,10 +37,34 @@ public class MailboxController {
 		return("redirect:/mailbox.htm");
 	}
 	
-	@RequestMapping("/replyMessage")
-	public String replyToMessage(@RequestParam("messageID") int messageID){
-		
-		return "messagereply";
+	@RequestMapping(value = "/replyMessage", method = RequestMethod.GET)
+	public String showReplyForm(@RequestParam("messageID") int messageID, Model model){
+		Message replyMessage = messageService.getReplyMessage(messageID);
+		model.addAttribute("message", replyMessage);
+		return "replyMessage";
 	}
 	
+	@RequestMapping(value = "/replyMessage", method = RequestMethod.POST)
+	public String sendReply(@ModelAttribute("message") Message message) {
+		// TODO verify message
+		messageService.saveMessage(message);
+		return("redirect:/mailbox.htm");
+	}
+	
+	@RequestMapping(value = "/sendMessage", method = RequestMethod.GET)
+	public String showSendForm() {
+		return "composeMessage";
+	}
+	
+	@RequestMapping(value = "/sendMessage", method = RequestMethod.POST)
+	public String sendMessage(@RequestParam("in_text") String text,
+			@RequestParam("in_recipient") String recipient,
+			@RequestParam("in_subject") String subject) {
+		User sender = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
+		long recipientID = userService.getUserID(recipient);
+		
+		Message message = new Message(text, recipientID, sender.getUserID(), 
+				messageService.generateMessageID(), sender.getUsername(), subject, System.currentTimeMillis(), 0);
+		return "redirect:/mailbox.htm";
+	}
 }
