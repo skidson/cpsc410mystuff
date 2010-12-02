@@ -29,7 +29,7 @@
 		<div id="content-wrap">
 
 			<div id="main">
-				<h3>Login</h3>
+				<h2>Login</h2>
 				<center>
 				<table><tr>
 					<c:if test="${not empty param.error}">

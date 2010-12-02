@@ -30,7 +30,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h3>Media</h3> <br />
+				<h2>Media</h2> <br />
 				${movie.itemID}
 			</div> <!-- main -->
 		
