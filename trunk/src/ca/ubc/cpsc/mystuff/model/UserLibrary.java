@@ -1,14 +1,17 @@
 package ca.ubc.cpsc.mystuff.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserLibrary {
 	private int itemCount;
 	private long ownerID;
-	private ArrayList<Integer> viewerID;
+	private List<Integer> viewerID;
 	private int id;
-	private ArrayList<Integer> movies;
-	private ArrayList<Integer> songs;
+	private List<Integer> movies;
+	private List<Integer> songs;
+	
+	public UserLibrary(){}
 	
 	public void addMovieToLibrary(int movieID){ 
 		movies.add(movieID);
@@ -27,20 +30,20 @@ public class UserLibrary {
 	}
 	
 	public UserLibrary(int itemCount, long ownerID,
-			ArrayList<Integer> viewerID, int id, ArrayList<Integer> movies,
-			ArrayList<Integer> songs) {
+			List<Integer> viewerID, int id, List<Integer> movies,
+			List<Integer> songs) {
 		this.itemCount = itemCount;
 		this.ownerID = ownerID;
 		this.viewerID = viewerID;
 		this.id = id;
-		this.movies = movies;
-		this.songs = songs;
+		this.movies = new ArrayList<Integer>(movies);
+		this.songs = new ArrayList<Integer>(songs);
 	}
 	
-	public ArrayList<Integer> getViewerID() {
+	public List<Integer> getViewerID() {
 		return viewerID;
 	}
-	public void setViewerID(ArrayList<Integer> viewerID) {
+	public void setViewerID(List<Integer> viewerID) {
 		this.viewerID = viewerID;
 	}
 	
@@ -54,7 +57,7 @@ public class UserLibrary {
 		this.itemCount = itemCount;
 	}
 
-	public void setMovies(ArrayList<Integer> movies) {
+	public void setMovies(List<Integer> movies) {
 		this.movies = movies;
 	}
 
@@ -77,16 +80,16 @@ public class UserLibrary {
 	public void setOwnerID(long ownerID) {
 		this.ownerID = ownerID;
 	}
-	public ArrayList<Integer> getMovies() {
+	public List<Integer> getMovies() {
 		return movies;
 	}
-	public void setmovies(ArrayList<Integer> items) {
+	public void setmovies(List<Integer> items) {
 		this.movies = items;
 	}
-	public ArrayList<Integer> getSongs() {
+	public List<Integer> getSongs() {
 		return songs;
 	}
-	public void setSongs(ArrayList<Integer> songs) {
+	public void setSongs(List<Integer> songs) {
 		this.songs = songs;
 	}
 	public void search(Search query) {
