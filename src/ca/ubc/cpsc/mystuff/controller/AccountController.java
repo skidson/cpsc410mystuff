@@ -62,10 +62,9 @@ public class AccountController {
 		UserLibraryService.saveUserLibrary(ul);
 		return "registerSuccess";
 
-
-		}
+	}
 	
-	@RequestMapping(value = "/registerFailure", method = RequestMethod.POST)
+	@RequestMapping("/registerFailure")
 	public String showFailure(Model model) {
 		String error = "One or more parameters are invalid";
 		model.addAttribute("error", error);
