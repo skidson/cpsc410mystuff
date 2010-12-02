@@ -36,7 +36,7 @@
 					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
 					<p class="post-footer align-right">					
 					<a href="#" class="readmore">Information</a>
-					<a href="addMedia.htm?itemID=${movie.itemID}"><button>STEVE FIX ME</button></a>
+					<a href="removeMedia.htm?itemID=${movie.itemID}"><button>Remove from Library</button></a>
 					</p>
 				</c:forEach>
 			</div> <!-- main -->

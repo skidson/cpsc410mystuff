@@ -17,6 +17,14 @@ public class UserLibrary {
 		movies.add(movieID);
 	}
 	
+	public void removeMovieFromLibrary(int movieID){ 
+		for (int i = 0; i < movies.size(); i++) {
+			if (movies.get(i).intValue() == movieID)
+				movies.remove(i);
+		}
+	}
+	
+	
 	public void addSongToLibrary(int songID){ 
 		songs.add(songID);
 	}

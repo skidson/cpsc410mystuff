@@ -42,7 +42,7 @@ public class MessageService {
 		Transaction tx = session.beginTransaction();
 	    Message message = (Message) session.createQuery("from Message" + " where messageID = ?").setInteger(0,messageID).uniqueResult();
 		Message m = new Message(message.getText(), message.getRecipientID(), message.getSenderID(), message.getMessageID() , message.getSenderName(), message.getSubject(), message.getDate(), message.getStatus());
-		tx.commit(); 
+		tx.commit();
 		session.close();
 		
 		return m;

@@ -56,9 +56,6 @@ public class UserService {
 	    ArrayList<Long> L = new ArrayList(user.getFriends());
 	    user.setFriends(L);
 	    
-//	    User user = (User) session.get(User.class, userID);
-	    
-	    
 	    tx.commit();
 	    session.close();
 	    
