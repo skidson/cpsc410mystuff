@@ -8,10 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import ca.ubc.cpsc.mystuff.model.Comment;
+import ca.ubc.cpsc.mystuff.model.CommentService;
 import ca.ubc.cpsc.mystuff.model.Movie;
 import ca.ubc.cpsc.mystuff.model.MovieDBWebService;
+import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserLibrary;
 import ca.ubc.cpsc.mystuff.model.UserLibraryService;
+import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 public class MediaController {
@@ -66,8 +70,35 @@ public class MediaController {
 	}
 	
 	@RequestMapping("/addComment")
-	public String addComment(@RequestParam("itemID") String itemID){
+	public String addComment(@RequestParam("itemID") String itemID, Model model) {
+		Movie movie = null;
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = UserService.getUser(username);
+		try {
+			movie = MovieDBWebService.getMovieByID((Integer.parseInt(itemID)));
+			
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		model.addAttribute("user", user);
+		model.addAttribute("movie", movie);
+		return "addComment";
+	}
+	
+	@RequestMapping("/submitComment")
+	public String submitComment(@RequestParam("itemID") String itemID, @RequestParam("userID") long userID, @RequestParam("in_text") String text, Model model){
+		Comment c;
+		String commentstuff = text;
+		long authorID = userID;
+		long commentID = CommentService.generateCommentID();
+		c = new Comment(commentstuff, authorID, commentID, Long.parseLong(itemID));
+		CommentService.saveComment(c);
 		
+		return "redirect:/media.htm";
 	}
 	
 }

@@ -20,7 +20,7 @@ public class CommentService {
 		List<Comment> tempList =  (List<Comment>) session.createQuery("select c from Comment c where c.itemID = ?").setInteger(0,movieID).list();
 		List<Comment> commentList = new ArrayList<Comment>();
 		for(Comment c : tempList){
-			Comment tmp = new Comment(c.getText(), c.getAuthorID(), c.getItemID(), c.getType(), c.getCommentID());
+			Comment tmp = new Comment(c.getText(), c.getAuthorID(), c.getItemID(), c.getCommentID());
 			commentList.add(tmp);
 		}
 		
@@ -30,6 +30,10 @@ public class CommentService {
 		return commentList;
 
 
+	}
+	
+	public static long generateCommentID(){
+		return System.currentTimeMillis();
 	}
 
 }

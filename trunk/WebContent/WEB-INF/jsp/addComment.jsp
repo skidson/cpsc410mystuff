@@ -3,7 +3,7 @@
 
 <head>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
-<title>MyStuff - Search</title>
+<title>MyStuff - Media</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 				<li id="current"><a href="media.htm">Media</a></li>
 				<li><a href="friends.htm">Friends</a></li>
 				<li><a href="mailbox.htm">Mailbox</a></li>
-				<li><a href="account.htm">Account</a></li>	
+				<li><a href="account.htm">Account</a></li>
 			</ul>
 		</div>		
 		
@@ -27,17 +27,18 @@
 		
 			<div id="sidebar">
 				<%@ include file="/WEB-INF/jsp/sidebar.jsp" %>
-			</div> <!-- sidebar -->		
+			</div> <!-- sidebar -->
 				
 			<div id="main">
-				<h3>${movie.title}</h3> <br />			
-					<h2>${movie.title}<div style="float:right">${movie.rating}/10</div></h2>
-					<table><tr><td width="200px"><img src="${movie.image}" width="99%" height="20%"></td><td>${movie.genre}</td></tr></table>
-					<p class="post-footer align-right">					
-						<a href="addComment.htm?itemID=${movie.itemID}">Add Comment</a>
-						<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
-					</p>
+				<h4>Add Comment to ${movie.title}</h4>
+				<form method="POST" action="submitComment.htm?itemID=${movie.itemID}?userID=${user.userID}">
+					<table>
+						<tr><td colspan="2"><center><textarea name="in_text"></textarea></center></td></tr>
+						<tr><td colspan="2"><center><input class="button" value="       Submit       " type="submit" /></center></td></tr>
+					</table>
+				</form>
 			</div> <!-- main -->
+		
 		</div> <!-- content-wrap -->
 					
 		<div id="footer">

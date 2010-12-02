@@ -7,18 +7,16 @@ public class Comment {
 	private String text;
 	private long authorID;
 	private long itemID; 
-	private String type;
 	private long commentID;
 	
 	public Comment(){}
 
-	public Comment(String text, long authorID, long itemID, String type,
+	public Comment(String text, long authorID, long itemID,
 			long commentID) {
 		super();
 		this.text = text;
 		this.authorID = authorID;
 		this.itemID = itemID;
-		this.type = type;
 		this.commentID = commentID;
 	}
 
@@ -44,14 +42,6 @@ public class Comment {
 
 	public void setItemID(long itemID) {
 		this.itemID = itemID;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 	public long getCommentID() {
