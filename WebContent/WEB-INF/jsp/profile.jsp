@@ -30,9 +30,9 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h4>Welcome to ${user.username}'s Profile! </h4>
-				<table><tr><td>Name : ${user.firstName} ${user.lastName}</td></tr>
-				<tr><td> Country : ${user.country}</td></tr>
+				<h4>Welcome to ${person.username}'s Profile! </h4>
+				<table><tr><td>Name : ${person.firstName} ${person.lastName}</td></tr>
+				<tr><td> Country : ${person.country}</td></tr>
 				</table>
 				
 				<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
