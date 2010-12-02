@@ -15,11 +15,10 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
 
-        <!-- SQL to stdout logging
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <property name="use_sql_comments">true</property>
-        -->
+
 
         <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 
@@ -28,7 +27,6 @@
         <mapping resource="ca/ubc/cpsc/mystuff/model/Song.hbm.xml"/>
         <mapping resource="ca/ubc/cpsc/mystuff/model/Movie.hbm.xml"/>
         <mapping resource="ca/ubc/cpsc/mystuff/model/Message.hbm.xml"/>
-        <mapping resource="ca/ubc/cpsc/mystuff/model/Comment.hbm.xml"/>
         
 
     </session-factory>
