@@ -35,7 +35,8 @@
 					<table>
 					<tr>
 						<td>${friend.firstName}   ${friend.lastName }</td>
-						<tr> <td> <a href="userPage.htm">View Profile</a> </td></tr>
+						<td>${friend.userID}</td>
+						<tr> <td> <a href="profile.htm?userID=${friend.userID}">View Profile</a> </td></tr>
 						<tr> <td> <a href="mailbox.htm">Send Message</a> </td></tr>
 						<tr> <td> <a href="userLibrary.htm">View library</a> </td></tr>
 					</tr>

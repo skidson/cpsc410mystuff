@@ -19,6 +19,7 @@ public class FriendsController {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		
 		User user = UserService.getUser(username);
+		user.addFriend(UserService.getUser("skidson").getUserID());
 		List<Long> friendIDs = user.getFriends();
 		List<User> friendsList = new ArrayList<User>();
 		

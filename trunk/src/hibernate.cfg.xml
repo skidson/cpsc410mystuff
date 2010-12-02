@@ -6,7 +6,7 @@
     <session-factory>
 
         <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
-        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost</property>
+        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://128.189.169.165</property>
         <property name="hibernate.connection.username">sa</property>
 
         <property name="hibernate.c3p0.min_size">5</property>
