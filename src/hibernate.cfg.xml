@@ -27,6 +27,8 @@
         <mapping resource="ca/ubc/cpsc/mystuff/model/Song.hbm.xml"/>
         <mapping resource="ca/ubc/cpsc/mystuff/model/Movie.hbm.xml"/>
         <mapping resource="ca/ubc/cpsc/mystuff/model/Message.hbm.xml"/>
+        <mapping resource="ca/ubc/cpsc/mystuff/model/Event.hbm.xml"/>
+        
         
 
     </session-factory>
