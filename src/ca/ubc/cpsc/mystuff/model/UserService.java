@@ -10,7 +10,7 @@ public class UserService {
 	public static void saveUser(User user){ 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    Transaction tx = session.beginTransaction();
-	    session.save(user);
+	    session.saveOrUpdate(user);
 	    tx.commit();
 	    session.close();
 	}
