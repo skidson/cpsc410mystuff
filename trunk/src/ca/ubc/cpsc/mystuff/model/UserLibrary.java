@@ -7,7 +7,7 @@ public class UserLibrary {
 	private int itemCount;
 	private long ownerID;
 	private List<Integer> viewerID;
-	private int id;
+	private long id;
 	private List<Integer> movies;
 	private List<Integer> songs;
 	
@@ -26,11 +26,11 @@ public class UserLibrary {
 		this.ownerID = ownerID; 
 		this.viewerID = null; 
 		this.movies = null; 
-		this.songs = null;
+		this.id = System.currentTimeMillis();
 	}
 	
 	public UserLibrary(int itemCount, long ownerID,
-			List<Integer> viewerID, int id, List<Integer> movies,
+			List<Integer> viewerID, long id, List<Integer> movies,
 			List<Integer> songs) {
 		this.itemCount = itemCount;
 		this.ownerID = ownerID;
@@ -61,10 +61,10 @@ public class UserLibrary {
 		this.movies = movies;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	
