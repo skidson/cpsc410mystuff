@@ -33,7 +33,7 @@
 				<h4>Compose Message</h4>
 				<form method="POST" action="sendMessage.htm">
 					<table>
-						<tr><td>To: </td><td><input type="text" size="60" name="in_recipient"></td></tr>
+						<tr><td>To: </td><td><input type="text" value="${username}" size="60" name="in_recipient"></td></tr>
 						<tr><td>Subject: </td><td><input type="text" size="60" name="in_subject"></td></tr>
 						<tr><td colspan="2"><center><textarea name="in_text"></textarea></center></td></tr>
 						<tr><td colspan="2"><center><input class="button" value="       Send       " type="submit" /></center></td></tr>

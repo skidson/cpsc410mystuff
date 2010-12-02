@@ -41,12 +41,12 @@
 					<input class="button" value=" Search " type="submit" /></center>
 				</form></tr></table>
 				
-				<c:forEach items="${resultsList}" var="movie">
-					<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
-					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
+				<c:forEach items="${resultsList}" var="user">
+					<h2><a href="profile.htm?userID=${user.userID}"> ${user.firstname} ${user.lastname } </a><div style="float:right"></div></h2>
+					<table><tr><td><a href="viewMedia.html?itemID=${movie.itemID}"> ${movie.title}</a>
+					<tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
 					<p class="post-footer align-right">					
 					<a href="#" class="readmore">Information</a>
-					<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
 					</p>
 				</c:forEach>
 				
