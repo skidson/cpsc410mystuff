@@ -30,7 +30,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h4>Media</h4> <br />
+				<h4>My Media</h4> <br />
 					<c:forEach items="${results}" var="movie">
 					<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
 					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
