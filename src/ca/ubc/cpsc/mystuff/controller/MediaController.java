@@ -132,6 +132,18 @@ public class MediaController {
 		String commentstuff = text;
 		long authorID = user.getUserID();
 		long commentID = CommentService.generateCommentID();
+		Movie currentMovie = new Movie("");
+		try {
+			currentMovie = MovieDBWebService.getMovieByID(Integer.parseInt(itemID));
+		} catch (NumberFormatException e1) {} catch (Exception e1) {}
+		String eventDescription = "{userFirstName} commented on {movieName}: \n {comment}...";
+		if(commentstuff.length() < 30){
+			eventDescription = eventDescription.replace("{userFirstName}", user.getFirstName()).replace("{movieName}", currentMovie.getTitle()).replace("{comment}", commentstuff);
+		}else{ 
+			eventDescription = eventDescription.replace("{userFirstName}", user.getFirstName()).replace("{movieName}", currentMovie.getTitle()).replace("{comment}", commentstuff.substring(0, 29));
+		}
+		Event e = new Event(authorID, user.getFirstName(), user.getUsername(), eventDescription );
+		EventService.saveEvent(e);
 		c = new Comment(commentstuff, authorID, Long.parseLong(itemID), commentID);
 		CommentService.saveComment(c);
 		return "redirect:/media.htm";
