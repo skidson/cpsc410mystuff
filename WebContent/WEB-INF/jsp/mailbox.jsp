@@ -43,7 +43,7 @@
 						</span>
 						<div style="padding-left:50px"><font color="#808080"><i>
 							${message.text}
-						</i></font></div>
+						</i></font></div><br />
 				</c:forEach>
 				</table>
 			</div> <!-- main -->
