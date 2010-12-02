@@ -31,18 +31,14 @@
 				
 			<div id="main">
 				<h4>Reply</h4> <br />
-				<p class="post-footer"><a href="#" class="readmore">${message.subject}</a>
-					<span style="float:right"><b>${message.senderName}</b></span>
-				</p>
-				<span style="float:right">
-					<a href="deleteMessage.htm?messageID=${message.messageID}"></a><button>Delete</button>
-				</span>
-				<div style="padding-left:30px"><font color="#808080"><i>
-					${message.text}
-				</i></font></div>
-				<form method="POST" action="sendMessage">
-					<input type="text" size="80" name="in_subject" />
-					<textarea ></textarea>
+				<form method="POST" action="sendMessage.htm">
+					<table>
+						<div style="padding-left:50px"><font color="#808080">
+							${message.text}
+						</font></div>
+						<tr><td colspan="2"><center><textarea name="in_text"></textarea></center></td></tr>
+						<tr><td colspan="2"><center><input class="button" value="       Send       " type="submit" /></center></td></tr>
+					</table>
 				</form>
 			</div> <!-- main -->
 		

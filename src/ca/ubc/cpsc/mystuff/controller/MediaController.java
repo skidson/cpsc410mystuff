@@ -56,4 +56,13 @@ public class MediaController {
 		model.addAttribute(movie);
 		return "itemPage";
 	}
+	
+	@RequestMapping("/removeMedia")
+	public String removeMedia(@RequestParam("itemID") String itemID) {
+		UserLibrary userLibrary = UserLibraryService.getUserLibrary(SecurityContextHolder.getContext().getAuthentication().getName());
+		userLibrary.removeMovieFromLibrary(Integer.parseInt(itemID));
+		UserLibraryService.saveUserLibrary(userLibrary);
+		return "redirect:/media.htm";
+	}
+	
 }

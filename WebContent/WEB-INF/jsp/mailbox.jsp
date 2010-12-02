@@ -38,8 +38,8 @@
 						<span style="float:right"><b>${message.senderName}</b></span>
 					</p>
 						<span style="float:right">
-							<a href="replyMessage.htm?messageID=${message.messageID}"><button>Reply</button></a>
-							<a href="deleteMessage.htm?messageID=${message.messageID}"><button>Delete</button></a>
+							<a href="replyMessage.htm?messageID=${message.itemID}"><button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reply&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+							<a href="deleteMessage.htm?messageID=${message.messageID}"><button>&nbsp;&nbsp;&nbsp;&nbsp;Delete&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
 						</span>
 						<div style="padding-left:50px"><font color="#808080"><i>
 							${message.text}
