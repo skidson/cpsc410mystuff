@@ -35,16 +35,26 @@
 				<tr><td> Country : ${person.country}</td></tr>
 				</table>
 				
-				
-				
-				
-				<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
+				<c:forEach items="${user.friends}" var="friend">
+					<c:choose>
+					 <c:when test="${friend == person.userID}" >
+						<td> You are friends with ${person.firstName} !</td>
+						<c:forEach items="${fullMovieList}" var="movie">
+						<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
+						<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
+						<p class="post-footer align-right">					
+						<a href="viewMedia.htm?itemID=${movie.itemID}" class="readmore">Information</a>
+						<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
+						</p>
+					</c:forEach>
+					</c:when>
+					<c:otherwise>				
+					<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
 					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
-					<p class="post-footer align-right">					
-					<a href="#" class="readmore">Information</a>
-					<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
+					</c:otherwise>
+					</c:choose>
+				</c:forEach>
 				
-				</p></table>
 			</div> <!-- main -->
 		
 		</div> <!-- content-wrap -->
