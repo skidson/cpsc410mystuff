@@ -16,18 +16,22 @@ import org.w3c.dom.NodeList;
 public class TrailerDBWebService {
 	private static final String SEARCH_URL_PREFIX = "http://api.traileraddict.com/?film=";
 
-	public TrailerDBWebService(String movieName){
+	public TrailerDBWebService(){
 	}
 
-	public static String getTrailerByMovieName(String movieName) throws Exception{ 
-		URL url = new URL(SEARCH_URL_PREFIX+movieName.replace(" ", "-"));
-		InputStream input = url.openStream();
-		DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		Document d = db.parse(input);
-		NodeList list = d.getElementsByTagName("trailer");
-		Element e = (Element) list.item(0);
-		NodeList l1 = e.getElementsByTagName("embed");
-		return l1.item(0).getTextContent();
+	public static String getTrailerByMovieName(String movieName) { 
+		try {
+			URL url = new URL(SEARCH_URL_PREFIX+movieName.replace(" ", "-"));
+			InputStream input = url.openStream();
+			DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			Document d = db.parse(input);
+			NodeList list = d.getElementsByTagName("trailer");
+			Element e = (Element) list.item(0);
+			NodeList l1 = e.getElementsByTagName("embed");
+			return l1.item(0).getTextContent();
+		} catch (Exception e) {
+			return "";
+		}
 	}
 
 }
