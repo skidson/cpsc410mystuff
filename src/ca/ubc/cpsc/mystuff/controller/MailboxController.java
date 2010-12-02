@@ -43,6 +43,7 @@ public class MailboxController {
 		String replyName = messageService.getMessage(messageID).getSenderName();
 		model.addAttribute("reply", reply);
 		model.addAttribute("replyName", replyName);
+		model.addAttribute("user", userService.getCurrentUser());
 		return "composeMessage";
 	}
 	

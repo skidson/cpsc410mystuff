@@ -10,8 +10,3 @@
 	<input name="search" class="button" value="Search" type="submit" />
 </p>
 </form>
-		
-<h3>Notices</h3>
-<ul class="sidemenu">
-	${sidebar}
-</ul>

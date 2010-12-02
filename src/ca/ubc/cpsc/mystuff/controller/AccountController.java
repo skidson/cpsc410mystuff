@@ -14,12 +14,8 @@ public class AccountController {
 	private UserService userService = new UserService();
 	
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
-	public String showAccount() {
-		return "account";
-	}
-
-	@RequestMapping(method = RequestMethod.POST)
-	public String editAccount(Model model) {
+	public String showAccount(Model model) {
+		model.addAttribute("user", userService.getCurrentUser());
 		return "account";
 	}
 	

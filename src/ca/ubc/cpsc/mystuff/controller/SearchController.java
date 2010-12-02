@@ -47,7 +47,7 @@ public class SearchController {
 			model.addAttribute("useResult", useResult);
 		}
 			
-
+		model.addAttribute("user", userService.getCurrentUser());
 		return "searchResults";
 	}
 		

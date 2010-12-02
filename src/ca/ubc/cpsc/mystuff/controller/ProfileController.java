@@ -40,5 +40,4 @@ public class ProfileController {
 		model.addAttribute("person", person);
 		return "profile";
 	}
-	
 }
