@@ -53,7 +53,7 @@ public class Song{
 		return this.URL;
 	}
 
-	public void setURL(String url){
+	public void setURL(String URL){
 		this.URL = URL;
 	}
 
