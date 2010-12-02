@@ -1,5 +1,6 @@
 package ca.ubc.cpsc.mystuff.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,16 +14,19 @@ import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 public class FriendsController {
-	private UserService userService = new UserService();
 	@RequestMapping(value = "/friends", method = RequestMethod.GET)
 	public String loadContent(Model model) {
-		User user = new User();
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
-		user.setUsername(username);
 		
-		user.addFriend(3245);
-		user.addFriend(95803);
-		List<Integer> friendsList = user.getFriends();
+		User user = UserService.getUser(username);
+		List<Long> friendIDs = user.getFriends();
+		List<User> friendsList = new ArrayList<User>();
+		
+		for(Long id : friendIDs){
+			friendsList.add(UserService.getUser(id));
+		}
+		
+
 		model.addAttribute("user", user);
 		model.addAttribute("friends", friendsList);
 		return "friends";
