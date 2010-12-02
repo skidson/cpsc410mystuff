@@ -8,7 +8,6 @@
 
 <body>
 	<div id="wrap">
-		
 		<div id="header">			
 			<h1 id="logo-text"><a href="home.htm">MyStuff</a></h1>
 			<p id="slogan">Your one-stop shop for media information...</p>
@@ -28,6 +27,9 @@
 				
 			<div id="main">
 				<h4>Register</h4>
+				
+				<center><font color="red">${error}</font></center>
+				
 				<table><form method="POST" action="register.htm">
 					<tr><td>First name: <font color="red">*</font></td><td><input type="text" size="30" name="in_firstName" /></td></tr>
 					<tr><td>Last name: <font color="red">*</font></td><td><input type="text" size="30" name="in_lastName" /></td></tr>

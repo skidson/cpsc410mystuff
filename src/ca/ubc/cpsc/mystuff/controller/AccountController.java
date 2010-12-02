@@ -65,6 +65,13 @@ public class AccountController {
 
 		}
 	
+	@RequestMapping(value = "/registerFailure", method = RequestMethod.POST)
+	public String showFailure(Model model) {
+		String error = "One or more parameters are invalid";
+		model.addAttribute("error", error);
+		return "register";
+	}
+	
 	@RequestMapping("/registerSuccess")
 	public String success() {
 		return("registerSuccess");
