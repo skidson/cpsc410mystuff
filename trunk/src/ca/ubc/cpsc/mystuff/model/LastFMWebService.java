@@ -88,13 +88,14 @@ public class LastFMWebService {
 		    	if (newLine.substring(0,21).equals("<image+size=\"medium\">")){
 		    		picture = newLine.substring(21, newLine.length()-8);
 		    		tempSong.setPicture(picture);
-		    		System.out.println(picture);
+		    		
 		    	}}
 		    	tempSong.setSongID(songID);
 		    	tempSong.setTitle(name);
 		    	tempSong.setURL(url);
 		    	tempSong.setArtist(artist);
-		    	//System.out.println(name +" "+ artist + " " + url + " " + songID);
+		    	
+		    	System.out.println(name +" "+ artist + " " + url + " " + songID);
 		    	return tempSong;
 	        }
 	return null;
