@@ -32,17 +32,21 @@ public class AccountController {
 			@RequestParam("in_email") String email,
 			@RequestParam("in_country") String country,
 			@RequestParam("in_username") String username,
-			@RequestParam("in_password") String password) {
+			@RequestParam("in_password") String password,
+			@RequestParam("in_confirmPassword")String confirm) {
 		// verify valid information
-		boolean synName, synPass, synCountry, synEmail, synFName, synLName, valid = true;
+		boolean synName, synPass, synCountry, synEmail, synFName, synLName, synConfirm = true;
 		synName = isdigornum(username);
+		synConfirm = isdigornum(confirm);
 		synPass = isdigornum(password);
 		synCountry = isdigornum(country);
 		synEmail = isdigornum(email);
 		synFName = isdigornum(firstName);
 		synLName = isdigornum(lastName);
-		
-		if (!(synName && synPass && synCountry && synEmail && synFName && synLName)){
+		if(!(confirm == password)){
+			return "redirect:/registerFailure.htm";
+		}
+		if (!(synName && synPass && synCountry && synEmail && synFName && synLName && synConfirm)){
 			return "redirect:/registerFailure.htm";
 		}
 		
