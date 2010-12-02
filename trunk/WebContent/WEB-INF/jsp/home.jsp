@@ -31,11 +31,6 @@
 				
 			<div id="main">
 				Welcome ${user.username}!
-				<c:forEach items="${friends}" var="friend">
-					<tr>
-						<td>${friend}</td><td><td> <td></td>
-					</tr>
-				</c:forEach>
 				<h3>News Feed</h3> <br />
 			</div> <!-- main -->
 		

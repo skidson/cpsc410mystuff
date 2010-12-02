@@ -30,25 +30,13 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h3>Search</h3> <br />
-				<table><tr><form method="POST" action="search.htm">
-					<center><input type="text" size="40" name="searchQuery" />
-					<select name="dropdown_media" size="1">
-						<option value="movies">Movies</option>
-						<option value="songs">Songs</option>
-						<option value="users">Users</option>
-					</select>
-					<input class="button" value=" Search " type="submit" /></center>
-				</form></tr></table>
-				
-				<c:forEach items="${resultsList}" var="movie">
-					<h2><a href="viewMedia.htm?itemID=${movie.itemID}"> ${movie.title} </a><div style="float:right">${movie.rating}/10</div></h2>
-					<table><tr><td width="100px"><img src="${movie.image}" width="95%" height="10%"></td><td>${movie.genre}</td></tr></table>
+				<h3>${movie.title}</h3> <br />			
+					<h2>${movie.title}<div style="float:right">${movie.rating}/10</div></h2>
+					<table><tr><td width="200px"><img src="${movie.image}" width="99%" height="20%"></td><td>${movie.genre}</td></tr></table>
 					<p class="post-footer align-right">					
 					<a href="#" class="readmore">Information</a>
 					<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
 					</p>
-				</c:forEach>
 				
 			</div> <!-- main -->
 		
