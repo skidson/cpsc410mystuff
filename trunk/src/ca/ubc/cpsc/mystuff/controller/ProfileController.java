@@ -23,9 +23,11 @@ public class ProfileController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadContent(@RequestParam("userID") long userID, Model model) {
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = UserService.getUser(username);
 		Random random = new Random();
-		User user = UserService.getUser(userID);
-		UserLibrary ul = UserLibraryService.getUserLibrary(user.getUsername());
+		User person = UserService.getUser(userID);
+		UserLibrary ul = UserLibraryService.getUserLibrary(person.getUsername());
 		List<Integer> movies = ul.getMovies();
 		Movie movie = null;
 		try {
@@ -33,8 +35,9 @@ public class ProfileController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		model.addAttribute("movie", movie);
 		model.addAttribute("user", user);
+		model.addAttribute("movie", movie);
+		model.addAttribute("person", person);
 		return "profile";
 	}
 	
