@@ -40,13 +40,8 @@ public class SearchController {
 			useResult = 0;
 			model.addAttribute("resultsList", resultList);
 			model.addAttribute("useResult", useResult);
-		}else if(option.equals("songs")){
-			useResult = 1;
-			List<Song> resultsList = searchService.songSearch(search);
-			model.addAttribute("resultsList", resultsList);
-			model.addAttribute("useResult", useResult);
 		}else if(option.equals("users")){
-			useResult = 2;
+			useResult = 1;
 			List<User> resultsList = searchService.doUserSearch(search);
 			model.addAttribute("resultsList", resultsList);
 			model.addAttribute("useResult", useResult);

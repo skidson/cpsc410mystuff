@@ -13,8 +13,8 @@ public class User {
 	private String password;
 	private String email;
 	private long userID;
-	private List<Long> friends = new ArrayList<Long>();
-	private List<Integer> inbox = new ArrayList<Integer>();
+	private List<Long> friends;
+	private List<Integer> inbox;
 	
 	public User(){}
 	

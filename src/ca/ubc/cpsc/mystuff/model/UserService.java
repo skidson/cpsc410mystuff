@@ -11,6 +11,7 @@ public class UserService {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    Transaction tx = session.beginTransaction();
 	    session.saveOrUpdate(user);
+	    session.flush();
 	    tx.commit();
 	    session.close();
 	}
@@ -21,7 +22,7 @@ public class UserService {
 
 	    User user = (User) session.createQuery(
                 "from User" + " where username = ?").setString(0,username).uniqueResult();
-	    ArrayList<Long> L = new ArrayList( user.getFriends());
+	    ArrayList<Long> L = new ArrayList(user.getFriends());
 	    user.setFriends(L);
 
 	    tx.commit();
@@ -84,7 +85,6 @@ public class UserService {
 	public User getCurrentUser() {
 		return getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 	}
-	
 	
 	public long generateUserID() {
 		// TODO: Change way of generating user id
