@@ -3,7 +3,7 @@
 
 <head>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
-<title>MyStuff - Search</title>
+<title>MyStuff - Media</title>
 </head>
 
 <body>
@@ -32,7 +32,10 @@
 			<div id="main">
 				<h3>${movie.title}</h3> <br />			
 					<h2>${movie.title}<div style="float:right">${movie.rating}/10</div></h2>
-					<table><tr><td width="200px"><img src="${movie.image}" width="99%" height="20%"></td><td>${movie.genre}</td></tr></table>
+					<table>
+						<tr><td width="200px"><img src="${movie.image}" width="99%" height="20%"></td><td>${movie.genre}</td></tr>
+						<tr><td colspan="2"><center>${trailer}</center></td></tr>
+					</table>
 					<p class="post-footer align-right">					
 						<a href="addComment.htm?itemID=${movie.itemID}">Add Comment</a>
 						<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>

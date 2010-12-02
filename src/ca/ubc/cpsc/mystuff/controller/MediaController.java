@@ -12,6 +12,7 @@ import ca.ubc.cpsc.mystuff.model.Comment;
 import ca.ubc.cpsc.mystuff.model.CommentService;
 import ca.ubc.cpsc.mystuff.model.Movie;
 import ca.ubc.cpsc.mystuff.model.MovieDBWebService;
+import ca.ubc.cpsc.mystuff.model.TrailerDBWebService;
 import ca.ubc.cpsc.mystuff.model.User;
 import ca.ubc.cpsc.mystuff.model.UserLibrary;
 import ca.ubc.cpsc.mystuff.model.UserLibraryService;
@@ -47,6 +48,8 @@ public class MediaController {
 	
 	@RequestMapping(value = "/viewMedia")
 	public String viewMedia(@RequestParam("itemID") String itemID, Model model){
+		TrailerDBWebService trailerService = new TrailerDBWebService();
+		
 		Movie movie = null;
 		List<Comment> comments = null;
 		try {
@@ -59,8 +62,14 @@ public class MediaController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		String trailer = trailerService.getTrailerByMovieName(movie.getTitle());
+		
+		model.addAttribute("trailer", trailer);
+
 		model.addAttribute("comments", comments);
 		model.addAttribute("movie", movie);
+
 		return "itemPage";
 	}
 	
