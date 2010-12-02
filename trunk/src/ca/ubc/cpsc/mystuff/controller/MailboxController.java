@@ -48,7 +48,7 @@ public class MailboxController {
 	
 	@RequestMapping(value = "/composeMessage")
 	public String showSendForm(@RequestParam ("username") String username, Model model) {
-		model.addAttribute("username", username);
+		model.addAttribute("replayname", username);
 		return "composeMessage";
 	}
 	
