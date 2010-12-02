@@ -1,6 +1,7 @@
 package ca.ubc.cpsc.mystuff.model;
 
 import org.hibernate.*;
+import org.hibernate.exception.GenericJDBCException;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.*;
@@ -8,12 +9,16 @@ import java.util.*;
 public class UserService {
 	
 	public static void saveUser(User user){ 
-		Session session = HibernateUtil.getSessionFactory().openSession();
-	    Transaction tx = session.beginTransaction();
-	    session.saveOrUpdate(user);
-	    session.flush();
-	    tx.commit();
-	    session.close();
+		try{
+			Session session = HibernateUtil.getSessionFactory().openSession();
+		    Transaction tx = session.beginTransaction();
+		    session.saveOrUpdate(user);
+		    session.flush();
+		    tx.commit();
+		    session.close();
+		}catch(GenericJDBCException e){
+			
+		}
 	}
 	
 	public static User getUser(String username){ 

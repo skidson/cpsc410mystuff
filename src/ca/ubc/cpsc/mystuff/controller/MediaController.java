@@ -3,10 +3,12 @@ package ca.ubc.cpsc.mystuff.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.exception.GenericJDBCException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.NestedServletException;
 
 import ca.ubc.cpsc.mystuff.model.Comment;
 import ca.ubc.cpsc.mystuff.model.CommentService;
@@ -51,6 +53,7 @@ public class MediaController {
 		UserService userService = new UserService();
 		User currentUser = userService.getCurrentUser();
 		UserLibrary ul = UserLibraryService.getUserLibrary(SecurityContextHolder.getContext().getAuthentication().getName());
+		
 		ul.addMovieToLibrary(Integer.parseInt(itemID));
 		Movie addedMovie;
 		try {
@@ -64,6 +67,7 @@ public class MediaController {
 		}
 		
 		UserLibraryService.saveUserLibrary(ul);
+
 		return "redirect:/media.htm";
 	}
 	

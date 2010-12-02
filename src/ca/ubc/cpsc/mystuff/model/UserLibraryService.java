@@ -1,17 +1,24 @@
 package ca.ubc.cpsc.mystuff.model;
 
 import org.hibernate.*;
+import org.hibernate.exception.GenericJDBCException;
+
 import java.util.*;
 
 public class UserLibraryService {
 	
 	public static void saveUserLibrary(UserLibrary ul){ 
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		
+		try{
+			Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(ul);
 
 		tx.commit();
 		session.close();
+		}catch(GenericJDBCException e){
+			
+		}
 	}
 
 	public static UserLibrary getUserLibrary(String username){ 

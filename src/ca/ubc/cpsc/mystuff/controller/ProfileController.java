@@ -35,7 +35,17 @@ public class ProfileController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		List<Movie> fullMovieList = new ArrayList<Movie>();
+		for(Integer id : movies){
+			try {
+				fullMovieList.add(MovieDBWebService.getMovieByID(id));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		model.addAttribute("user", user);
+		model.addAttribute("fullMovieList", fullMovieList);
 		model.addAttribute("movie", movie);
 		model.addAttribute("person", person);
 		return "profile";
