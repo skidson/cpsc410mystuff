@@ -30,7 +30,7 @@
 			</div> <!-- sidebar -->		
 				
 			<div id="main">
-				<h2>Friends</h2> <br />
+				<h4>Friends</h4> <br />
 				<c:forEach items="${friends}" var="friend">
 					<table>
 					<tr>
