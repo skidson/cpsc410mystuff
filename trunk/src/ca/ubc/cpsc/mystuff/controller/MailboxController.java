@@ -51,7 +51,7 @@ public class MailboxController {
 		return("redirect:/mailbox.htm");
 	}
 	
-	@RequestMapping(value = "/sendMessage", method = RequestMethod.GET)
+	@RequestMapping(value = "/composeMessage")
 	public String showSendForm() {
 		return "composeMessage";
 	}
@@ -60,11 +60,13 @@ public class MailboxController {
 	public String sendMessage(@RequestParam("in_text") String text,
 			@RequestParam("in_recipient") String recipient,
 			@RequestParam("in_subject") String subject) {
+		// TODO validate fields
 		User sender = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 		long recipientID = userService.getUserID(recipient);
 		
 		Message message = new Message(text, recipientID, sender.getUserID(), 
 				messageService.generateMessageID(), sender.getUsername(), subject, System.currentTimeMillis(), 0);
+		messageService.saveMessage(message);
 		return "redirect:/mailbox.htm";
 	}
 }
