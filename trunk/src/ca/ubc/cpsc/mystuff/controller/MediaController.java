@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import ca.ubc.cpsc.mystuff.model.Comment;
 import ca.ubc.cpsc.mystuff.model.CommentService;
+import ca.ubc.cpsc.mystuff.model.Event;
+import ca.ubc.cpsc.mystuff.model.EventService;
 import ca.ubc.cpsc.mystuff.model.Movie;
 import ca.ubc.cpsc.mystuff.model.MovieDBWebService;
 import ca.ubc.cpsc.mystuff.model.TrailerDBWebService;
@@ -20,6 +22,7 @@ import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 public class MediaController {
+	private static String ADD_MEDIA_MESSAGE = "{userFirstName} added {mediaName} to their library";
 	UserService userService = new UserService();
 	
 	@RequestMapping(value = "/media", method = RequestMethod.GET)
@@ -45,8 +48,21 @@ public class MediaController {
 	
 	@RequestMapping("/addMedia")
 	public String addMedia(@RequestParam("itemID") String itemID, Model model) {
+		UserService userService = new UserService();
+		User currentUser = userService.getCurrentUser();
 		UserLibrary ul = UserLibraryService.getUserLibrary(SecurityContextHolder.getContext().getAuthentication().getName());
 		ul.addMovieToLibrary(Integer.parseInt(itemID));
+		Movie addedMovie;
+		try {
+			addedMovie = MovieDBWebService.getMovieByID(Integer.parseInt(itemID));
+			Event event = new Event(currentUser.getUserID(), currentUser.getFirstName(), currentUser.getUsername(), ADD_MEDIA_MESSAGE.replace("{userFirstName}", currentUser.getFirstName()).replace("{mediaName}", addedMovie.getTitle()));
+			EventService.saveEvent(event);
+		} catch (NumberFormatException e) {
+
+		} catch (Exception e) {
+
+		}
+		
 		UserLibraryService.saveUserLibrary(ul);
 		return "redirect:/media.htm";
 	}
@@ -114,7 +130,6 @@ public class MediaController {
 		long commentID = CommentService.generateCommentID();
 		c = new Comment(commentstuff, authorID, Long.parseLong(itemID), commentID);
 		CommentService.saveComment(c);
-		
 		return "redirect:/media.htm";
 	}
 	
