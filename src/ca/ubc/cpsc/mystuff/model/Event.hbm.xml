@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ca.ubc.cpsc.mystuff.model.Event" table="Event">
+		<id name="eventID" column="eventID">
+			<generator class="increment"/>
+		</id>
+		<property name="userID" column="userID"/>
+		<property name="name" column="name"/>
+		<property name="description" column="description"/>
+		<property name="username" column="username"/>
+		
+   </class>
+</hibernate-mapping>
