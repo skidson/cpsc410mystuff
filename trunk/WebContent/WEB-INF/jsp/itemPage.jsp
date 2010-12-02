@@ -41,11 +41,11 @@
 						<a href="addMedia.htm?itemID=${movie.itemID}"><button>Add to Library</button></a>
 					</p>
 					
-					<c:forEach items="${comments}" var="comment">
-					<h2><div style="float:right">${comment.authorName}</div></h2>
-					<table><tr><td width="100px">${comment.text}</td></tr></table>
-					<p class="post-footer align-right">					
-					</p>
+				<c:forEach items="${comments}" var="comment">
+					<table>
+					<p class="post-footer"><b>${comment.authorName}</b></p>
+					<span style="padding-left:50px">${comment.text}</span>
+					</table>
 				</c:forEach>
 			</div> <!-- main -->
 		</div> <!-- content-wrap -->

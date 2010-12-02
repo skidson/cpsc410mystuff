@@ -20,6 +20,7 @@ import ca.ubc.cpsc.mystuff.model.UserService;
 
 @Controller
 public class MediaController {
+	UserService userService = new UserService();
 	
 	@RequestMapping(value = "/media", method = RequestMethod.GET)
 	public String loadContent(Model model) {
@@ -34,6 +35,7 @@ public class MediaController {
 				e.printStackTrace();
 			}
 		}
+		model.addAttribute("user", userService.getCurrentUser());
 		model.addAttribute("results", results);
 		return "media";
 	}
@@ -69,7 +71,8 @@ public class MediaController {
 
 		model.addAttribute("comments", comments);
 		model.addAttribute("movie", movie);
-
+		model.addAttribute("user", userService.getCurrentUser());
+		
 		return "itemPage";
 	}
 	
