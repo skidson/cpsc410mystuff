@@ -52,7 +52,8 @@ public class MailboxController {
 	}
 	
 	@RequestMapping(value = "/composeMessage")
-	public String showSendForm() {
+	public String showSendForm(@RequestParam ("username") String username, Model model) {
+		model.addAttribute("username", username);
 		return "composeMessage";
 	}
 	

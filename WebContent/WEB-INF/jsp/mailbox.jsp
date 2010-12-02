@@ -31,7 +31,7 @@
 				
 			<div id="main">
 				<h4>Mailbox</h4> <br />
-				<a href="composeMessage.htm"><button> Compose Message </button></a>
+				<a href="composeMessage.htm?username=" " "><button> Compose Message </button></a>
 				<table>
 				<c:forEach items="${messageList}" var="message">
 					<p class="post-footer"><a href="replyMessage.htm?messageID=${message.messageID}" class="readmore">${message.subject}</a>

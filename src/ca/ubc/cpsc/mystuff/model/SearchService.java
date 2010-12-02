@@ -17,7 +17,7 @@ public class SearchService {
 		this.resultList = resultList;
 	}
 	
-	public List<Movie> doSearch(String search) {
+	public List<Movie> movieSearch(String search) {
 		try {
 			return(MovieDBWebService.getMovies(search));
 		} catch (Exception e) {
