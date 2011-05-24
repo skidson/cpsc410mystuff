@@ -42,7 +42,7 @@ public class FriendsController {
 		User currentUser = userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
 		String text = "You've received a friend request from " + currentUser.getUsername() +
 			"(" + currentUser.getFirstName() + " " + currentUser.getLastName() + 
-			"! Click <a href='acceptFriend.htm?userID=" + currentUser.getUserID() + "?messageID=" + messageID + "'>here</a> to accept.";
+			"! Click <a href='acceptFriend.htm?userID=" + currentUser.getUserID() + "'>here</a> to accept.";
 		String subject = "Friend request from " + currentUser.getUsername();
 		Message friendRequest = new Message(text, recipientID, currentUser.getUserID(),
 				messageID, currentUser.getUsername(), subject, 
